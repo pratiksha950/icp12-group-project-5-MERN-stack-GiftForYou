@@ -120,6 +120,10 @@ app.post("/login",async (req,res)=>{
 
 })
 
+app.post("/gift",(req,res)=>{
+    res.send("gift route");
+})
+
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`);
     connectDB();
