@@ -51,11 +51,11 @@ const GiftSchema = new Schema({
     default: true
   },
 
-  stock: {
-    type: Number,
-    default: 10
-  },
 
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 
 }, { timestamps: true });
 

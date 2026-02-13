@@ -3,14 +3,16 @@ import dotenv from "dotenv"
 import cors from "cors"; 
 import connectDB from "./db.js";
 import User from "./models/user.js";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";  
 
 dotenv.config();
-
 const app=express();
 app.use(express.json());
 app.use(cors());
 
 const PORT=8080;
+
 
 //health Routes
 app.get("/",(req,res)=>{
@@ -58,13 +60,17 @@ app.post("/signUp",async (req,res)=>{
         })
     }
 
+const salt = bcrypt.genSaltSync(10);
+const encryptedPassword  = bcrypt.hashSync(password, salt);
+
+
     const newUser=new User({
         name,
         email,
         mobile,
         city,
         country,
-        password
+         password:encryptedPassword
     })
     try{
         const savedUser=await newUser.save();
@@ -102,9 +108,21 @@ app.post("/login",async (req,res)=>{
         })
     }
 
-     const existingUser=await User.findOne({email ,password}).select("-password");
+      const existingUser=await User.findOne({email });
 
-     if(existingUser){
+     if(!existingUser){
+        return res.json({
+            success:false,
+            message:"user doesn`t exist with this email,please sign Up",
+            data:null
+        })
+     }
+
+     const isPasswordCorrect=bcrypt.compareSync(password,existingUser.password);
+
+     existingUser.password=undefined;
+
+     if(isPasswordCorrect){
                 return res.json({
             success:true,
             message:"login successfully",
