@@ -7,7 +7,11 @@ import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Contact from "./views/Contact";
 import About from "./views/About";
-import Profile from "./views/Profile";
+import Wedding from "./views/Wedding";
+import Birthday from "./views/Birthday";
+import Fashion from "./views/Fashion";
+import Cake from "./views/Cake";
+import Valentine from "./views/Valentine";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -16,8 +20,13 @@ createRoot(document.getElementById("root")).render(
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Profile" element={<Profile />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/wedding" element={<Wedding />} />
+      <Route path="/birthday" element={<Birthday />} />
+      <Route path="/fashion" element={<Fashion />} />
+      <Route path="/cake" element={<Cake />} />
+      <Route path="/valentine" element={<Valentine />} />
+      
     </Routes>
   </BrowserRouter>
 );
