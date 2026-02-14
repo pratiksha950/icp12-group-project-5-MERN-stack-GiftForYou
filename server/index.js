@@ -5,6 +5,7 @@ import connectDB from "./db.js";
 import User from "./models/user.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";  
+import Gift from "./models/gift.js";
 
 dotenv.config();
 const app=express();
@@ -23,6 +24,24 @@ app.get("/",(req,res)=>{
 app.get("/health",(req,res)=>{
      res.send("welcome to server");
 }) 
+
+const checkJWT=(req,res,next)=>{
+    const {authorization}=req.headers;
+    const token=authorization && authorization.split(" ")[1];
+    console.log("Token",token);
+
+    try{
+    const decodedToken=jwt.verify(token,process.env.JWT_SECRET);
+    req.user = decodedToken;
+    next();
+    }catch(e){
+        return res.json({
+            success:false,
+            message:"invalid or missing token",
+            data:null
+        })
+    }
+}
 
 app.post("/signUp",async (req,res)=>{
     const {name,email,mobile,city,country,password}=req.body;
@@ -123,9 +142,21 @@ app.post("/login",async (req,res)=>{
      existingUser.password=undefined;
 
      if(isPasswordCorrect){
-                return res.json({
+         const jwttoken = jwt.sign(
+       {
+         id: existingUser._id,
+         email: existingUser.email,
+       },
+       process.env.JWT_SECRET,
+       {
+         expiresIn: "1h",
+       }
+     );
+     
+            return res.json({
             success:true,
             message:"login successfully",
+              token: jwttoken,
             data:existingUser
         })
      }else{
@@ -138,9 +169,47 @@ app.post("/login",async (req,res)=>{
 
 })
 
-app.post("/gift",(req,res)=>{
-    res.send("gift route");
-})
+app.post("/gifts",checkJWT, async (req, res) => {
+  const {
+    title,
+    description,
+    category,
+    productType,
+    basePrice,
+    images,
+    mockupImage,
+    customizable,
+  } = req.body;
+
+  const newGift = new Gift({
+    title,
+    description,
+    category,
+    productType,
+    basePrice,
+    images,
+    mockupImage,
+    customizable,
+    createdBy: req.user.id
+  });
+
+  try {
+    const savedGift = await newGift.save();
+
+    return res.status(201).json({
+      success: true,
+      message: "Gift created successfully",
+      data: savedGift
+    });
+
+  } catch (e) {
+    return res.status(500).json({
+      success: false,
+      message: `Gift creation failed: ${e.message}`,
+      data: null
+    });
+  }
+});
 
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`);
