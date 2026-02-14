@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar'
 
 
+
 function Login() {
   useEffect(() => {
     setPageTitle("Login-TinyTour")
@@ -38,7 +39,7 @@ function Login() {
         localStorage.setItem("userData",JSON.stringify(data));
 
         setTimeout(()=>{
-          window.location.href="/dashboard";
+          window.location.href="/";
         },1500)
 
       } else {

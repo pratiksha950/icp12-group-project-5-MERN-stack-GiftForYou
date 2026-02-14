@@ -1,106 +1,139 @@
-import {useEffect} from "react"
-import {setPageTitle} from "../utils.jsx"
-import { useState } from "react"
-import Input from "../components/Input.jsx"
-import Button from "../components/Button.jsx"
-import axios from "axios"
-import toast,{Toaster} from "react-hot-toast"
-import {Link} from "react-router-dom"
-import Navbar from '../components/Navbar'
+import { useEffect, useState } from "react";
+import { setPageTitle } from "../utils.jsx";
+import Input from "../components/Input.jsx";
+import Button from "../components/Button.jsx";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom"; // ✅ FIXED: added useNavigate
+import Navbar from "../components/Navbar";
 
-function Signup() {
-    const [newUser, setNewUser]=useState({
-        name:"",
-        email:"",
-        mobile:"",
-        city:"",
-        country:"",
-        password:""
+function SignUp() {
 
-    })
-    useEffect(()=>{
-        setPageTitle("SignUp-TinyTour")
-    },[])
+  const navigate = useNavigate(); // ✅ FIXED
 
-    const createUser=async()=>{
-        const response=await axios.post(`${import.meta.env.VITE_API_BASE_URL}/Signup`,newUser);
-        console.log(response.data);
-        if(response.data.success){
-            toast.success(response.data.message,{id:"signupSuccess"})
-            setNewUser({
-              name:"",
-              email:"",
-              mobile:"",
-              city:"",
-              country:"",
-              password:""
-            })
+  const [newUser, setNewUser] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    city: "",
+    country: "",
+    password: ""
+  });
 
-            setTimeout(()=>{
-                window.location.href="/login"
-            },1500)
-        }else{
-            toast.error(response.data.message,{id:"signuperror"})
-        }
+  useEffect(() => {
+    setPageTitle("SignUp-TinyTour");
+  }, []);
+
+  // ✅ FIXED: added try-catch + validation
+  const createUser = async (e) => {
+    e.preventDefault();
+
+    if (!newUser.name || !newUser.email || !newUser.password) {
+      toast.error("Please fill all required fields");
+      return;
     }
 
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/signUp`,
+        newUser
+      );
+
+      console.log(response.data);
+
+      if (response.data.success) {
+        toast.success(response.data.message, { id: "signupSuccess" });
+
+        // reset form
+        setNewUser({
+          name: "",
+          email: "",
+          mobile: "",
+          city: "",
+          country: "",
+          password: ""
+        });
+
+        // ✅ FIXED: React navigation instead of window.location
+        setTimeout(() => {
+          navigate("/login");
+        }, 1500);
+
+      } else {
+        toast.error(response.data.message, { id: "signupError" });
+      }
+
+    } catch (error) {
+      console.error(error);
+      toast.error("Server error! Try again later");
+    }
+  };
+
   return (
-    <> <Navbar />
-    <div className="w-60 flex flex-col justify-center items-center m-auto gap-4 ">
-       
-        SignUp
-        <Input 
-        type="text"
-        placeholder="Name"
-        value={newUser.name}
-        autoComplete="off"
-        onChange={(e)=>{setNewUser({...newUser,name:e.target.value})}}
+    <>
+      <Navbar />
+
+      <form 
+        onSubmit={createUser} // ✅ FIXED: form submit
+        className="w-60 flex flex-col justify-center items-center m-auto gap-4"
+      >
+        <h2>SignUp</h2>
+
+        <Input
+          type="text"
+          placeholder="Name"
+          value={newUser.name}
+          autoComplete="off"
+          onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
         />
 
-        <Input 
-        type="email"
-        placeholder="Email"
-        value={newUser.email}
-        autoComplete="off"
-        onChange={(e)=>{setNewUser({...newUser,email:e.target.value})}}
+        <Input
+          type="email"
+          placeholder="Email"
+          value={newUser.email}
+          autoComplete="off"
+          onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
         />
 
-        <Input 
-        type="text"
-        placeholder="mobile"
-        value={newUser.mobile}
-        onChange={(e)=>{setNewUser({...newUser,mobile:e.target.value})}}
+        <Input
+          type="text"
+          placeholder="Mobile"
+          value={newUser.mobile}
+          onChange={(e) => setNewUser({ ...newUser, mobile: e.target.value })}
         />
 
-        <Input 
-        type="text"
-        placeholder="city"
-        value={newUser.city}
-        onChange={(e)=>{setNewUser({...newUser,city:e.target.value})}}
+        <Input
+          type="text"
+          placeholder="City"
+          value={newUser.city}
+          onChange={(e) => setNewUser({ ...newUser, city: e.target.value })}
         />
 
-        <Input 
-        type="text"
-        placeholder="country"
-        value={newUser.country}
-        onChange={(e)=>{setNewUser({...newUser,country:e.target.value})}}
+        <Input
+          type="text"
+          placeholder="Country"
+          value={newUser.country}
+          onChange={(e) => setNewUser({ ...newUser, country: e.target.value })}
         />
 
-        <Input 
-        type="password"
-        placeholder="password"
-        autoComplete="new-password"
-        value={newUser.password}
-        onChange={(e)=>{setNewUser({...newUser,password:e.target.value})}}
+        <Input
+          type="password"
+          placeholder="Password"
+          autoComplete="new-password" // ✅ FIXED browser autofill issue
+          value={newUser.password}
+          onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
         />
 
-        <Button title="signUp" onClick={createUser}/>
-        <Link to="/login" className="text-blue-500">Already have an account? Login</Link>
+        <Button title="Sign Up" type="submit" /> {/* ✅ FIXED */}
 
-       <Toaster/>
-    </div>
+        <Link to="/login" className="text-blue-500">
+          Already have an account? Login
+        </Link>
+
+        <Toaster />
+      </form>
     </>
-  )
+  );
 }
 
-export default Signup
+export default SignUp;

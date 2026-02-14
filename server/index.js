@@ -21,7 +21,7 @@ app.get("/",getHome)
 
 
 
-app.post("/signUp",postSignUp)
+app.post("/Signup",postSignUp)
 app.post("/login",postLogin)
 
 app.post("/gifts",checkJWT,getGifts);
