@@ -4,13 +4,12 @@ import Input from "../components/Input.jsx";
 import Button from "../components/Button.jsx";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom"; // ✅ FIXED: added useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 import Navbar from "../components/Navbar";
 
 function SignUp() {
 
-  const navigate = useNavigate(); // ✅ FIXED
-
+  const navigate = useNavigate(); 
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
@@ -24,7 +23,6 @@ function SignUp() {
     setPageTitle("SignUp-TinyTour");
   }, []);
 
-  // ✅ FIXED: added try-catch + validation
   const createUser = async (e) => {
     e.preventDefault();
 
@@ -44,7 +42,6 @@ function SignUp() {
       if (response.data.success) {
         toast.success(response.data.message, { id: "signupSuccess" });
 
-        // reset form
         setNewUser({
           name: "",
           email: "",
@@ -54,7 +51,6 @@ function SignUp() {
           password: ""
         });
 
-        // ✅ FIXED: React navigation instead of window.location
         setTimeout(() => {
           navigate("/login");
         }, 1500);
@@ -73,40 +69,55 @@ function SignUp() {
     <>
       <Navbar />
 
-      <form 
-        onSubmit={createUser} // ✅ FIXED: form submit
-        className="w-60 flex flex-col justify-center items-center m-auto gap-4"
-      >
-        <h2>SignUp</h2>
+<div className="min-h-screen bg-gray-100 flex justify-center pt-6 md:pt-0 md:items-center px-4">
 
-        <Input
-          type="text"
-          placeholder="Name"
-          value={newUser.name}
-          autoComplete="off"
-          onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-        />
+  <div className="bg-white shadow-lg rounded-lg w-full max-w-lg p-6 sm:p-8">
 
-        <Input
-          type="email"
-          placeholder="Email"
-          value={newUser.email}
-          autoComplete="off"
-          onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-        />
+    <h2 className="text-xl sm:text-2xl font-bold text-center mb-1">
+      Create Account
+    </h2>
+    <p className="text-sm text-center text-gray-500 mb-5">
+      Join GiftForYou today 
+    </p>
 
-        <Input
-          type="text"
-          placeholder="Mobile"
-          value={newUser.mobile}
-          onChange={(e) => setNewUser({ ...newUser, mobile: e.target.value })}
-        />
+    <form
+      onSubmit={createUser}
+      className="flex flex-col gap-3"
+    >
 
+      <Input
+        type="text"
+        placeholder="Full Name"
+        value={newUser.name}
+        autoComplete="off"
+        onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+        className="border px-3 py-2 rounded w-full"
+      />
+
+      <Input
+        type="email"
+        placeholder="Email Address"
+        value={newUser.email}
+        autoComplete="off"
+        onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+        className="border px-3 py-2 rounded w-full"
+      />
+
+      <Input
+        type="text"
+        placeholder="Mobile Number"
+        value={newUser.mobile}
+        onChange={(e) => setNewUser({ ...newUser, mobile: e.target.value })}
+        className="border px-3 py-2 rounded w-full"
+      />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Input
           type="text"
           placeholder="City"
           value={newUser.city}
           onChange={(e) => setNewUser({ ...newUser, city: e.target.value })}
+          className="border px-3 py-2 rounded w-full"
         />
 
         <Input
@@ -114,24 +125,40 @@ function SignUp() {
           placeholder="Country"
           value={newUser.country}
           onChange={(e) => setNewUser({ ...newUser, country: e.target.value })}
+          className="border px-3 py-2 rounded w-full"
         />
+      </div>
 
-        <Input
-          type="password"
-          placeholder="Password"
-          autoComplete="new-password" // ✅ FIXED browser autofill issue
-          value={newUser.password}
-          onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+      <Input
+        type="password"
+        placeholder="Password"
+        autoComplete="new-password"
+        value={newUser.password}
+        onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+        className="border px-3 py-2 rounded w-full"
+      />
+
+      <div className="flex justify-center mt-2">
+        <Button
+          title="Sign Up"
+          type="submit"
+          varient="primary"
         />
+      </div>
 
-        <Button title="Sign Up" type="submit" /> {/* ✅ FIXED */}
-
-        <Link to="/login" className="text-blue-500">
-          Already have an account? Login
+      <p className="text-center text-sm mt-2">
+        Already have an account?
+        <Link to="/login" className="text-purple-600 ml-1 font-semibold">
+          Login
         </Link>
+      </p>
 
+    </form>
+  </div>
+
+</div>
         <Toaster />
-      </form>
+     
     </>
   );
 }

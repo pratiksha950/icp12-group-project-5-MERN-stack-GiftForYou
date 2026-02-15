@@ -53,10 +53,11 @@ function Login() {
 
   return (
     <> <Navbar />
-<div className="mt-16 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-100 flex justify-center pt-2 sm:pt-4 md:pt-0 md:items-center px-2 overflow-x-hidden">
 
-  <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
+  <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden">
 
+    {/* Image Section */}
     <div className="hidden md:block md:w-1/2">
       <img
         src={loginImg}
@@ -65,13 +66,14 @@ function Login() {
       />
     </div>
 
-    <div className="w-full md:w-1/2 p-6 ">
+    {/* Form Section */}
+    <div className="w-full md:w-1/2 p-4 sm:p-6">
 
-      <h2 className="text-xl sm:text-2xl font-bold text-center mb-2">
+      <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
         Welcome Back
       </h2>
 
-      <p className="text-xs sm:text-sm text-center text-gray-500 mb-4">
+      <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
         Login to continue to GiftForYou
       </p>
 
@@ -99,13 +101,9 @@ function Login() {
           className="border px-3 py-2 rounded w-full"
         />
 
+        {/* Center Login Button */}
         <div className="flex justify-center">
-          <Button
-            title="Login"
-            type="submit"
-            varient="secondary"
-            className="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700"
-          />
+          <Button title="Login" type="submit" varient="primary" />
         </div>
 
         <p className="text-center text-xs sm:text-sm">
@@ -119,9 +117,9 @@ function Login() {
       </form>
 
     </div>
-
   </div>
 </div>
+
     </>
   )
 }

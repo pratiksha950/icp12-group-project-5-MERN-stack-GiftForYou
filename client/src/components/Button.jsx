@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button({title,size="sm",varient="danger",onClick}) {
+function Button({title,size="sm",varient="primary",onClick}) {
  const size_classes = {
     sm: "px-3 py-1 text-sm",
     md: "px-6 py-2 text-base",
@@ -8,7 +8,7 @@ function Button({title,size="sm",varient="danger",onClick}) {
   };
 
    const variant_classes = {
-    primary: "bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-400",
+    primary: "bg-pink-500 text-white hover:bg-pink-600 focus:ring-pink-400",
     secondary: "bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-400",
     danger: "bg-red-500 text-white hover:bg-red-600 focus:ring-red-400",
     outline: "border border-blue-500 text-blue-500 hover:bg-blue-50 focus:ring-blue-400"

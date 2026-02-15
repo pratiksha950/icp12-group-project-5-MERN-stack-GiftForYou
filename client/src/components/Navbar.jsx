@@ -32,7 +32,6 @@ export default function Navbar() {
             Contact
           </Link>
 
-          <span className="cursor-pointer text-lg">❤️</span>
           <span className="cursor-pointer text-lg">👤</span>
 
           <Link to="/login" className="hidden md:block bg-pink-500 text-white px-3 py-1 text-sm rounded hover:bg-pink-600">
