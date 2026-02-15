@@ -5,6 +5,7 @@ import occasion from "../assets/homeimg/occasion1.png";
 import anniversary from "../assets/homeimg/image.png";
 import trending from "../assets/homeimg/occasion3.jpg";
 import Birthday from "../assets/homeimg/occasion2.png";
+import Heading from "./Heading";
 
 function OccasionSection() {
 
@@ -16,13 +17,12 @@ function OccasionSection() {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-2">
       <div className="max-w-7xl mx-auto px-4">
 
-        <h2 className="text-3xl font-bold text-center">
-          Shop By Occasions & Relations
-        </h2>
-        <p className="text-center text-gray-600 mt-2">
+        <Heading text="Shop By Occasions & Relations" />
+
+        <p className="text-center text-gray-900 mt-2 mb-4 font-medium">
           Surprise Your Loved Ones
         </p>
 

@@ -9,7 +9,7 @@ function VideoSection() {
         autoPlay
         loop
         muted
-        className="w-full max-w-6xl h-[390px] object-cover rounded-xl shadow-lg"
+        className="w-full max-w-6xl h-[450px] object-cover rounded-xl shadow-lg"
       />
     </div>
   );
