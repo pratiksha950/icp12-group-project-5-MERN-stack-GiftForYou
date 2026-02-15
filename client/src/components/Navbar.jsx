@@ -11,14 +11,14 @@ function Navbar({ refreshCart }) {
   }, [refreshCart]); 
 
   return (
-    <nav className="w-full bg-rose-100 shadow-md ">
+    <nav className="w-full bg-rose-100 shadow-md philosopher-regular">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
         <h1 className="text-2xl font-bold text-pink-600 italic cursor-pointer">
           <Link to="/" className="hover:text-pink-500">GiftForYou</Link>
         </h1>
 
-        <ul className="hidden lg:flex items-center gap-6 text-gray-700 font-medium">
+        <ul className="hidden lg:flex items-center gap-6 text-gray-700 font-medium philosopher-regular">
           <Link to="/wedding" className="hover:text-pink-500">Wedding</Link>
           <Link to="/birthday" className="hover:text-pink-500">Birthday</Link>
           <Link to="/valentine" className="hover:text-pink-500">Valentine</Link>
