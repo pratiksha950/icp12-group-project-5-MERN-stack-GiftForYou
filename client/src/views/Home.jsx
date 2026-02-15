@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.jsx'
 import Category from '../components/CategorySection.jsx'
 import Video from '../components/VideoSection.jsx'
 import OccasionSection from '../components/OccasionSection.jsx'
+import TeamSection from '../components/TeamSection.jsx'
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       <Video />
       <Category />
       <OccasionSection />
+      <TeamSection />
     </div>
     </>
 

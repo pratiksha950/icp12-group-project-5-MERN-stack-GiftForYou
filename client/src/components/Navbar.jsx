@@ -37,7 +37,6 @@ function Navbar({ refreshCart }) {
             Login
           </Link>
 
-          {/* CART ICON */}
           <div className="relative cursor-pointer">
             <Link to="/cart" className="text-lg">🛒</Link>
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">
