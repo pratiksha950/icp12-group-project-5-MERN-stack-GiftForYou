@@ -5,10 +5,11 @@ import { useRef } from 'react'
 import { setPageTitle } from "../utils.jsx"
 import Button from '../components/Button.jsx'
 import Category from '../components/CategorySection.jsx'
+import Navbar from '../components/Navbar.jsx'
 
 
 function About() {
-  
+
        useEffect(() => {
     setPageTitle("About-GiftForYou")
   }, [])
@@ -68,6 +69,10 @@ function About() {
   };
 
   return (
+    <>
+    <Navbar/>
+
+
   <div className="min-h-screen w-full bg-slate-100 py-12 px-4">
     
     <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-10">
@@ -168,7 +173,10 @@ function About() {
 
     </div>
   </div>
+  </>
+  
 );
+
 }
 
 export default About
