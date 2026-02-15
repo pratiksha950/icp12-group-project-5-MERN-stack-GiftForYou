@@ -1,8 +1,9 @@
-import BirthdayCard from '../components/BirthdayCard';
+import Card from '../components/Card';
 import BirthdayCardData from '../configs/birthdaycarddata';
 import toast, { Toaster } from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 import { useState } from 'react';
+import Input from '../components/Input';
 
 function StationaryStore() {
   const [refreshCart, setRefreshCart] = useState(false);
@@ -45,13 +46,12 @@ function StationaryStore() {
       <Toaster />
 
      
-      <div className="flex justify-center p-4 bg-[#F8FAFF] font-sans">
-        <input
+      <div className="flex justify-center p-4 bg-[#F8FAFF] font-sans w-[100]">
+        <Input
           type="text"
           placeholder="Search items..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="flex w-130 border rounded-lg px-4 py-2 border-blue-900"
         />
       </div>
 
@@ -61,7 +61,7 @@ function StationaryStore() {
           filteredItems.map((item) => {
             const { id, image, name, description, price,originalPrice, discount } = item;
             return (
-              <BirthdayCard
+              <Card
                 key={id}
                 image={image}
                 name={name}

@@ -5,7 +5,7 @@ import {useState} from 'react'
 import toast, {Toaster} from 'react-hot-toast';
 
 
-function BirthdayCard({ image, name, description, price,originalPrice, discount, addToCart, id }) {
+function Card({ image, name, description, price,originalPrice, discount, addToCart, id }) {
     const [quantity,setQuantity]=useState(1);
 
   return (
@@ -65,4 +65,4 @@ function BirthdayCard({ image, name, description, price,originalPrice, discount,
   );
 }
 
-export default BirthdayCard;
+export default Card;
