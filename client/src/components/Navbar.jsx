@@ -1,14 +1,29 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Avatar from "./Avatar";
+import { getUserData, logoutUser } from "../utils";
+import Button from "./Button";
+import toast, { Toaster } from "react-hot-toast";
 
 function Navbar({ refreshCart }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [userData, setUserData] = useState({});
+
+  const fetchUserData = () => {
+    const data = getUserData();
+    console.log(data);
+    setUserData(data);
+  }
+
+  useEffect(() => {
+    fetchUserData();
+  }, [])
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartCount(cart.length);
-  }, [refreshCart]); 
+  }, [refreshCart]);
 
   return (
     <nav className="w-full bg-rose-100 shadow-md philosopher-regular">
@@ -31,11 +46,17 @@ function Navbar({ refreshCart }) {
           <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
           <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
 
-          <span className="cursor-pointer text-lg">👤</span>
-
-          <Link to="/login" className="hidden md:block bg-pink-500 text-white px-3 py-1 text-sm rounded hover:bg-pink-600">
-            Login
-          </Link>
+          <div>
+            {userData?.name ? (
+              <div className="flex items-center">
+                <Avatar name={userData.name} />
+                Hello, {userData.name}
+                <Button title="Logout" className="ml-2" varient="primary" onClick={logoutUser} />
+              </div>
+            ) : (
+              <Link to="/login" className="hidden md:block bg-pink-500 text-white px-3 py-1 text-sm rounded hover:bg-pink-600"> Login</Link>
+            )}
+          </div>
 
           <div className="relative cursor-pointer">
             <Link to="/cart" className="text-lg">🛒</Link>
@@ -62,6 +83,7 @@ function Navbar({ refreshCart }) {
           <Link to="/login" className="block text-pink-500">Login</Link>
         </div>
       )}
+      <Toaster />
     </nav>
   );
 }
