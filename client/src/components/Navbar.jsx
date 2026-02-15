@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+function Navbar({ refreshCart }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartCount(cart.length);
+  }, [refreshCart]); 
 
   return (
     <nav className="w-full bg-white shadow-md border-b">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
-        <div>
-          <h1 className="text-2xl font-bold text-pink-600 italic cursor-pointer">
-            GiftForYou
-          </h1>
-        </div>
+        <h1 className="text-2xl font-bold text-pink-600 italic cursor-pointer">
+          GiftForYou
+        </h1>
 
         <ul className="hidden lg:flex items-center gap-6 text-gray-700 font-medium">
           <Link to="/wedding" className="hover:text-pink-500">Wedding</Link>
@@ -24,13 +28,8 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4 text-gray-700">
 
-          <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">
-            About
-          </Link>
-
-          <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">
-            Contact
-          </Link>
+          <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
+          <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
 
           <span className="cursor-pointer text-lg">👤</span>
 
@@ -38,10 +37,11 @@ export default function Navbar() {
             Login
           </Link>
 
+          {/* CART ICON */}
           <div className="relative cursor-pointer">
-            🛒
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
-              0
+            <Link to="/cart" className="text-lg">🛒</Link>
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">
+              {cartCount}
             </span>
           </div>
 
@@ -66,3 +66,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;

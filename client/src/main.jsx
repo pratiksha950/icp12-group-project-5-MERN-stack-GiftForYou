@@ -12,6 +12,7 @@ import Birthday from "./views/Birthday";
 import Fashion from "./views/Fashion";
 import Cake from "./views/Cake";
 import Valentine from "./views/Valentine";
+import Cart from "./views/Cart";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -26,6 +27,8 @@ createRoot(document.getElementById("root")).render(
       <Route path="/fashion" element={<Fashion />} />
       <Route path="/cake" element={<Cake />} />
       <Route path="/valentine" element={<Valentine />} />
+     <Route path="/cart" element={<Cart />} />
+
       
     </Routes>
   </BrowserRouter>
