@@ -1,39 +1,52 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import flower1 from "../assets/flower1.jpg";
-import flower2 from "../assets/flower2.jpg";
-import flower3 from "../assets/flower3.jpg";
+import flower1 from "../assets/homeimg/flower1.jpg";
+import birthday1 from "../assets/homeimg/birthday1.jpg";
+import cake1 from "../assets/homeimg/cake1.jpg";
+import wedding1 from "../assets/homeimg/wedding1.jpg";
+import fasion from "../assets/homeimg/fasion.png";
 
 function CategorySection() {
 
   const categories = [
-    { name: "Valentine’s Day", img: flower1 },
-    { name: "Grand Gesture", img: flower2 },
-    { name: "Valentine Flowers", img: flower3 },
+    { name: "Valentine’s Day", img: flower1, path: "/valentine" },
+    { name: "Birthday", img: birthday1, path: "/birthday" },
+    { name: "Cake", img: cake1, path: "/cake" },
+    { name: "Wedding", img: wedding1, path: "/wedding" },
+    { name: "Fashion", img: fasion, path: "/fashion" },
   ];
 
   return (
-    <div className="bg-gray-100 py-10">
+    <div className="bg-pink-100 py-10">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex gap-6 overflow-x-auto scrollbar-hide">
+
+        <h2 className="text-2xl font-bold text-center mb-6">
+          Shop by Category
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-6">
+
           {categories.map((item, index) => (
-            <div
+            <Link 
               key={index}
-              className="flex flex-col items-center min-w-[130px] cursor-pointer group"
+              to={item.path}
+              className="flex flex-col items-center cursor-pointer group"
             >
-              <div className="w-28 h-28 rounded-2xl overflow-hidden shadow-lg bg-white">
+              <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-lg bg-white flex justify-center items-center">
                 <img
                   src={item.img}
+                  className="w-full h-full object-cover hover:scale-110 transition duration-300"
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
                 />
               </div>
 
-              <p className="mt-3 text-sm font-semibold text-gray-700">
+              <p className="mt-3 text-sm font-semibold text-gray-700 text-center">
                 {item.name}
               </p>
-            </div>
+            </Link>
           ))}
+
         </div>
       </div>
     </div>
