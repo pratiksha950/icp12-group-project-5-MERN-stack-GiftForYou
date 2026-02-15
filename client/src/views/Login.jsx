@@ -6,6 +6,7 @@ import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
 import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar'
+import loginImg from "../assets/homeimg/login.png"
 
 
 
@@ -52,40 +53,75 @@ function Login() {
 
   return (
     <> <Navbar />
-    <form
-      onSubmit={checkUserLogin}
-      className="w-60 flex flex-col justify-center items-center m-auto mt-10  gap-4 "
-    >
-      {/* <h2 className="font-semibold">Login</h2> */}
+<div className="mt-16 flex items-center justify-center p-4">
 
-      <Input
-        type="email"
-        placeholder="Email"
-        autoComplete="off"
-        value={loginUser.email}
-        onChange={(e) =>
-          setLoginUser({ ...loginUser, email: e.target.value })
-        }
+  <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
+
+    <div className="hidden md:block md:w-1/2">
+      <img
+        src={loginImg}
+        alt="login"
+        className="h-full w-full object-cover"
       />
+    </div>
 
-      <Input
-        type="password"
-        placeholder="Password"
-        autoComplete="new-password"
-        value={loginUser.password}
-        onChange={(e) =>
-          setLoginUser({ ...loginUser, password: e.target.value })
-        }
-      />
+    <div className="w-full md:w-1/2 p-6 ">
 
-      <Button title="Login" type="submit" varient=" secondary"/>
+      <h2 className="text-xl sm:text-2xl font-bold text-center mb-2">
+        Welcome Back
+      </h2>
 
-      <Link to="/signUp" className="text-blue-500 text-sm">
-        Don't have an account? SignUp
-      </Link>
+      <p className="text-xs sm:text-sm text-center text-gray-500 mb-4">
+        Login to continue to GiftForYou
+      </p>
 
-      <Toaster />
-    </form>
+      <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
+
+        <Input
+          type="email"
+          placeholder="Email"
+          autoComplete="off"
+          value={loginUser.email}
+          onChange={(e) =>
+            setLoginUser({ ...loginUser, email: e.target.value })
+          }
+          className="border px-3 py-2 rounded w-full"
+        />
+
+        <Input
+          type="password"
+          placeholder="Password"
+          autoComplete="new-password"
+          value={loginUser.password}
+          onChange={(e) =>
+            setLoginUser({ ...loginUser, password: e.target.value })
+          }
+          className="border px-3 py-2 rounded w-full"
+        />
+
+        <div className="flex justify-center">
+          <Button
+            title="Login"
+            type="submit"
+            varient="secondary"
+            className="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700"
+          />
+        </div>
+
+        <p className="text-center text-xs sm:text-sm">
+          Don't have an account?
+          <Link to="/signUp" className="text-purple-600 ml-1 font-semibold">
+            Sign Up
+          </Link>
+        </p>
+
+        <Toaster />
+      </form>
+
+    </div>
+
+  </div>
+</div>
     </>
   )
 }
