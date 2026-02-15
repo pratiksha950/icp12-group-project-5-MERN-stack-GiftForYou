@@ -130,4 +130,46 @@ const postLogin=async (req,res)=>{
 
 }
 
-export {postSignUp,postLogin}
+
+const updateUser = async (req, res) => {
+  try {
+
+    const userId = req.user?.id;
+
+    if (!userId) {
+      return res.json({
+        success: false,
+        message: "Unauthorized"
+      });
+    }
+
+    const { name, mobile, whatsapp, email, address, city, country, pincode } = req.body;
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { name, mobile, whatsapp, email, address, city, country, pincode },
+      { new: true, runValidators: true }
+    ).select("-password");
+
+    if (!updatedUser) {
+      return res.json({
+        success: false,
+        message: "User not found"
+      });
+    }
+
+    return res.json({
+      success: true,
+      message: "Profile updated successfully",
+      data: updatedUser
+    });
+
+  } catch (error) {
+    return res.json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+export {postSignUp,postLogin,updateUser}

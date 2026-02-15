@@ -18,6 +18,15 @@ const userSchema=new Schema({
     country:{
         type:String,
     },
+    pincode:{
+        type:String,
+    },
+    whatsappNumber:{
+        type:String,
+    },
+    address:{
+        type:String,
+    },
     password:{
         type:String,
         required:true,

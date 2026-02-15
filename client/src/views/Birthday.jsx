@@ -12,6 +12,11 @@ function StationaryStore() {
     const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
     const itemIndex = existingCart.findIndex((item) => item.id === items.id);
 
+     const cartItem = {
+    ...items,
+    customImages: items.customImages || [], 
+  };
+
     if (itemIndex !== -1) {
       existingCart[itemIndex] = items;
     } else {

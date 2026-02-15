@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from '../components/Button.jsx'
+import React from 'react';
+import Button from '../components/Button.jsx';
 import { Trash } from "lucide-react";
 
 const removeFromCart = (id) => {
@@ -16,27 +16,11 @@ function CartItem({
   price,
   quantity,
   imageUrl,
+  customImages = [],
 }) {
   return (
-    <div
-      className="
-    relative
-      flex flex-col md:flex-row
-      items-start
-      gap-4
-      rounded-lg
-      shadow-md
-      p-4
-      mb-4
-      bg-white
-      w-full
-      max-w-4xl
-    
-      transition-shadow duration-300
-      hover:shadow-lg  "
-    >
+    <div className="relative flex flex-col md:flex-row items-start gap-4 rounded-lg shadow-md p-4 mb-4 bg-white w-full max-w-4xl transition-shadow duration-300 hover:shadow-lg">
 
-    
       <div className="absolute top-3 right-3">
         <Button
           title={<Trash size={16} />}
@@ -46,23 +30,18 @@ function CartItem({
         />
       </div>
 
-     
-      <div className="
-      -3
-      .  h-32">
-        <img
-          src={imageUrl}
-          alt={name}
-          className="w-full h-full object-contain  rounded-3xl"
-        />
+      <div className="flex gap-2">
+        <img src={imageUrl} alt={name} className="w-32 h-32 object-contain rounded-3xl border" />
+        {customImages.map((img, index) => (
+          <img key={index} src={img} alt={`Custom ${index + 1}`} className="w-20 h-20 object-cover rounded-2xl border" />
+        ))}
       </div>
 
-     
       <div className="flex flex-col gap-2 flex-1">
         <p className="text-md font-semibold">Item Name: {name}</p>
         <p className="text-sm text-gray-700">{description}</p>
         <p>Price: ₹ {price} per Unit</p>
-        <p> Quantity: {quantity}</p>
+        <p>Quantity: {quantity}</p>
         <p className="font-bold">Total: ₹ {price * quantity}</p>
       </div>
     </div>

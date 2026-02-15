@@ -1,5 +1,5 @@
 import React from "react";
-import giftVideo from "../assets/homepage.mp4";
+import giftVideo from "../assets/home.mp4";
 
 function VideoSection() {
   return (

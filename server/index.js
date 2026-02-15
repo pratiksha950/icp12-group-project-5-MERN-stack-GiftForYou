@@ -6,7 +6,7 @@ import Gift from "./models/gift.js";
 import {checkJWT} from "./middleware/jwt.js";
 import { postSignUp,postLogin } from "./controllers/auth.js";
 import {getHome,getHealth} from "./controllers/health.js";
-import { getGifts } from "./controllers/gift.js";
+import { updateUser } from "./controllers/auth.js";
 
 
 const app=express();
@@ -24,7 +24,8 @@ app.get("/",getHome)
 app.post("/Signup",postSignUp)
 app.post("/login",postLogin)
 
-app.post("/gifts",checkJWT,getGifts);
+app.put("/gifts",checkJWT,updateUser);
+
 
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`);
