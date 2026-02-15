@@ -4,6 +4,7 @@ import { setPageTitle } from "../utils.jsx"
 import Navbar from '../components/Navbar.jsx'
 import Category from '../components/CategorySection.jsx'
 import Video from '../components/VideoSection.jsx'
+import OccasionSection from '../components/OccasionSection.jsx'
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
     <div>
       <Video />
       <Category />
+      <OccasionSection />
     </div>
     </>
 
