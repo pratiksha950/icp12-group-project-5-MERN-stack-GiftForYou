@@ -23,7 +23,7 @@ app.get("/",getHome)
 app.post("/Signup",postSignUp)
 app.post("/login",postLogin)
 
-app.put("/gifts",checkJWT,updateUser);
+app.put("/profile", checkJWT, updateUser);
 
 
 app.listen(PORT,()=>{
