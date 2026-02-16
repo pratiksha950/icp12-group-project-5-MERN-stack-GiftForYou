@@ -3,6 +3,7 @@ const setPageTitle=(title)=>{
     document.title=title;
 };
 
+
 const getUserData = () => {
     const userData = localStorage.getItem("userData") || "{}";
 
@@ -18,3 +19,4 @@ const logoutUser = () => {
 }
 
 export {setPageTitle, getUserData, logoutUser}
+
