@@ -1,11 +1,12 @@
 import React from "react"
 
-function Input({ type, placeholder, value, onChange, autoComplete,onKeyDown,ref }) {
+function Input({ type, placeholder, value, name, onChange, autoComplete,onKeyDown,ref }) {
   return (
     <input
       type={type}
       placeholder={placeholder}
       value={value}
+      name={name}
       onChange={onChange}
       autoComplete={autoComplete}
       onKeyDown={onKeyDown}
