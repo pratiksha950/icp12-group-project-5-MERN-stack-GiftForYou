@@ -130,7 +130,7 @@ const postLogin=async (req,res)=>{
 
 }
 
-
+//update 
 const updateUser = async (req, res) => {
   try {
 
