@@ -48,11 +48,11 @@ function Navbar({ refreshCart }) {
 
           <div>
             {userData?.name ? (
-              <div className="flex items-center">
+              <Link to="/profile" className="flex items-center">
                 <Avatar name={userData.name} />
                 Hello, {userData.name}
                 <Button title="Logout" className="ml-2" varient="primary" onClick={logoutUser} />
-              </div>
+              </Link>
             ) : (
               <Link to="/login" className="hidden md:block bg-pink-500 text-white px-3 py-1 text-sm rounded hover:bg-pink-600"> Login</Link>
             )}
