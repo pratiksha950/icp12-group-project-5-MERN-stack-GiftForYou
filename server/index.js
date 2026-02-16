@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv"
 import cors from "cors"; 
 import connectDB from "./db.js";
-import Gift from "./models/gift.js";
 import {checkJWT} from "./middleware/jwt.js";
 import { postSignUp,postLogin } from "./controllers/auth.js";
 import {getHome,getHealth} from "./controllers/health.js";
@@ -24,7 +23,7 @@ app.get("/",getHome)
 app.post("/Signup",postSignUp)
 app.post("/login",postLogin)
 
-app.put("/gifts",checkJWT,updateUser);
+app.put("/profile", checkJWT, updateUser);
 
 
 app.listen(PORT,()=>{

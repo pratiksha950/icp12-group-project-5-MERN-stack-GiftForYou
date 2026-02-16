@@ -1,19 +1,31 @@
-const checkJWT=(req,res,next)=>{
-    const {authorization}=req.headers;
-    const token=authorization && authorization.split(" ")[1];
-    console.log("Token",token);
+import jwt from "jsonwebtoken";
 
-    try{
-    const decodedToken=jwt.verify(token,process.env.JWT_SECRET);
-    req.user = decodedToken;
+const checkJWT = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  console.log("AUTH HEADER:", authHeader); 
+
+  if (!authHeader) {
+    return res.status(401).json({
+      success: false,
+      message: "Token missing"
+    });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded; 
+    console.log("DECODED USER:", decoded);
     next();
-    }catch(e){
-        return res.json({
-            success:false,
-            message:"invalid or missing token",
-            data:null
-        })
-    }
-}
+  } catch (err) {
+    console.log("JWT ERROR:", err);
+    return res.status(401).json({
+      success: false,
+      message: "Invalid token"
+    });
+  }
+};
 
-export {checkJWT}
+export { checkJWT };

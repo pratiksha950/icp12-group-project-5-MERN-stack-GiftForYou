@@ -18,3 +18,4 @@ const logoutUser = () => {
 }
 
 export {setPageTitle, getUserData, logoutUser}
+

@@ -47,7 +47,7 @@ function Login() {
         toast.error(response.data.message, { id: "loginFail" })
       }
     } catch (error) {
-      toast.error("Server not responding"+error.message)
+      toast.error("Server not responding"+ error.message)
     }
   }
 
@@ -57,7 +57,6 @@ function Login() {
 
   <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden">
 
-    {/* Image Section */}
     <div className="hidden md:block md:w-1/2">
       <img
         src={loginImg}
@@ -66,7 +65,6 @@ function Login() {
       />
     </div>
 
-    {/* Form Section */}
     <div className="w-full md:w-1/2 p-4 sm:p-6">
 
       <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
@@ -101,7 +99,6 @@ function Login() {
           className="border px-3 py-2 rounded w-full"
         />
 
-        {/* Center Login Button */}
         <div className="flex justify-center">
           <Button title="Login" type="submit" varient="primary" />
         </div>
