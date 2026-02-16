@@ -1,11 +1,9 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
-import { getUserData } from '../utils';
-import Avatar from '../components/Avatar';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import axios from 'axios';
-
+import React, { useState, useEffect } from "react";
+import { getUserData } from "../utils";
+import Avatar from "../components/Avatar";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import axios from "axios";
 
 function Profile() {
   const [userData, setUserData] = useState({
@@ -16,25 +14,13 @@ function Profile() {
     address: "",
     city: "",
     pincode: "",
-    country:""
+    country: ""
   });
 
-  const token = localStorage.getItem("userJwtToken");
-  console.log("TOKEN:", token);
-  
-  console.log(localStorage.getItem("userJwtToken"))
-
-  const fetchUserData = () => {
-    const data = getUserData();
-    console.log(data);
-    setUserData(prev => ({
-    ...prev,
-    ...data
-  }));
-  }
-
   useEffect(() => {
-    fetchUserData()
+    const data = getUserData();
+    console.log("USER DATA:", data);
+    setUserData(prev => ({ ...prev, ...data }));
   }, []);
 
   const handleChange = (e) => {
@@ -44,13 +30,12 @@ function Profile() {
     });
   };
 
-  const updateProfile = async () => {
-      try {
-
+const updateProfile = async () => {
+  try {
     const token = localStorage.getItem("userJwtToken");
 
     const response = await axios.put(
-      `${import.meta.env.VITE_API_BASE_URL}/gifts`,
+      `${import.meta.env.VITE_API_BASE_URL}/profile`,
       userData,
       {
         headers: {
@@ -59,83 +44,33 @@ function Profile() {
       }
     );
 
-    alert(response.data.message);
+    localStorage.setItem("userData", JSON.stringify(response.data.data));
+
+    alert("Profile Updated Successfully");
+
+    window.location.reload();
 
   } catch (error) {
     console.log(error);
   }
-  };
+};
+
   return (
-    <div className='w-100 px-10 border m-auto'>
-      {userData.name ? (<div><Avatar name={userData.name}/> </div> ): null}
+    <div className="w-100 px-10 border m-auto">
+      {userData.name && <Avatar name={userData.name} />}
 
-      <Input 
-      type={"text"}
-      placeholder={"Name"}
-      name={"name"}
-      value={userData.name}
-      onChange={handleChange}
-      />
+      <Input name="name" value={userData.name} onChange={handleChange} placeholder="Name" />
+      <Input name="email" value={userData.email} onChange={handleChange} placeholder="Email" />
+      <Input name="mobile" value={userData.mobile} onChange={handleChange} placeholder="Mobile" />
+      <Input name="whatsapp" value={userData.whatsapp} onChange={handleChange} placeholder="Whatsapp" />
+      <Input name="address" value={userData.address} onChange={handleChange} placeholder="Address" />
+      <Input name="city" value={userData.city} onChange={handleChange} placeholder="City" />
+      <Input name="pincode" value={userData.pincode} onChange={handleChange} placeholder="Pincode" />
+      <Input name="country" value={userData.country} onChange={handleChange} placeholder="Country" />
 
-      <Input 
-      type={"text"}
-      placeholder={"Email"}
-      name={"email"}
-      value={userData.email}
-      onChange={handleChange}
-      />
-
-      <Input 
-      type={"text"}
-      placeholder={"Mobile"}
-      name={"mobile"}
-      value={userData.mobile}
-      onChange={handleChange}
-      />
-
-      <Input 
-      type={"text"}
-      placeholder={"Whatsapp"}
-      name={"whatsapp"}
-      value={userData.whatsapp}
-      onChange={handleChange}
-      />
-
-      <Input 
-      type={"text"}
-      placeholder={"Address"}
-      name={"address"}
-      value={userData.address}
-      onChange={handleChange}
-      />
-
-      <Input 
-      type={"text"}
-      placeholder={"City"}
-      name={"city"}
-      value={userData.city}
-      onChange={handleChange}
-      />
-
-      <Input 
-      type={"text"}
-      placeholder={"Pine Code"}
-      name={"pincode"}
-      value={userData.pincode}
-      onChange={handleChange}
-      />
-
-      <Input 
-      type={"text"}
-      placeholder={"Country"}
-      name={"country"}
-      value={userData.country}
-      onChange={handleChange}
-      />
-
-      <Button title="Update Profile" varient='primary' onClick={updateProfile}/>
+      <Button title="Update Profile" varient="primary" onClick={updateProfile} />
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
