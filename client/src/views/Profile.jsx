@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { getUserData } from "../utils";
+import Navbar from "../components/Navbar"
 import Avatar from "../components/Avatar";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import axios from "axios";
+import PrifileImg from "../assets/profile.png"
+import { Link } from "react-router";
 
 function Profile() {
   const [userData, setUserData] = useState({
@@ -56,18 +59,41 @@ const updateProfile = async () => {
 };
 
   return (
-    <div className="w-100 px-10 border m-auto">
-      {userData.name && <Avatar name={userData.name} />}
+    <div>
+      <Navbar />
+      <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden mt-20">
+      <div className="flex flex-col items-center">
+        <img src={PrifileImg} alt="Profile" className="h-full w-full object-cover"/>
+        <span className="text-center text-sm font-medium text-gray-600">
+    UPDATE YOUR BASIC PROFILE INFORMATION
+  </span>
+      </div>
+
+
+    <div className="w-full md:w-1/2 p-4 sm:p-6 mx-2 my-2">
+
+      <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
+        Welcome Back
+      </h2>
+
+      <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
+        Update your profile information
+      </p>
+      
+<div className="w-full mx-2 my-2 space-y-4">
 
       <Input name="name" 
       value={userData.name} 
       onChange={handleChange} 
-      placeholder="Name" />
+      placeholder="Name"
+      />
 
       <Input name="email" 
       value={userData.email} 
       onChange={handleChange} 
-      placeholder="Email" />
+      placeholder="Email" 
+      className="mt-10"
+      />
 
       <Input name="mobile" 
       value={userData.mobile} 
@@ -83,7 +109,7 @@ const updateProfile = async () => {
       value={userData.address} 
       onChange={handleChange} 
       placeholder="Address" />
-      
+
       <Input name="city" 
       value={userData.city} 
       onChange={handleChange} 
@@ -99,7 +125,12 @@ const updateProfile = async () => {
       onChange={handleChange} 
       placeholder="Country" />
 
-      <Button title="Update Profile" varient="primary" onClick={updateProfile} />
+<Link to="/">
+      <Button title="Update Profile" varient="primary" onClick={updateProfile}/>
+      </Link>
+      </div>
+    </div>
+    </div>
     </div>
   );
 }
