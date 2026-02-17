@@ -7,6 +7,7 @@ import Button from '../components/Button.jsx'
 import Category from '../components/CategorySection.jsx'
 import SubHeading from '../components/SubHeading.jsx'
 import Navbar from '../components/Navbar.jsx'
+import Heading from '../components/Heading.jsx'
 
 
 function About() {
@@ -69,14 +70,13 @@ function About() {
     <>
     <Navbar />
 
-
   <div className="min-h-screen w-full py-12 px-4 bg-[#f5f3ff]">
     
     <div className="">
 
       <div className="text-center mb-12">
        
-        <SubHeading text="Welcome to Our Store"/>
+        <Heading text="Welcome to Our Store"/>
 
         <p className="text-gray-600 mb-3">
           Gift For You helps you find the perfect gift for every occasion.
