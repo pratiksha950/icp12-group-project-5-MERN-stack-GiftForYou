@@ -6,6 +6,8 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 .special-elite-regular {
   font-family: "Special Elite", system-ui;
@@ -16,5 +18,11 @@ body {
 .philosopher-regular {
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
+  font-style: normal;
+}
+
+.lobster-two-bold {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 900;
   font-style: normal;
 }
