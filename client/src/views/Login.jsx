@@ -53,20 +53,20 @@ function Login() {
 
   return (
     <> <Navbar />
-    <div className="min-h-screen bg-gray-100 flex justify-center pt-2 sm:pt-4 md:pt-0 md:items-center px-2 overflow-x-hidden">
+  <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center px-4">
 
   <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden">
 
-    <div className="hidden md:block md:w-1/2">
-      <img
-        src={loginImg}
-        alt="login"
-        className="h-full w-full object-cover"
-      />
-    </div>
+     <div className="hidden md:flex md:w-1/2 h-full items-center justify-center">
+        <img
+          src={loginImg}
+          alt="login"
+          className="h-[511px] w-full object-cover rounded-l-lg"
+        />
+      </div>
+    
 
-    <div className="w-full md:w-1/2 p-4 sm:p-6">
-
+    <div className="bg-white shadow-lg rounded-lg w-full md:w-1/2 max-w-lg p-6 sm:p-8">
       <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
         Welcome Back
       </h2>

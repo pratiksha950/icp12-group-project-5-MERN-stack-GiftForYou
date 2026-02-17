@@ -6,6 +6,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom"; 
 import Navbar from "../components/Navbar";
+import signupImg from "../assets/signup-img.jpg";
 
 function SignUp() {
 
@@ -71,9 +72,19 @@ function SignUp() {
     <>
       <Navbar />
 
-<div className="min-h-screen bg-gray-100 flex justify-center pt-6 md:pt-0 md:items-center px-4">
+<div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center px-4">
 
-  <div className="bg-white shadow-lg rounded-lg w-full max-w-lg p-6 sm:p-8">
+  <div className="hidden md:flex md:w-1/2 h-full items-center justify-center">
+    <img
+      src={signupImg}
+      alt="signup"
+      className="h-[511px] w-full object-cover rounded-l-lg"
+    />
+  </div>
+
+  <div className="bg-white shadow-lg rounded-lg w-full md:w-1/2 max-w-lg p-6 sm:p-8">
+
+    
 
     <h2 className="text-xl sm:text-2xl font-bold text-center mb-1">
       Create Account
