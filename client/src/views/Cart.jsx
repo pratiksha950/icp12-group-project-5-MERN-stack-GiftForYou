@@ -1,69 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import CartItem from '../components/CartItem';
-import Btn from '../components/Button.jsx';
-import Navbar from '../components/Navbar.jsx';
+import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar.jsx";
+import CartItem from "../components/CartItem.jsx";
+import Btn from "../components/Button.jsx";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
-  const [totalAmount, setTotalAmount] = useState(0);
 
-  
+  const loadCart = () => {
+    const savedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(savedCart);
+  };
+
   useEffect(() => {
-    const existingCart =
-      JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartItems(existingCart);
+    loadCart();
+    // Listen for storage changes from other pages
+    const handleStorageChange = () => loadCart();
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  
-  useEffect(() => {
-    let total = 0;
+  const totalAmount = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
-    cartItems.forEach((item) => {
-      total += item.price * item.quantity;
-    });
-
-    setTotalAmount(total);
-  }, [cartItems]);
-
-return (
+  return (
     <>
-    <Navbar />
-    <div className='bg-[#F8FAFF] font-sans min-h-screen flex flex-col '>
-     
-    <div className='min-h-screen flex flex-col flex-wrap gap-4 justify-center bg-[#F8FAFF] font-sans-200 p-4 '>
-      <div className='h-145 overflow-y-auto rounded-lg p-4 w-full max-w-4xl mx-auto bg-[#F8FAFF] font-sans '>
-      {
-        cartItems.map((item)=>{
-            console.log(item);
-          return(<CartItem key={item.id}  {...item} >
-            
-          </CartItem>) 
-        })
-      }
+      <Navbar />
+      <div className="min-h-screen bg-[#F8FAFF] p-4">
+        <h1 className="text-center text-2xl font-bold mb-4">Your Cart</h1>
+
+        {cartItems.length === 0 ? (
+          <p className="text-center text-gray-600">Your cart is empty.</p>
+        ) : (
+          <div className="flex flex-col gap-4 mx-auto w-full max-w-4xl">
+            {cartItems.map((item) => (
+              <CartItem key={item.id + item.description} {...item} />
+            ))}
+
+            <h2 className="text-xl font-bold text-right mt-4">
+              Total: ₹ {totalAmount}
+            </h2>
+
+            <div className="flex justify-center">
+              <Btn
+                title="Proceed to Pay"
+                variant="primary"
+                size="large"
+                onClick={() => (window.location.href = "https://www.phonepe.com/")}
+              />
+            </div>
+          </div>
+        )}
       </div>
-      <div>
-              <h3 className='text-center font-bold text-2xl  bg-[#F8FAFF] font-sans p-4'>
-        Total Amount: ₹ {totalAmount}     
-      </h3>
-
-      <div className="flex items-center justify-center mb-4 ">
-        <Btn  
-          title="Proceed to Pay"
-          variant="primary"
-          size="large"
-          onClick={() => {
-            window.location.href = "https://www.phonepe.com/";
-          }}
-/>  
-
-      </div>
-
-      </div>
-
-    </div>
-    </div>
     </>
-  )
+  );
 }
 
-export default Cart
+export default Cart;
