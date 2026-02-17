@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from "../components/Navbar"
 import { useState } from "react";
+import SubHeading from '../components/SubHeading';
 
 function Contact() {
 

@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { setPageTitle } from "../utils.jsx"
 import Button from '../components/Button.jsx'
 import Category from '../components/CategorySection.jsx'
+import SubHeading from '../components/SubHeading.jsx'
 import Navbar from '../components/Navbar.jsx'
 
 
@@ -28,7 +29,6 @@ function About() {
     localStorage.setItem("reviews", JSON.stringify(reviews));
   }, [reviews]);
 
-  //scroll bar
   const reviewContainerRef = useRef(null);
 
   useEffect(() => {
@@ -40,7 +40,6 @@ function About() {
   }
 }, [reviews]);
 
-  // Add or Update Review
   const handleAddReview = () => {
     if (review.trim() === "") return;
 
@@ -56,13 +55,11 @@ function About() {
     setReview("");
   };
 
-  // Delete Review
   const handleDelete = (index) => {
     const filtered = reviews.filter((_, i) => i !== index);
     setReviews(filtered);
   };
 
-  // Edit Review
   const handleEdit = (index) => {
     setReview(reviews[index]);
     setEditIndex(index);
@@ -70,18 +67,16 @@ function About() {
 
   return (
     <>
-    <Navbar/>
+    <Navbar />
 
 
-  <div className="min-h-screen w-full bg-slate-100 py-12 px-4">
+  <div className="min-h-screen w-full py-12 px-4 bg-[#f5f3ff]">
     
-    <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-10">
+    <div className="">
 
-      {/* Welcome Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-pink-500 mb-4">
-          Welcome to Our Store
-        </h2>
+       
+        <SubHeading text="Welcome to Our Store"/>
 
         <p className="text-gray-600 mb-3">
           Gift For You helps you find the perfect gift for every occasion.
@@ -102,7 +97,7 @@ function About() {
 
       {/* Vision & Mission */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-blue-800 mb-4">
+        <h2 className="text-3xl font-bold philosopher-regular mb-4 ">
           Vision & Mission
         </h2>
 
@@ -112,19 +107,13 @@ function About() {
         </p>
       </div>
 
-      {/* Category Section */}
-      <div className="mb-12">
-        <Category />
-      </div>
 
       {/* Reviews Section */}
       <div>
-        <h2 className="text-3xl font-bold text-blue-800 text-center mb-6">
-          Customer Reviews
-        </h2>
+        <SubHeading text="Customer Reviews"/>
         <div
   ref={reviewContainerRef}
-  className={`bg-slate-100 rounded-xl p-6 space-y-4 transition-all
+  className={`rounded-xl p-6 space-y-4 transition-all
   ${reviews.length > 3 ? "max-h-72 overflow-y-auto pr-2" : ""}`}>
           {reviews.map((r, i) => (
             <div
