@@ -59,11 +59,11 @@ function Login() {
 
 
 {/* Image Section */}
-<div className="w-full md:w-1/2">
+ <div className="w-full md:w-1/2 flex items-center justify-center">
   <img
     src={loginImg}
-    alt="login illustration"
-    className="w-full h-52 sm:h-64 md:h-full object-cover"
+    alt="login"
+    className="h-64 md:h-[511px] w-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
   />
 </div>
 
