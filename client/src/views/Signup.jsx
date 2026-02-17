@@ -74,13 +74,14 @@ function SignUp() {
 
 <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center px-4">
 
-  <div className="hidden md:flex md:w-1/2 h-full items-center justify-center">
-    <img
-      src={signupImg}
-      alt="signup"
-      className="h-[511px] w-full object-cover rounded-l-lg"
-    />
-  </div>
+  <div className="w-full md:w-1/2 flex items-center justify-center">
+  <img
+    src={signupImg}
+    alt="signup"
+    className="h-64 md:h-[511px] w-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+  />
+</div>
+
 
   <div className="bg-white shadow-lg rounded-lg w-full md:w-1/2 max-w-lg p-6 sm:p-8">
 
