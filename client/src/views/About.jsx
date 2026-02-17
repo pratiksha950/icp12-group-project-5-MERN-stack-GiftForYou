@@ -6,7 +6,7 @@ import { setPageTitle } from "../utils.jsx"
 import Button from '../components/Button.jsx'
 import Category from '../components/CategorySection.jsx'
 import Navbar from '../components/Navbar.jsx'
-
+import Footer from '../components/Footer.jsx'
 
 
 function About() {
