@@ -1,102 +1,83 @@
 import birthday1 from "../assets/homeimg/birthday1.jpg";
 import flower1 from "../assets/homeimg/flower1.jpg";
 import cake1 from "../assets/homeimg/cake1.jpg";
+import { generatePlaceholderImage } from "../utils/placeholderImage";
 
-const giftCardData = [
-  {
-    id: 1,
-    name: "Classmate Notebook",
-    description: "200 pages notebook ideal for engineering students",
-    originalPrice: 135,
-    price: 120,
-    discount: 10,
-    image: birthday1,
-    category: "Stationery",
-    quantity: 1,
-  },
-  {
-    id: 2,
-    name: "Instruments Box",
-    description: "Complete set including compass, divider, and scale",
-    originalPrice: 370,
-    price: 350,
-    discount: 5,
-    image: birthday1,
-    category: "Stationery",
-    quantity: 1,
-  },
+const products = [
 
-  // 🎂 Birthday Gifts
-  {
-    id: 3,
-    name: "Birthday Cake",
-    description: "Chocolate truffle cake 1kg for birthday celebration",
-    originalPrice: 800,
-    price: 699,
-    discount: 12,
-    image: cake1,
-    category: "Cake",
-    quantity: 1,
-  },
-  {
-    id: 4,
-    name: "Teddy Bear",
-    description: "Soft teddy bear 30cm for gift",
-    originalPrice: 600,
-    price: 499,
-    discount: 15,
-    image: birthday1,
-    category: "Toys",
-    quantity: 1,
-  },
+  
+    {
+      id: 1,
+      name: "Personalized Birthday Card",
+      description: "Custom image & heartfelt message",
+      price: 499,
+      originalPrice: 599,
+      discount: 20,
+      image: generatePlaceholderImage("Birthday Card", "#fce7f3"),
+    },
+    {
+      id: 2,
+      name: "Custom Birthday Cushion",
+      description: "Upload your favorite birthday photo",
+      price: 899,
+      originalPrice: 999,
+      discount: 10,
+      image: generatePlaceholderImage("Birthday Cushion", "#fce7f3"),
+    },
+    {
+      id: 3,
+      name: "Personalized Photo Mug",
+      description: "Your favorite moment on a mug",
+      price: 399,
+      originalPrice: 499,
+      discount: 20,
+      image: generatePlaceholderImage("Photo Mug", "#fce7f3"),
+    },
+    {
+      id: 4,
+      name: "Birthday Photo Frame",
+      description: "Beautiful wooden frame with custom photo",
+      price: 599,
+      originalPrice: 799,
+      discount: 25,
+      image: generatePlaceholderImage("Photo Frame", "#fce7f3"),
+    },
+    {
+      id: 5,
+      name: "Personalized Birthday Plate",
+      description: "Ceramic plate with custom birthday design",
+      price: 449,
+      originalPrice: 599,
+      discount: 25,
+      image: generatePlaceholderImage("Birthday Plate", "#fce7f3"),
+    },
+    {
+      id: 6,
+      name: "Custom Photo Blanket",
+      description: "Cozy fleece blanket with your favorite photos",
+      price: 699,
+      originalPrice: 899,
+      discount: 22,
+      image: generatePlaceholderImage("Photo Blanket", "#fce7f3"),
+    },
+    {
+      id: 7,
+      name: "Personalized Birthday Keychain",
+      description: "Durable keychain with custom photo and name",
+      price: 199,
+      originalPrice: 299,
+      discount: 33,
+      image: generatePlaceholderImage("Birthday Keychain", "#fce7f3"),
+    },
+    {
+      id: 8,
+      name: "Custom Birthday Puzzle",
+      description: "Fun 500-piece puzzle with your favorite photo",
+      price: 549,
+      originalPrice: 699,
+      discount: 21,
+      image: generatePlaceholderImage("Photo Puzzle", "#fce7f3"),
+    },
+  ];
 
-  // 💐 Flowers
-  {
-    id: 5,
-    name: "Rose Bouquet",
-    description: "Fresh red roses bouquet with wrapping",
-    originalPrice: 500,
-    price: 420,
-    discount: 16,
-    image: flower1,
-    category: "Flowers",
-    quantity: 1,
-  },
-
-  // 🎁 Surprise Gifts
-  {
-    id: 6,
-    name: "Surprise Gift Box",
-    description: "Special gift box with chocolates and greeting card",
-    originalPrice: 900,
-    price: 799,
-    discount: 11,
-    image: birthday1,
-    category: "Gift Box",
-    quantity: 1,
-  },
-  {
-    id: 7,
-    name: "Personalized Mug",
-    description: "Custom name printed coffee mug",
-    originalPrice: 300,
-    price: 250,
-    discount: 17,
-    image: birthday1,
-    category: "Personalized",
-    quantity: 1,
-  },
-  {
-    id: 8,
-    name: "Photo Frame",
-    description: "Wooden photo frame for memories",
-    originalPrice: 400,
-    price: 320,
-    discount: 20,
-    image: birthday1,
-    category: "Home Decor",
-    quantity: 1,
-  },
-];
-
-export default giftCardData;
+export default products;

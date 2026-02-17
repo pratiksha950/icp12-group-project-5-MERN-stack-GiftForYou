@@ -5,35 +5,31 @@ import { getUserData, logoutUser } from "../utils";
 import Button from "./Button";
 import toast, { Toaster } from "react-hot-toast";
 
-function Navbar({ refreshCart }) {
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [userData, setUserData] = useState({});
 
   const fetchUserData = () => {
     const data = getUserData();
-    console.log("NAVBAR USER DATA:", data);
     setUserData(data || {});
   };
 
   useEffect(() => {
     fetchUserData();
-
-    const handleStorageChange = () => {
-      fetchUserData();
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
   }, []);
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartCount(cart.length);
-  }, [refreshCart]);
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      setCartCount(cart.length);
+    };
+
+    updateCartCount();
+
+    window.addEventListener("storage", updateCartCount);
+    return () => window.removeEventListener("storage", updateCartCount);
+  }, []);
 
   return (
     <nav className="w-full bg-rose-100 shadow-md philosopher-regular">
@@ -81,8 +77,8 @@ function Navbar({ refreshCart }) {
             )}
           </div>
 
-          <div className="relative cursor-pointer">
-            <Link to="/cart" className="text-lg">🛒</Link>
+          <div className="relative cursor-pointer text-lg">
+            <Link to="/cart">🛒</Link>
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">
               {cartCount}
             </span>
@@ -91,6 +87,7 @@ function Navbar({ refreshCart }) {
           <button className="lg:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
             ☰
           </button>
+
         </div>
       </div>
 
