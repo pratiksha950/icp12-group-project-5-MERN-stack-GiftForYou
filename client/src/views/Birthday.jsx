@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
+import { generatePlaceholderImage } from "../utils/placeholderImage";
 
 const Birthday = () => {
   const products = [
@@ -13,7 +14,7 @@ const Birthday = () => {
       price: 499,
       originalPrice: 599,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Birthday+Card",
+      image: generatePlaceholderImage("Birthday Card", "#fce7f3"),
     },
     {
       id: 2,
@@ -22,7 +23,7 @@ const Birthday = () => {
       price: 899,
       originalPrice: 999,
       discount: 10,
-      image: "https://via.placeholder.com/300x300?text=Birthday+Cushion",
+      image: generatePlaceholderImage("Birthday Cushion", "#fce7f3"),
     },
     {
       id: 3,
@@ -31,7 +32,7 @@ const Birthday = () => {
       price: 399,
       originalPrice: 499,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Photo+Mug",
+      image: generatePlaceholderImage("Photo Mug", "#fce7f3"),
     },
     {
       id: 4,
@@ -40,7 +41,7 @@ const Birthday = () => {
       price: 599,
       originalPrice: 799,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Photo+Frame",
+      image: generatePlaceholderImage("Photo Frame", "#fce7f3"),
     },
     {
       id: 5,
@@ -49,7 +50,7 @@ const Birthday = () => {
       price: 449,
       originalPrice: 599,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Birthday+Plate",
+      image: generatePlaceholderImage("Birthday Plate", "#fce7f3"),
     },
     {
       id: 6,
@@ -58,7 +59,7 @@ const Birthday = () => {
       price: 699,
       originalPrice: 899,
       discount: 22,
-      image: "https://via.placeholder.com/300x300?text=Photo+Blanket",
+      image: generatePlaceholderImage("Photo Blanket", "#fce7f3"),
     },
     {
       id: 7,
@@ -67,7 +68,7 @@ const Birthday = () => {
       price: 199,
       originalPrice: 299,
       discount: 33,
-      image: "https://via.placeholder.com/300x300?text=Birthday+Keychain",
+      image: generatePlaceholderImage("Birthday Keychain", "#fce7f3"),
     },
     {
       id: 8,
@@ -76,7 +77,7 @@ const Birthday = () => {
       price: 549,
       originalPrice: 699,
       discount: 21,
-      image: "https://via.placeholder.com/300x300?text=Photo+Puzzle",
+      image: generatePlaceholderImage("Photo Puzzle", "#fce7f3"),
     },
   ];
 

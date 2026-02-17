@@ -42,7 +42,7 @@ function Navbar() {
         <ul className="hidden lg:flex items-center gap-6 text-gray-700 font-medium">
           <Link to="/wedding" className="hover:text-pink-500">Wedding</Link>
           <Link to="/birthday" className="hover:text-pink-500">Birthday</Link>
-          <Link to="/valentine" class= "hover:text-pink-500">Valentine</Link>
+          <Link to="/valentine" className="hover:text-pink-500">Valentine</Link>
           <Link to="/fashion" className="hover:text-pink-500">Fashion</Link>
           <Link to="/cake" className="hover:text-pink-500">Cakes</Link>
         </ul>

@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Button from "./Button.jsx";
 import { Plus, Minus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
-import { IKContext, IKUpload } from 'imagekit-react';
+
 
 const imageKitEndpoint = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT;
 const imageKitPublicKey = import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY;
@@ -11,25 +11,12 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
     const [quantity, setQuantity] = useState(1);
     const [customImage, setCustomImage] = useState(null);
     const [customText, setCustomText] = useState("");
-    const [uploading, setUploading] = useState(false);
-    const ikUploadRef = useRef(null);
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
             setCustomImage(URL.createObjectURL(file));
         }
-    };
-
-    const handleKitUploadSuccess = (res) => {
-        setCustomImage(res.filePath);
-        toast.success("Image uploaded successfully!");
-        setUploading(false);
-    };
-
-    const handleKitUploadError = (error) => {
-        toast.error("Upload failed: " + (error?.message || "Unknown error"));
-        setUploading(false);
     };
 
     return (
@@ -48,29 +35,12 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
 
                 {/* Customization */}
                 <div className="flex flex-col items-center mt-3 space-y-3">
-                    {imageKitPublicKey && imageKitEndpoint ? (
-                        <div className="w-full">
-                            <IKContext publicKey={imageKitPublicKey} urlEndpoint={imageKitEndpoint}>
-                                <IKUpload
-                                    ref={ikUploadRef}
-                                    fileName="gift-upload"
-                                    onSuccess={handleKitUploadSuccess}
-                                    onError={handleKitUploadError}
-                                    onChange={() => setUploading(true)}
-                                    className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-sm cursor-pointer hover:border-pink-400 transition duration-200 file:cursor-pointer file:bg-pink-100 file:text-pink-700 file:border-0 file:px-2 file:py-1 file:rounded"
-                                    accept="image/*"
-                                />
-                            </IKContext>
-                            {uploading && <p className="text-xs text-center text-gray-500 mt-1">Uploading...</p>}
-                        </div>
-                    ) : (
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleImageChange}
-                            className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-sm cursor-pointer hover:border-pink-400 transition duration-200 file:cursor-pointer file:bg-pink-100 file:text-pink-700 file:border-0 file:px-2 file:py-1 file:rounded"
-                        />
-                    )}
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-sm cursor-pointer hover:border-pink-400 transition duration-200 file:cursor-pointer file:bg-pink-100 file:text-pink-700 file:border-0 file:px-2 file:py-1 file:rounded"
+                    />
                     <input
                         type="text"
                         placeholder="Add short description"

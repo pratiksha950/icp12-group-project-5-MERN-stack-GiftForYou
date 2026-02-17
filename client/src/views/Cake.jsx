@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
+import { generatePlaceholderImage } from "../utils/placeholderImage";
 
 const Cake = () => {
   const products = [
@@ -13,7 +14,7 @@ const Cake = () => {
       price: 999,
       originalPrice: 1299,
       discount: 23,
-      image: "https://via.placeholder.com/300x300?text=Photo+Cake",
+      image: generatePlaceholderImage("Photo Cake", "#fed7aa"),
     },
     {
       id: 302,
@@ -22,7 +23,7 @@ const Cake = () => {
       price: 1299,
       originalPrice: 1599,
       discount: 19,
-      image: "https://via.placeholder.com/300x300?text=Buttercream+Cake",
+      image: generatePlaceholderImage("Buttercream Cake", "#fed7aa"),
     },
     {
       id: 303,
@@ -31,7 +32,7 @@ const Cake = () => {
       price: 899,
       originalPrice: 1099,
       discount: 18,
-      image: "https://via.placeholder.com/300x300?text=Chocolate+Cake",
+      image: generatePlaceholderImage("Chocolate Cake", "#fed7aa"),
     },
     {
       id: 304,
@@ -40,7 +41,7 @@ const Cake = () => {
       price: 1199,
       originalPrice: 1499,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Theme+Cake",
+      image: generatePlaceholderImage("Theme Cake", "#fed7aa"),
     },
     {
       id: 305,
@@ -49,7 +50,7 @@ const Cake = () => {
       price: 1599,
       originalPrice: 1999,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Tiered+Cake",
+      image: generatePlaceholderImage("Tiered Cake", "#fed7aa"),
     },
     {
       id: 306,
@@ -58,7 +59,7 @@ const Cake = () => {
       price: 849,
       originalPrice: 1099,
       discount: 23,
-      image: "https://via.placeholder.com/300x300?text=Strawberry+Cake",
+      image: generatePlaceholderImage("Strawberry Cake", "#fed7aa"),
     },
     {
       id: 307,
@@ -67,7 +68,7 @@ const Cake = () => {
       price: 699,
       originalPrice: 899,
       discount: 22,
-      image: "https://via.placeholder.com/300x300?text=Eggless+Cake",
+      image: generatePlaceholderImage("Eggless Cake", "#fed7aa"),
     },
     {
       id: 308,
@@ -76,7 +77,7 @@ const Cake = () => {
       price: 749,
       originalPrice: 949,
       discount: 21,
-      image: "https://via.placeholder.com/300x300?text=Name+Cake",
+      image: generatePlaceholderImage("Name Cake", "#fed7aa"),
     },
   ];
 

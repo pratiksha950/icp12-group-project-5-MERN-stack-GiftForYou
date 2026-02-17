@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
+import { generatePlaceholderImage } from "../utils/placeholderImage";
 
 const Fashion = () => {
   const products = [
@@ -13,7 +14,7 @@ const Fashion = () => {
       price: 499,
       originalPrice: 699,
       discount: 29,
-      image: "https://via.placeholder.com/300x300?text=Photo+T-Shirt",
+      image: generatePlaceholderImage("Photo T-Shirt", "#f3e8ff"),
     },
     {
       id: 402,
@@ -22,7 +23,7 @@ const Fashion = () => {
       price: 799,
       originalPrice: 999,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Custom+Hoodie",
+      image: generatePlaceholderImage("Custom Hoodie", "#f3e8ff"),
     },
     {
       id: 403,
@@ -31,7 +32,7 @@ const Fashion = () => {
       price: 1299,
       originalPrice: 1599,
       discount: 19,
-      image: "https://via.placeholder.com/300x300?text=Photo+Jacket",
+      image: generatePlaceholderImage("Photo Jacket", "#f3e8ff"),
     },
     {
       id: 404,
@@ -40,7 +41,7 @@ const Fashion = () => {
       price: 399,
       originalPrice: 499,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Custom+Cap",
+      image: generatePlaceholderImage("Custom Cap", "#f3e8ff"),
     },
     {
       id: 405,
@@ -49,7 +50,7 @@ const Fashion = () => {
       price: 599,
       originalPrice: 799,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Polo+Shirt",
+      image: generatePlaceholderImage("Polo Shirt", "#f3e8ff"),
     },
     {
       id: 406,
@@ -58,7 +59,7 @@ const Fashion = () => {
       price: 699,
       originalPrice: 899,
       discount: 22,
-      image: "https://via.placeholder.com/300x300?text=Sweatshirt",
+      image: generatePlaceholderImage("Sweatshirt", "#f3e8ff"),
     },
     {
       id: 407,
@@ -67,7 +68,7 @@ const Fashion = () => {
       price: 349,
       originalPrice: 499,
       discount: 30,
-      image: "https://via.placeholder.com/300x300?text=Tank+Top",
+      image: generatePlaceholderImage("Tank Top", "#f3e8ff"),
     },
     {
       id: 408,
@@ -76,7 +77,7 @@ const Fashion = () => {
       price: 299,
       originalPrice: 399,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Custom+Beanie",
+      image: generatePlaceholderImage("Custom Beanie", "#f3e8ff"),
     },
   ];
 

@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
+import { generatePlaceholderImage } from "../utils/placeholderImage";
 
 const Wedding = () => {
   const products = [
@@ -13,7 +14,7 @@ const Wedding = () => {
       price: 799,
       originalPrice: 999,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Wedding+Invitation",
+      image: generatePlaceholderImage("Wedding Invitation", "#fef3c7"),
     },
     {
       id: 102,
@@ -22,7 +23,7 @@ const Wedding = () => {
       price: 1299,
       originalPrice: 1599,
       discount: 19,
-      image: "https://via.placeholder.com/300x300?text=Wedding+Album",
+      image: generatePlaceholderImage("Wedding Album", "#fef3c7"),
     },
     {
       id: 103,
@@ -31,7 +32,7 @@ const Wedding = () => {
       price: 1099,
       originalPrice: 1299,
       discount: 15,
-      image: "https://via.placeholder.com/300x300?text=Wedding+Cushion",
+      image: generatePlaceholderImage("Wedding Cushion", "#fef3c7"),
     },
     {
       id: 104,
@@ -40,7 +41,7 @@ const Wedding = () => {
       price: 599,
       originalPrice: 799,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Thank+You+Card",
+      image: generatePlaceholderImage("Thank You Card", "#fef3c7"),
     },
     {
       id: 105,
@@ -49,7 +50,7 @@ const Wedding = () => {
       price: 799,
       originalPrice: 999,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Wedding+Frame",
+      image: generatePlaceholderImage("Wedding Frame", "#fef3c7"),
     },
     {
       id: 106,
@@ -58,7 +59,7 @@ const Wedding = () => {
       price: 1399,
       originalPrice: 1799,
       discount: 22,
-      image: "https://via.placeholder.com/300x300?text=Wedding+Canvas",
+      image: generatePlaceholderImage("Wedding Canvas", "#fef3c7"),
     },
     {
       id: 107,
@@ -67,7 +68,7 @@ const Wedding = () => {
       price: 899,
       originalPrice: 1099,
       discount: 18,
-      image: "https://via.placeholder.com/300x300?text=Wedding+GuestBook",
+      image: generatePlaceholderImage("Wedding GuestBook", "#fef3c7"),
     },
     {
       id: 108,
@@ -76,7 +77,7 @@ const Wedding = () => {
       price: 299,
       originalPrice: 399,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Wedding+Keychains",
+      image: generatePlaceholderImage("Wedding Keychains", "#fef3c7"),
     },
   ];
 

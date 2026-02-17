@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
+import { generatePlaceholderImage } from "../utils/placeholderImage";
 
 const Valentine = () => {
   const products = [
@@ -13,7 +14,7 @@ const Valentine = () => {
       price: 399,
       originalPrice: 499,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Love+Card",
+      image: generatePlaceholderImage("Love Card", "#fee2e2"),
     },
     {
       id: 202,
@@ -22,7 +23,7 @@ const Valentine = () => {
       price: 699,
       originalPrice: 899,
       discount: 22,
-      image: "https://via.placeholder.com/300x300?text=Couple+Locket",
+      image: generatePlaceholderImage("Couple Locket", "#fee2e2"),
     },
     {
       id: 203,
@@ -31,7 +32,7 @@ const Valentine = () => {
       price: 999,
       originalPrice: 1299,
       discount: 23,
-      image: "https://via.placeholder.com/300x300?text=Love+Book",
+      image: generatePlaceholderImage("Love Book", "#fee2e2"),
     },
     {
       id: 204,
@@ -40,7 +41,7 @@ const Valentine = () => {
       price: 799,
       originalPrice: 999,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Valentine+Mugs",
+      image: generatePlaceholderImage("Valentine Mugs", "#fee2e2"),
     },
     {
       id: 205,
@@ -49,7 +50,7 @@ const Valentine = () => {
       price: 599,
       originalPrice: 799,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Love+Pillow",
+      image: generatePlaceholderImage("Love Pillow", "#fee2e2"),
     },
     {
       id: 206,
@@ -58,7 +59,7 @@ const Valentine = () => {
       price: 899,
       originalPrice: 1199,
       discount: 25,
-      image: "https://via.placeholder.com/300x300?text=Valentine+Canvas",
+      image: generatePlaceholderImage("Valentine Canvas", "#fee2e2"),
     },
     {
       id: 207,
@@ -67,7 +68,7 @@ const Valentine = () => {
       price: 799,
       originalPrice: 999,
       discount: 20,
-      image: "https://via.placeholder.com/300x300?text=Couple+Sketch",
+      image: generatePlaceholderImage("Couple Sketch", "#fee2e2"),
     },
     {
       id: 208,
@@ -76,7 +77,7 @@ const Valentine = () => {
       price: 249,
       originalPrice: 349,
       discount: 29,
-      image: "https://via.placeholder.com/300x300?text=Love+Magnet",
+      image: generatePlaceholderImage("Love Magnet", "#fee2e2"),
     },
   ];
 
