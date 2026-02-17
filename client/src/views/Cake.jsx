@@ -4,83 +4,13 @@ import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import { generatePlaceholderImage } from "../utils/placeholderImage";
+import  cakeProducts  from "../configs/cakedata";
+
 
 const Cake = () => {
-  const products = [
-    {
-      id: 301,
-      name: "Customized Photo Cake",
-      description: "Your favorite photo on a delicious cake",
-      price: 999,
-      originalPrice: 1299,
-      discount: 23,
-      image: generatePlaceholderImage("Photo Cake", "#fed7aa"),
-    },
-    {
-      id: 302,
-      name: "Personalized Buttercream Cake",
-      description: "Custom design with your special message",
-      price: 1299,
-      originalPrice: 1599,
-      discount: 19,
-      image: generatePlaceholderImage("Buttercream Cake", "#fed7aa"),
-    },
-    {
-      id: 303,
-      name: "Chocolate Photo Cake",
-      description: "Rich chocolate cake with custom photo topper",
-      price: 899,
-      originalPrice: 1099,
-      discount: 18,
-      image: generatePlaceholderImage("Chocolate Cake", "#fed7aa"),
-    },
-    {
-      id: 304,
-      name: "Theme Based Customized Cake",
-      description: "Any theme you desire on your cake",
-      price: 1199,
-      originalPrice: 1499,
-      discount: 20,
-      image: generatePlaceholderImage("Theme Cake", "#fed7aa"),
-    },
-    {
-      id: 305,
-      name: "Multi-Tier Custom Photo Cake",
-      description: "Beautiful tiered cake with custom photos on each tier",
-      price: 1599,
-      originalPrice: 1999,
-      discount: 20,
-      image: generatePlaceholderImage("Tiered Cake", "#fed7aa"),
-    },
-    {
-      id: 306,
-      name: "Strawberry Photo Cake",
-      description: "Fresh strawberry cake with custom photo design",
-      price: 849,
-      originalPrice: 1099,
-      discount: 23,
-      image: generatePlaceholderImage("Strawberry Cake", "#fed7aa"),
-    },
-    {
-      id: 307,
-      name: "Personalized Eggless Photo Cake",
-      description: "Delicious eggless cake with your custom photo",
-      price: 699,
-      originalPrice: 899,
-      discount: 22,
-      image: generatePlaceholderImage("Eggless Cake", "#fed7aa"),
-    },
-    {
-      id: 308,
-      name: "Custom Name Message Cake",
-      description: "Vanilla cake with personalized name and message",
-      price: 749,
-      originalPrice: 949,
-      discount: 21,
-      image: generatePlaceholderImage("Name Cake", "#fed7aa"),
-    },
-  ];
 
+  const products = cakeProducts;
+ 
   return (
     <>
       <Navbar />
