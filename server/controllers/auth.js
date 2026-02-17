@@ -1,13 +1,14 @@
-import User from "../models/user.js";
+
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";  
 import dotenv from "dotenv";
+import User from "../models/User.js";
  
 dotenv.config();
 
 //signUp
 const postSignUp=async (req,res)=>{
-    const {name,email,mobile,city,country,password}=req.body;
+    const {name,email,mobile,city,country,password,profilePic}=req.body;
 
     if(!name){
         return  res.json({
@@ -50,6 +51,7 @@ const encryptedPassword  = bcrypt.hashSync(password, salt);
         mobile,
         city,
         country,
+        profilePic,
          password:encryptedPassword
     })
     try{
@@ -100,8 +102,6 @@ const postLogin=async (req,res)=>{
 
      const isPasswordCorrect=bcrypt.compareSync(password,existingUser.password);
 
-     existingUser.password=undefined;
-
      if(isPasswordCorrect){
          const jwttoken = jwt.sign(
        {
@@ -114,11 +114,14 @@ const postLogin=async (req,res)=>{
        }
      );
      
+     const userData = existingUser.toObject();
+     delete userData.password;
+     
             return res.json({
             success:true,
             message:"login successfully",
               token: jwttoken,
-            data:existingUser
+            data:userData
         })
      }else{
         return res.json({

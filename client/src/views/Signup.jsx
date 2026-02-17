@@ -16,7 +16,8 @@ function SignUp() {
     mobile: "",
     city: "",
     country: "",
-    password: ""
+    password: "",
+    profilePic: ""
   });
 
   useEffect(() => {
@@ -48,7 +49,8 @@ function SignUp() {
           mobile: "",
           city: "",
           country: "",
-          password: ""
+          password: "",
+          profilePic: ""
         });
 
         setTimeout(() => {
@@ -128,6 +130,35 @@ function SignUp() {
           className="border px-3 py-2 rounded w-full"
         />
       </div>
+
+      <div className="border px-3 py-2 rounded w-full">
+        <label className="block text-sm font-medium text-gray-700 mb-2">Profile Picture (Optional)</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              setNewUser({ ...newUser, profilePic: reader.result });
+            };
+            if (file) {
+              reader.readAsDataURL(file);
+            }
+          }}
+          className="w-full"
+        />
+        {newUser.profilePic && (
+          <div className="mt-3 flex justify-center">
+            <img
+              src={newUser.profilePic}
+              alt="preview"
+              className="w-20 h-20 rounded-full object-cover border-2 border-pink-500"
+            />
+          </div>
+        )}
+      </div>
+
 
       <Input
         type="password"

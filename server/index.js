@@ -7,6 +7,7 @@ import { postSignUp,postLogin } from "./controllers/auth.js";
 import {getHome,getHealth} from "./controllers/health.js";
 import { updateUser } from "./controllers/auth.js";
 
+dotenv.config();
 
 const app=express();
 app.use(express.json());
