@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from "../components/Navbar"
 import { useState } from "react";
 import SubHeading from '../components/SubHeading';
+import Heading from '../components/Heading';
+import Button from '../components/Button';
 
 function Contact() {
 
@@ -38,15 +40,13 @@ const [form, setForm] = useState({
   return (
       <>
     <Navbar/>
-    <div className="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div className="bg-[#f5f3ff] min-h-screen flex items-center justify-center p-4">
 
       <div className="max-w-2xl w-full bg-white rounded-3xl p-8 text-center shadow-lg">
 
-        <h1 className="text-3xl font-bold text-blue-600 mb-4">
-          Contact Us
-        </h1>
+       <Heading text="Contact Us"/>
 
-        <h2 className="text-xl font-semibold text-blue-800">
+        <h2 className="text-xl font-semibold text-black-800">
           Gift For You
         </h2>
 
@@ -63,9 +63,7 @@ const [form, setForm] = useState({
         </p>
 
         {/* Google Map */}
-        <h2 className="mt-8 text-xl font-semibold text-blue-800">
-          Location
-        </h2>
+        <SubHeading text="location"/>
 
         <div className="mt-4 rounded-xl overflow-hidden shadow">
           <iframe
@@ -81,7 +79,7 @@ const [form, setForm] = useState({
         </p>
 
         {/* Form */}
-        <h2 className="mt-8 text-xl font-semibold text-blue-800">
+        <h2 className="mt-8 text-xl font-semibold text-black-800">
           Send Suggestion
         </h2>
 
@@ -118,7 +116,7 @@ const [form, setForm] = useState({
 
           <button
             type="submit"
-            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-800 transition"
+            className="bg-pink-600 text-white py-3 rounded-lg hover:bg-blue-800 transition"
           >
             Send Message
           </button>

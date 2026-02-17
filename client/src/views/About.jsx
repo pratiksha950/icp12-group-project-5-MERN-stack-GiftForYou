@@ -95,7 +95,6 @@ function About() {
         </p>
       </div>
 
-      {/* Vision & Mission */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold philosopher-regular mb-4 ">
           Vision & Mission
@@ -108,7 +107,6 @@ function About() {
       </div>
 
 
-      {/* Reviews Section */}
       <div>
         <SubHeading text="Customer Reviews"/>
         <div
@@ -141,7 +139,6 @@ function About() {
         </div>
 
 
-        {/* Add Review Input */}
         <div className="mt-6 flex gap-3">
           <input
             type="text"
@@ -153,7 +150,7 @@ function About() {
 
           <button
             onClick={handleAddReview}
-            className="bg-blue-600 text-white px-6 rounded-lg hover:bg-blue-800 transition"
+            className="bg-pink-600 text-white px-6 rounded-lg hover:bg-blue-800 transition"
           >
             {editIndex !== null ? "Update" : "Add"}
           </button>
