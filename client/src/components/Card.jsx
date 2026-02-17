@@ -33,7 +33,6 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">{name}</h3>
                 <p className="text-sm text-gray-600">{description}</p>
 
-                {/* Customization */}
                 <div className="flex flex-col items-center mt-3 space-y-3">
                     <input
                         type="file"
