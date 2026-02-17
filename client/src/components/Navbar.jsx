@@ -14,7 +14,7 @@ function Navbar() {
     const user = JSON.parse(localStorage.getItem("userData"));
     setUserData(user);
 
-    // Listen for storage changes (updates from other tabs/windows or after login redirect)
+   
     const handleStorageChange = () => {
       const updatedUser = JSON.parse(localStorage.getItem("userData"));
       setUserData(updatedUser);
@@ -57,7 +57,7 @@ function Navbar() {
           <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
           <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
 
-          {/* User Profile or Login */}
+         
           <div>
             {userData ? (
               <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ function Navbar() {
           <Link to="/about" className="block">About</Link>
           <Link to="/contact" className="block">Contact</Link>
           
-          {/* Mobile Menu: User Profile or Login */}
+          
           {userData ? (
             <div className="border-t pt-3">
               <Link to="/profile" className="flex items-center gap-2 py-2">
