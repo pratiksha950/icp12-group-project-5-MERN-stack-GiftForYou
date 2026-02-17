@@ -52,71 +52,73 @@ function Login() {
   }
 
   return (
-    <> <Navbar />
-  <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center px-4">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
+     <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
-  <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden">
 
-     <div className="hidden md:flex md:w-1/2 h-full items-center justify-center">
-        <img
-          src={loginImg}
-          alt="login"
-          className="h-[511px] w-full object-cover rounded-l-lg"
-        />
-      </div>
-    
-
-    <div className="bg-white shadow-lg rounded-lg w-full md:w-1/2 max-w-lg p-6 sm:p-8">
-      <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
-        Welcome Back
-      </h2>
-
-      <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
-        Login to continue to GiftForYou
-      </p>
-
-      <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
-
-        <Input
-          type="email"
-          placeholder="Email"
-          autoComplete="off"
-          value={loginUser.email}
-          onChange={(e) =>
-            setLoginUser({ ...loginUser, email: e.target.value })
-          }
-          className="border px-3 py-2 rounded w-full"
-        />
-
-        <Input
-          type="password"
-          placeholder="Password"
-          autoComplete="new-password"
-          value={loginUser.password}
-          onChange={(e) =>
-            setLoginUser({ ...loginUser, password: e.target.value })
-          }
-          className="border px-3 py-2 rounded w-full"
-        />
-
-        <div className="flex justify-center">
-          <Button title="Login" type="submit" varient="primary" />
-        </div>
-
-        <p className="text-center text-xs sm:text-sm">
-          Don't have an account?
-          <Link to="/signUp" className="text-purple-600 ml-1 font-semibold">
-            Sign Up
-          </Link>
-        </p>
-
-        <Toaster />
-      </form>
-
-    </div>
-  </div>
+{/* Image Section */}
+<div className="w-full md:w-1/2">
+  <img
+    src={loginImg}
+    alt="login illustration"
+    className="w-full h-52 sm:h-64 md:h-full object-cover"
+  />
 </div>
 
+
+
+          {/* Form Section */}
+          <div className="w-full md:w-1/2 p-6 sm:p-8">
+            <h2 className="text-lg sm:text-2xl font-bold text-center mb-2">
+              Welcome Back
+            </h2>
+
+            <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
+              Login to continue to GiftForYou
+            </p>
+
+            <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
+
+              <Input
+                type="email"
+                placeholder="Email"
+                autoComplete="off"
+                value={loginUser.email}
+                onChange={(e) =>
+                  setLoginUser({ ...loginUser, email: e.target.value })
+                }
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <Input
+                type="password"
+                placeholder="Password"
+                autoComplete="new-password"
+                value={loginUser.password}
+                onChange={(e) =>
+                  setLoginUser({ ...loginUser, password: e.target.value })
+                }
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <div className="flex justify-center">
+                <Button title="Login" type="submit" varient="primary" />
+              </div>
+
+              <p className="text-center text-xs sm:text-sm">
+                Don't have an account?
+                <Link to="/signUp" className="text-purple-600 ml-1 font-semibold">
+                  Sign Up
+                </Link>
+              </p>
+
+              <Toaster />
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
