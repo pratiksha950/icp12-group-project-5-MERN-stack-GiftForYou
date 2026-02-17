@@ -59,14 +59,45 @@ const updateProfile = async () => {
     <div className="w-100 px-10 border m-auto">
       {userData.name && <Avatar name={userData.name} />}
 
-      <Input name="name" value={userData.name} onChange={handleChange} placeholder="Name" />
-      <Input name="email" value={userData.email} onChange={handleChange} placeholder="Email" />
-      <Input name="mobile" value={userData.mobile} onChange={handleChange} placeholder="Mobile" />
-      <Input name="whatsapp" value={userData.whatsapp} onChange={handleChange} placeholder="Whatsapp" />
-      <Input name="address" value={userData.address} onChange={handleChange} placeholder="Address" />
-      <Input name="city" value={userData.city} onChange={handleChange} placeholder="City" />
-      <Input name="pincode" value={userData.pincode} onChange={handleChange} placeholder="Pincode" />
-      <Input name="country" value={userData.country} onChange={handleChange} placeholder="Country" />
+      <Input name="name" 
+      value={userData.name} 
+      onChange={handleChange} 
+      placeholder="Name" />
+
+      <Input name="email" 
+      value={userData.email} 
+      onChange={handleChange} 
+      placeholder="Email" />
+
+      <Input name="mobile" 
+      value={userData.mobile} 
+      onChange={handleChange} 
+      placeholder="Mobile" />
+
+      <Input name="whatsapp" 
+      value={userData.whatsapp} 
+      onChange={handleChange} 
+      placeholder="Whatsapp" />
+
+      <Input name="address" 
+      value={userData.address} 
+      onChange={handleChange} 
+      placeholder="Address" />
+      
+      <Input name="city" 
+      value={userData.city} 
+      onChange={handleChange} 
+      placeholder="City" />
+
+      <Input name="pincode" 
+      value={userData.pincode} 
+      onChange={handleChange} 
+      placeholder="Pincode" />
+
+      <Input name="country" 
+      value={userData.country} 
+      onChange={handleChange} 
+      placeholder="Country" />
 
       <Button title="Update Profile" varient="primary" onClick={updateProfile} />
     </div>
