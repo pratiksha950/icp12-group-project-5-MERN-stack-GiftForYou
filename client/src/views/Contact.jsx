@@ -4,13 +4,18 @@ import { useState } from "react";
 import SubHeading from '../components/SubHeading';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
-import SuggestionImg from "../assets/send-suggestion.png";
-import { MapPinCheck, PhoneCall, MailCheck} from "lucide-react";
+import SuggestionImg from "../assets/contactImg/sendsuggestion.png";
+import Facebook from '../assets/contactImg/facebook.png';
+import Instagram from '../assets/contactImg/insta.png'
+import Linkedin from '../assets/contactImg/linkedin.png'
+import Twitter from '../assets/contactImg/twitters.png'
+import Youtube from '../assets/contactImg/youtube.png'
+import { MapPinCheck, PhoneCall, MailCheck } from "lucide-react";
 import { Link } from 'react-router';
 
 function Contact() {
 
-const [form, setForm] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     message: ""
@@ -41,43 +46,51 @@ const [form, setForm] = useState({
   };
 
   return (
-      <div>
-    <Navbar/>
-    
+    <div>
+      <Navbar />
+
       <div className=" mx-auto px-6 py-10">
 
-       <Heading text="Contact Us"/>
+        <Heading text="Contact Us" />
 
-       <div  className='md:flex gap-10 md:mx-30'>
+        <div className='md:flex gap-10 md:mx-30'>
 
-        <Link to="https://www.google.com/maps?q=Pune,India&output=embed" 
-        className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
-          <div className='flex flex-col items-center gap-2 mb-2'>
-          <MapPinCheck className='text-blue-500'/><span className="font-semibold">Address</span>
-          </div>
-          <p className='text-center'>123 Gift Street, Pune, India</p>
-           
-        </Link>
+          <Link to="https://www.google.com/maps?q=Pune,India&output=embed"
+            className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+            <div className='flex flex-col items-center gap-2 mb-2'>
+              <MapPinCheck className='text-blue-500' /><span className="font-semibold">Address</span>
+            </div>
+            <p className='text-center'>123 Gift Street, Pune, India</p>
+          </Link>
 
-        <Link to="tel:+919860737643" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
-          <div className='flex flex-col items-center gap-2 mb-2'>
-          <PhoneCall className='text-blue-500'/><span className="font-semibold">Mobile No.</span>
-          </div>
-          <p className='text-center'>+91 9860737643</p>
-           
-        </Link>
+          <Link to="tel:+919860737643" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+            <div className='flex flex-col items-center gap-2 mb-2'>
+              <PhoneCall className='text-blue-500' /><span className="font-semibold">Mobile No.</span>
+            </div>
+            <p className='text-center'>+91 9860737643</p>
+          </Link>
 
-        <Link to="mailto:giftforyou@gmail.org" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
-          <div className='flex flex-col items-center gap-2 mb-2'>
-          <MailCheck className='text-blue-500'/><span className="font-semibold">Email Id</span>
-          </div>
-          <p className='text-center'>giftforyou@gmail.org</p>
-           
-        </Link>
+          <Link to="mailto:giftforyou@gmail.org" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+            <div className='flex flex-col items-center gap-2 mb-2'>
+              <MailCheck className='text-blue-500' /><span className="font-semibold">Email Id</span>
+            </div>
+            <p className='text-center'>giftforyou@gmail.org</p>
+          </Link>
         </div>
 
-        {/* Google Map */}
-        <SubHeading text="location"/>
+        <div className='my-10'>
+          <SubHeading text="Follow Us" />
+
+          <div className="flex gap-4 justify-center mt-6">
+            <Link to="https://www.facebook.com/"><img src={Facebook} alt='facebook' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://www.instagram.com/"><img src={Instagram} alt='Instagram' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://in.linkedin.com/"><img src={Linkedin} alt='Linkedin' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://x.com/"><img src={Twitter} alt='Twitter' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://www.youtube.com/"><img src={Youtube} alt='Youtube' className='w-10 hover:scale-110 transition' /></Link>
+          </div>
+        </div>
+
+        <SubHeading text="location" />
 
         <div className="mt-4 rounded-xl overflow-hidden shadow md:mx-10">
           <iframe
@@ -92,9 +105,6 @@ const [form, setForm] = useState({
           We are located in the heart of the city. Visit our store anytime!
         </p>
 
-        {/* Form */}
-        
-
         <form
           onSubmit={handleSubmit}
           className="mt-4 flex flex-col gap-3 max-w-200 bg-white p-6 rounded-lg shadow m-auto"
@@ -102,55 +112,51 @@ const [form, setForm] = useState({
 
           <div className="flex flex-col md:flex-row gap-6 items-center">
 
-          <div className='flex'>
-            <img src={SuggestionImg} alt="Send Suggestion" className="w-full h-60 md:h-80 object-cover rounded-lg" />
+            <div className='flex'>
+              <img src={SuggestionImg} alt="Send Suggestion" className="w-full h-60 md:h-80 object-cover rounded-lg" />
+            </div>
+            <div className='w-full md:w-1/2 flex flex-col gap-3'>
+              <h2 className="mt-2 text-2xl font-semibold text-black-800 text-center ">
+                Send Suggestion
+              </h2>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={form.name}
+                onChange={handleChange}
+                className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={form.email}
+                onChange={handleChange}
+                className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Suggestion..."
+                value={form.message}
+                onChange={handleChange}
+                className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <Button
+                title={"Send Message"}
+            />
+                
+            </div>
           </div>
-          <div className='w-full md:w-1/2 flex flex-col gap-3'>
-          <h2 className="mt-2 text-2xl font-semibold text-black-800 text-center ">
-          Send Suggestion
-        </h2>
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={handleChange}
-            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={form.email}
-            onChange={handleChange}
-            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-
-          <textarea
-            name="message"
-            placeholder="Your Suggestion..."
-            value={form.message}
-            onChange={handleChange}
-            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-
-          <button
-            type="submit"
-            className="bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition"
-          >
-            Send Message
-          </button>
-          </div>
-          </div>
-
         </form>
-
       </div>
     </div>
-  
-    
+
+
   )
 }
 
