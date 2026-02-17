@@ -33,7 +33,7 @@ function About() {
   const reviewContainerRef = useRef(null);
 
   useEffect(() => {
-  if (reviewContainerRef.current && reviews.length > 4) {
+  if (reviewContainerRef.current && reviews.length > 3) {
     reviewContainerRef.current.scrollTo({
       top: reviewContainerRef.current.scrollHeight,
       behavior: "smooth"
