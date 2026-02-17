@@ -49,7 +49,7 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
                     />
                 </div>
                  
-                {/* Quantity */}
+               
                 <div className='flex mt-4 px-4 items-center justify-center text-[20px] font-bold border border-yellow-300 border-[3px] rounded-full mx-auto w-fit h-8 mb-2'>
                     <Minus className='cursor-pointer m-2' onClick={() => {
                         if (quantity > 1) setQuantity(quantity - 1);
