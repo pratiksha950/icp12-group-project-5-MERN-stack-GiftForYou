@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { setPageTitle } from "../utils.jsx"
 import Button from '../components/Button.jsx'
-import Category from '../components/CategorySection.jsx'
 import SubHeading from '../components/SubHeading.jsx'
 import Navbar from '../components/Navbar.jsx'
 import Heading from '../components/Heading.jsx'

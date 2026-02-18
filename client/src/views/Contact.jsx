@@ -136,12 +136,11 @@ const [form, setForm] = useState({
             className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-          <button
-            type="submit"
-            className="bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition"
-          >
-            Send Message
-          </button>
+<Button 
+  title="Send Message" 
+  varient="pink" 
+  size="lg" 
+/>
           </div>
           </div>
 
