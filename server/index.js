@@ -26,6 +26,10 @@ app.post("/login",postLogin)
 
 app.put("/profile", checkJWT, updateUser);
 
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "10mb", extended: true }));
+
+
 
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`);
