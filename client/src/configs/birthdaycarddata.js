@@ -8,8 +8,6 @@ import StrawberryCakeImg from '../assets/cakeImg/strawberryCake.jpg';
 import NameCakeImg from '../assets/cakeImg/nameCake.jpg';
 
 const BirthdayData = [
-
-
   {
     id: 1,
     name: "Personalized Birthday Card",
