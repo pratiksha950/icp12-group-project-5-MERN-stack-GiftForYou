@@ -63,7 +63,7 @@ function Profile() {
     <div>
       <Navbar />
 
-      <Heading text = "Update Profile" />
+      <Heading text="Update Profile" />
       <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden mt-10">
         <div className="flex flex-col items-center">
           <img src={ProfileImg} alt="Profile" className="h-full w-full object-cover" />
