@@ -1,79 +1,93 @@
+import RedRoseImg from '../assets/valentaineImg/redrose.jpg';
+import ChocolateImg from '../assets/valentaineImg/chocolatebox.jpg';
+import TeddyBearImg from '../assets/valentaineImg/teddybear.jpg'
+import MugSetImg from '../assets/valentaineImg/mugsets.jpg';
+import LocketImg from '../assets/valentaineImg/locket.jpg';
+import GreetingCardImg from '../assets/valentaineImg/greetingcard.jpg';
+import PhotoFrameImg from '../assets/valentaineImg/photoframe.jpg';
+import StoryBookImg from '../assets/valentaineImg/storybook.jpg';
 
-import { generatePlaceholderImage } from "../utils/placeholderImage";
 const products = [
-    {
-      id: 201,
-      name: "Love Letter Personalized Card",
-      description: "Express your feelings with a custom card",
-      price: 399,
-      originalPrice: 499,
-      discount: 20,
-      image: generatePlaceholderImage("Love Card", "#fee2e2"),
-    },
-    {
-      id: 202,
-      name: "Couple Photo Locket",
-      description: "Precious moments in a beautiful locket",
-      price: 699,
-      originalPrice: 899,
-      discount: 22,
-      image: generatePlaceholderImage("Couple Locket", "#fee2e2"),
-    },
-    {
-      id: 203,
-      name: "Custom Love Story Book",
-      description: "Our memories in a beautiful photo book",
-      price: 999,
-      originalPrice: 1299,
-      discount: 23,
-      image: generatePlaceholderImage("Love Book", "#fee2e2"),
-    },
-    {
-      id: 204,
-      name: "Personalized Valentine Mug Set",
-      description: "Matching mugs with your couple photo",
-      price: 799,
-      originalPrice: 999,
-      discount: 20,
-      image: generatePlaceholderImage("Valentine Mugs", "#fee2e2"),
-    },
-    {
-      id: 205,
-      name: "Custom Love Pillow Cover",
-      description: "Romantic pillow with your couple photo",
-      price: 599,
-      originalPrice: 799,
-      discount: 25,
-      image: generatePlaceholderImage("Love Pillow", "#fee2e2"),
-    },
-    {
-      id: 206,
-      name: "Personalized Valentine Canvas",
-      description: "Beautiful canvas with a heartfelt message",
-      price: 899,
-      originalPrice: 1199,
-      discount: 25,
-      image: generatePlaceholderImage("Valentine Canvas", "#fee2e2"),
-    },
-    {
-      id: 207,
-      name: "Custom Couple Portrait Sketch",
-      description: "Hand-drawn style portrait of you both",
-      price: 799,
-      originalPrice: 999,
-      discount: 20,
-      image: generatePlaceholderImage("Couple Sketch", "#fee2e2"),
-    },
-    {
-      id: 208,
-      name: "Personalized Valentine Magnetic Photo",
-      description: "Cute magnetic photo for your fridge",
-      price: 249,
-      originalPrice: 349,
-      discount: 29,
-      image: generatePlaceholderImage("Love Magnet", "#fee2e2"),
-    },
-  ];
-
+  {
+    id: 31,
+    name: "Romantic Red Rose Bouquet",
+    description: "Beautiful fresh red roses bouquet for your loved one.",
+    originalPrice: 1499,
+    price: 1199,
+    discount: "20",
+    image: RedRoseImg,
+    category: "Flowers"
+  },
+  {
+    id: 32,
+    name: "Heart Shape Chocolate Box",
+    description: "Premium assorted chocolates in heart-shaped box.",
+    originalPrice: 999,
+    price: 799,
+    discount: "20",
+    image: ChocolateImg,
+    category: "Chocolates"
+  },
+  {
+    id: 33,
+    name: "Couple Teddy Bear",
+    description: "Cute teddy bear pair for Valentine's gift.",
+    originalPrice: 1299,
+    price: 999,
+    discount: "23",
+    image: TeddyBearImg,
+    category: "Soft Toys",
+  },
+  {
+    id: 34,
+    name: "Love Greeting Card",
+    description: "Romantic handwritten style Valentine's greeting card.",
+    originalPrice: 299,
+    price: 199,
+    discount: "33",
+    image: GreetingCardImg,
+    category: "Cards",
+  },
+  {
+    id: 35,
+    name: "Personal Photo Frame",
+    description: "Custom photo frame with your favorite picture.",
+    originalPrice: 899,
+    price: 699,
+    discount: "22",
+    image: PhotoFrameImg,
+    category: "Personalized Gifts",
+  },
+  {
+    id: 36,
+    name: "Love Couple Mug Set",
+    description: "Cute matching mugs for couples.",
+    originalPrice: 799,
+    price: 599,
+    discount: "25",
+    image: MugSetImg,
+    category: "Accessories",
+  },
+  {
+    id: 37,
+    name: "Couple Photo Locket",
+    description: "Precious moments in a beautiful locket.",
+    originalPrice: 899,
+    price: 699,
+    discount: "22",
+    image: LocketImg,
+    category: "Jewellery",
+  },
+  {
+    id: 38,
+    name: "Custom Love Story Book",
+    description: "Our memories beautifully captured in a personalized photo book.",
+    originalPrice: 1299,
+    price: 999,
+    discount: "23",
+    image: StoryBookImg,
+    category: "Personalized Gifts",
+  }
+];
 
 export default products;
