@@ -46,32 +46,9 @@ Click Here to visit our website ()
 
 ---
 
-## Structure
+## Project Structure
 
-GiftForYou/
-### Frontend
- - client
-  - src
-    - assest/
-     - components/
-     - configs/
-     - view/
-    - main.jsx
-    - utils.jsx
-  - .env
-  - index.html 
-
-### Backend
- - server
-   - controllers/
-   - middleware/
-   - models/
-   - .env
-   - db.js
-   - index.js
-
-- .gitignore
-- README.md
+![Project Structure](./client/src/assets/projectStructure.png)
 
 ---
 
