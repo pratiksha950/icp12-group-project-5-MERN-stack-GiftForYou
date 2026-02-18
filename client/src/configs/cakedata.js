@@ -7,7 +7,7 @@ import PhotoCakeImg from '../assets/cakeImg/photoCake.jpg';
 import StrawberryCakeImg from '../assets/cakeImg/strawberryCake.jpg';
 import NameCakeImg from '../assets/cakeImg/nameCake.jpg';
 
-export const Products = [
+const Products = [
   {
     id: 11,
     name: "Customized Photo Cake",
