@@ -8,15 +8,20 @@ import toast, { Toaster } from "react-hot-toast";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [userData, setUserData] = useState({});
-
-  const fetchUserData = () => {
-    const data = getUserData();
-    setUserData(data || {});
-  };
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetchUserData();
+    const user = JSON.parse(localStorage.getItem("userData"));
+    setUserData(user);
+
+   
+    const handleStorageChange = () => {
+      const updatedUser = JSON.parse(localStorage.getItem("userData"));
+      setUserData(updatedUser);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   useEffect(() => {
@@ -52,18 +57,32 @@ function Navbar() {
           <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
           <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
 
+         
           <div>
-            {userData?.name ? (
-              <div className="flex items-center gap-2">
-                <Link to="/profile" className="flex items-center gap-1">
-                  <Avatar name={userData.name} />
-                  <span>Hello, {userData.name}</span>
+            {userData ? (
+              <div className="flex items-center gap-3">
+                
+                <Link to="/profile" className="flex items-center gap-2">
+                  
+                  {userData.profilePic ? (
+                    <img
+                      src={userData.profilePic}
+                      alt="profile"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-pink-500 md:flex hidden"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-pink-400 flex items-center justify-center text-white font-bold">
+                      {userData.username?.charAt(0).toUpperCase() || userData.name?.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+
+                  <span className="font-medium hidden md:inline">Hello, {userData.username || userData.name}</span>
                 </Link>
 
                 <Button
                   title="Logout"
                   varient="primary"
-                  className="ml-2"
+                  
                   onClick={logoutUser}
                 />
               </div>
@@ -100,7 +119,37 @@ function Navbar() {
           <Link to="/cake" className="block">Cakes</Link>
           <Link to="/about" className="block">About</Link>
           <Link to="/contact" className="block">Contact</Link>
-          <Link to="/login" className="block text-pink-500">Login</Link>
+          
+          
+          {userData ? (
+            <div className="border-t pt-3">
+              <Link to="/profile" className="flex items-center gap-2 py-2">
+                {userData.profilePic ? (
+                  <img
+                    src={userData.profilePic}
+                    alt="profile"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-pink-500"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-pink-400 flex items-center justify-center text-white font-bold text-sm">
+                    {userData.username?.charAt(0).toUpperCase() || userData.name?.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <span>Hello, {userData.username || userData.name}</span>
+              </Link>
+              <button
+                onClick={() => {
+                  logoutUser();
+                  setMenuOpen(false);
+                }}
+                className="block w-full text-left bg-pink-500 text-white px-3 py-2 rounded hover:bg-pink-600 text-sm mt-2 md:flex hidden"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="block text-pink-500">Login</Link>
+          )}
         </div>
       )}
 
