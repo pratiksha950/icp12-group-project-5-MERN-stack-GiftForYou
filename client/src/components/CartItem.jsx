@@ -12,8 +12,6 @@ const removeFromCart = (id, description) => {
 function CartItem({ id, name, description, price, quantity, imageUrl }) {
   return (
 
-
-
     <div className="relative flex flex-col md:flex-row items-start gap-4 rounded-lg shadow-md p-4 mb-4 bg-white w-full max-w-4xl transition-shadow duration-300 hover:shadow-lg">
 
       <div className="absolute top-3 right-3">

@@ -4,8 +4,6 @@ import cake1 from "../assets/homeimg/cake1.jpg";
 import { generatePlaceholderImage } from "../utils/placeholderImage";
 
 const products = [
-
-  
     {
       id: 1,
       name: "Personalized Birthday Card",

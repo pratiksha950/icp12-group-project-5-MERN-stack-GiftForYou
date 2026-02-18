@@ -21,7 +21,7 @@ app.get("/",getHome)
 
 
 
-app.post("/Signup",postSignUp)
+app.post("/signUp",postSignUp)
 app.post("/login",postLogin)
 
 app.put("/profile", checkJWT, updateUser);
