@@ -51,8 +51,8 @@ Click Here to visit our website ()
 GiftForYou/
 ### Frontend
  - client
-   - src
-     - assest/
+  - src
+    - assest/
      - components/
      - configs/
      - view/
@@ -88,3 +88,7 @@ GiftForYou/
 - Postman
 
 ## Contributors
+
+<a href="https://github.com/pratiksha950/icp12-group-project-5-MERN-stack-GiftForYou/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pratiksha950/icp12-group-project-5-MERN-stack-GiftForYou" />
+</a>
