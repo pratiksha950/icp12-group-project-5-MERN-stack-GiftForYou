@@ -20,7 +20,6 @@ app.get("/health",getHealth)
 app.get("/",getHome) 
 
 
-
 app.post("/signUp",postSignUp)
 app.post("/login",postLogin)
 
