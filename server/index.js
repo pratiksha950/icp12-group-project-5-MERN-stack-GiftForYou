@@ -7,6 +7,7 @@ import { postSignUp,postLogin } from "./controllers/auth.js";
 import {getHome,getHealth} from "./controllers/health.js";
 import { updateUser } from "./controllers/auth.js";
 
+dotenv.config();
 
 const app=express();
 app.use(express.json());
@@ -20,7 +21,7 @@ app.get("/",getHome)
 
 
 
-app.post("/Signup",postSignUp)
+app.post("/signUp",postSignUp)
 app.post("/login",postLogin)
 
 app.put("/profile", checkJWT, updateUser);
