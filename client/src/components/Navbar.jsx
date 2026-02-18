@@ -68,7 +68,7 @@ function Navbar() {
                     <img
                       src={userData.profilePic}
                       alt="profile"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-pink-500"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-pink-500 md:flex hidden"
                     />
                   ) : (
                     <div className="w-10 h-10 rounded-full bg-pink-400 flex items-center justify-center text-white font-bold">
@@ -82,7 +82,7 @@ function Navbar() {
                 <Button
                   title="Logout"
                   varient="primary"
-                  className="hidden md:block"
+                  
                   onClick={logoutUser}
                 />
               </div>
@@ -142,7 +142,7 @@ function Navbar() {
                   logoutUser();
                   setMenuOpen(false);
                 }}
-                className="block w-full text-left bg-pink-500 text-white px-3 py-2 rounded hover:bg-pink-600 text-sm mt-2"
+                className="block w-full text-left bg-pink-500 text-white px-3 py-2 rounded hover:bg-pink-600 text-sm mt-2 md:flex hidden"
               >
                 Logout
               </button>
