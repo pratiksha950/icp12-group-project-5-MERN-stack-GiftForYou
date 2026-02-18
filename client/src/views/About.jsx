@@ -8,6 +8,8 @@ import Category from '../components/CategorySection.jsx'
 import SubHeading from '../components/SubHeading.jsx'
 import Navbar from '../components/Navbar.jsx'
 import Heading from '../components/Heading.jsx'
+import TeamSection from '../components/TeamSection.jsx'
+
 
 
 function About() {
@@ -104,6 +106,8 @@ function About() {
           Our vision is to become the most trusted gift store online.
           Our mission is to deliver happiness through thoughtful and creative gift collections.
         </p>
+
+        <TeamSection />
       </div>
 
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import SubHeading from '../components/SubHeading';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
-import SuggestionImg from "../assets/send-suggestion.png";
+import SuggestionImg from "../assets/contactImg/sendsuggestion.png";
 import { MapPinCheck, PhoneCall, MailCheck} from "lucide-react";
 import { Link } from 'react-router';
 
