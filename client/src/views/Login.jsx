@@ -58,7 +58,6 @@ function Login() {
      <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
 
-{/* Image Section */}
  <div className="w-full md:w-1/2 flex items-center justify-center">
   <img
     src={loginImg}
@@ -69,7 +68,6 @@ function Login() {
 
 
 
-          {/* Form Section */}
           <div className="w-full md:w-1/2 p-6 sm:p-8">
             <h2 className="text-lg sm:text-2xl font-bold text-center mb-2">
               Welcome Back
