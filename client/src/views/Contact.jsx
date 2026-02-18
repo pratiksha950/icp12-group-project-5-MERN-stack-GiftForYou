@@ -53,7 +53,7 @@ const [form, setForm] = useState({
         <Link to="https://www.google.com/maps?q=Pune,India&output=embed" 
         className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
-          <MapPinCheck className='text-blue-500'/><span className="font-semibold">Address</span>
+          <MapPinCheck className='text-pink-500'/><span className="font-semibold">Address</span>
           </div>
           <p className='text-center'>123 Gift Street, Pune, India</p>
            
@@ -61,7 +61,7 @@ const [form, setForm] = useState({
 
         <Link to="tel:+919860737643" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
-          <PhoneCall className='text-blue-500'/><span className="font-semibold">Mobile No.</span>
+          <PhoneCall className='text-pink-500'/><span className="font-semibold">Mobile No.</span>
           </div>
           <p className='text-center'>+91 9860737643</p>
            
@@ -69,7 +69,7 @@ const [form, setForm] = useState({
 
         <Link to="mailto:giftforyou@gmail.org" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
-          <MailCheck className='text-blue-500'/><span className="font-semibold">Email Id</span>
+          <MailCheck className='text-pink-500'/><span className="font-semibold">Email Id</span>
           </div>
           <p className='text-center'>giftforyou@gmail.org</p>
            
