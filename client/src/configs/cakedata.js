@@ -7,7 +7,7 @@ import PhotoCakeImg from '../assets/cakeImg/photoCake.jpg';
 import StrawberryCakeImg from '../assets/cakeImg/strawberryCake.jpg';
 import NameCakeImg from '../assets/cakeImg/nameCake.jpg';
 
-const Products = [
+const CakeData = [
   {
     id: 11,
     name: "Customized Photo Cake",
@@ -82,4 +82,4 @@ const Products = [
   },
 ];
 
-export default Products;
+export default CakeData;

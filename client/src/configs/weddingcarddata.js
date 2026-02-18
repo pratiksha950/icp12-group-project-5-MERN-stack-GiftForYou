@@ -7,7 +7,7 @@ import WeddingCanvasImg from '../assets/weddingImg/weddingCanvasPrint.jpg';
 import WeddingGuestBookImg from '../assets/weddingImg/weddingGuestBook.jpg';
 import WeddingKeychainImg from '../assets/weddingImg/weddingKeychainSet.jpg';
 
-const products = [
+const WeddingData = [
   {
     id: 41,
     name: "Personalized Wedding Invitation Card",
@@ -83,4 +83,4 @@ const products = [
 ];
 
 
-export default products;  
+export default WeddingData;  

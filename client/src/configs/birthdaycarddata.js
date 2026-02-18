@@ -7,7 +7,7 @@ import BirthdayPuzzleImg from '../assets/birthdayImg/birthdayPuzzal.webp';
 import StrawberryCakeImg from '../assets/cakeImg/strawberryCake.jpg';
 import NameCakeImg from '../assets/cakeImg/nameCake.jpg';
 
-const products = [
+const BirthdayData = [
 
 
   {
@@ -84,4 +84,4 @@ const products = [
   },
 ];
 
-export default products;
+export default BirthdayData;

@@ -8,7 +8,7 @@ import CustomBeanieImg from '../assets/fashionImg/beanie.jpg';
 import WomenSummerDressImg from '../assets/fashionImg/womensummerDress.jpg';
 
 
-const products = [
+const FashionData = [
   {
     id: 21,
     name: "Custom Photo T-Shirt",
@@ -82,5 +82,5 @@ const products = [
     image: CustomBeanieImg,
   },
 ];
-export default products;
+export default FashionData;
 

@@ -7,7 +7,7 @@ import GreetingCardImg from '../assets/valentaineImg/greetingcard.jpg';
 import PhotoFrameImg from '../assets/valentaineImg/photoframe.jpg';
 import StoryBookImg from '../assets/valentaineImg/storybook.jpg';
 
-const products = [
+const ValentineData = [
   {
     id: 31,
     name: "Romantic Red Rose Bouquet",
@@ -90,4 +90,4 @@ const products = [
   }
 ];
 
-export default products;
+export default ValentineData;
