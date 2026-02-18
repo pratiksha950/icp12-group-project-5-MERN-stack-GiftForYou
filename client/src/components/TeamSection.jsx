@@ -3,7 +3,7 @@ import team1 from "../assets/homeimg/team1.jpg";
 import team2 from "../assets/homeimg/team2.jpg";
 import team3 from "../assets/homeimg/team3.jpg";
 import team4 from "../assets/homeimg/team4.jpg";
-import Heading from "./Heading";
+import SubHeading from "./SubHeading";
 
 function TeamSection() {
   const teamMembers = [
@@ -37,7 +37,7 @@ function TeamSection() {
     <section className="py-2">
       <div className="max-w-7xl mx-auto px-4 text-center">
 
-        <Heading text="Our Team" />
+        <SubHeading text="Our Team" />
         <p className="text-center text-gray-900 mt-2 mb-4 font-medium">
           Meet the team behind GiftForYou 
         </p>

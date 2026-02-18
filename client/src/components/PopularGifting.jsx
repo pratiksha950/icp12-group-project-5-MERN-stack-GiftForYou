@@ -3,7 +3,6 @@ import gift1 from "../assets/homeimg/gift1.png";
 import gift2 from "../assets/homeimg/gift2.png";
 import gift3 from "../assets/homeimg/gift3.png";
 import gift4 from "../assets/homeimg/gift4.png";
-import Heading from "./Heading";
 
 
 const gifts = [
@@ -28,7 +27,6 @@ const gifts = [
 function PopularGifting() {
   return (
     <div className="py-10 px-6">
-         <Heading text="Popular In Gifting" />
 
       <div className="flex gap-6 overflow-x-auto flex-wrap justify-center items-center">
         {gifts.map((gift, index) => (
