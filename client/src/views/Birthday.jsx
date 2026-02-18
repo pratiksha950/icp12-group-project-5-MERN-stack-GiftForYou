@@ -4,7 +4,6 @@ import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import birthdaycarddata from "../configs/birthdaycarddata"
-import  {generatePlaceholderImage} from "../utils/placeholderImage";
 
 const Birthday = () => {
   

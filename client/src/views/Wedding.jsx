@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
-import { generatePlaceholderImage } from "../utils/placeholderImage";
 import weddingcarddata from "../configs/weddingcarddata";
 
 const Wedding = () => {
