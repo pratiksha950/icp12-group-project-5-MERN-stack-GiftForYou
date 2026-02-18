@@ -5,7 +5,7 @@ import CustomCapImg from '../assets/fashionImg/personalizedCap.jpg';
 import CustomPoloShirtImg from '../assets/fashionImg/poloShirt.jpg';
 import CustomTankTopImg from '../assets/fashionImg/photoTankTop.jpg';
 import CustomBeanieImg from '../assets/fashionImg/beanie.jpg';
-import WomenSummerDressImg from '../assets/fashionImg/womenSummerDress.jpg';
+import WomenSummerDressImg from '../assets/fashionImg/dress.jpg';
 
 
 const FashionData = [
