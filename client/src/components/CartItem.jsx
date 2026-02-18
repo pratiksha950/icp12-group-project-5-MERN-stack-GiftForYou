@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button.jsx";
 import { Trash } from "lucide-react";
-import cake1 from "../assets/homeimg/cake1.jpg";
+
 const removeFromCart = (id, description) => {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   const updatedCartItems = cartItems.filter(item => !(item.id === id && item.description === description));
@@ -9,7 +9,7 @@ const removeFromCart = (id, description) => {
   window.dispatchEvent(new Event("storage"));
 };
 
-function CartItem({ id, name, description, price, quantity, imageUrl }) {
+function CartItem({ id,image, name, description, price, quantity, imageUrl }) {
   return (
 
     <div className="relative flex flex-col md:flex-row items-start gap-4 rounded-lg shadow-md p-4 mb-4 bg-white w-full max-w-4xl transition-shadow duration-300 hover:shadow-lg">
@@ -25,9 +25,9 @@ function CartItem({ id, name, description, price, quantity, imageUrl }) {
 
 
       <img
-        src={cake1}
+        src={image}
         alt={name}
-        
+        className="w-32 h-32 object-cover rounded-3xl border"
       />
 
       <div className="flex gap-2">
