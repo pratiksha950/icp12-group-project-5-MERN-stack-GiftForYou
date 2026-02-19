@@ -10,7 +10,7 @@ import Personalise from '../components/Personalise.jsx'
 
 function Home() {
      useEffect(() => {
-    setPageTitle("Home-GiftForYou")
+    setPageTitle("GiftForYou-Home")
   }, [])
   return (
     <>

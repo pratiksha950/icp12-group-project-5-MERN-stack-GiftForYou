@@ -5,11 +5,17 @@ import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import fashiondatacard from "../configs/fashiondatacard";
 import Heading from "../components/Heading.jsx";
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+
 
 const Fashion = () => {
   const products = fashiondatacard;
   
-
+  useEffect(() => {
+    setPageTitle("GiftForYou-Fashion");
+  }, [])
+  
   return (
     <>
       <Navbar />

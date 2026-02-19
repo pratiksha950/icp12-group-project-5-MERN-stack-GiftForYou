@@ -5,10 +5,14 @@ import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import valentinecarddata from "../configs/valentinecarddata";
 import Heading from "../components/Heading.jsx";
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
 
 const Valentine = () => {
   const products = valentinecarddata;
- 
+ useEffect(() => {
+    setPageTitle("GiftForYou- Valentine");
+  }, []);
 
   return (
     <>

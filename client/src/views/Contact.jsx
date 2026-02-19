@@ -7,8 +7,15 @@ import Button from '../components/Button';
 import SuggestionImg from "../assets/contactImg/sendsuggestion.png";
 import { MapPinCheck, PhoneCall, MailCheck} from "lucide-react";
 import { Link } from 'react-router';
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+
 
 function Contact() {
+   useEffect(() => {
+    setPageTitle("GiftForYou- Contact");
+  }, []);
+
 
 const [form, setForm] = useState({
     name: "",

@@ -22,7 +22,7 @@ function SignUp() {
   });
 
   useEffect(() => {
-    setPageTitle("SignUp-TinyTour");
+    setPageTitle("GiftForYou-SignUp");
   }, []);
 
   const createUser = async (e) => {

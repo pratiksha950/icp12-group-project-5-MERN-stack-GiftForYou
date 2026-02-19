@@ -13,11 +13,16 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
     const [customText, setCustomText] = useState("");
 
     const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setCustomImage(URL.createObjectURL(file));
-        }
-    };
+   const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    setCustomImage(reader.result); 
+  };
+  reader.readAsDataURL(file);
+};
+
 
     return (
         <div className="bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col justify-between h-auto w-[300px] border md:border-gray-300 border-gray-400">

@@ -8,11 +8,9 @@ import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar'
 import loginImg from "../assets/homeimg/login.png"
 
-
-
 function Login() {
   useEffect(() => {
-    setPageTitle("Login-TinyTour")
+    setPageTitle("GiftForYou-Login");
   }, [])
 
   const [loginUser, setLoginUser] = useState({

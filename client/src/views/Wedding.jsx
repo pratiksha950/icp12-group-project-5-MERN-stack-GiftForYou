@@ -5,9 +5,15 @@ import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import weddingcarddata from "../configs/weddingcarddata";
 import Heading from "../components/Heading.jsx";
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+
 
 const Wedding = () => {
   const products = weddingcarddata;
+   useEffect(() => {
+      setPageTitle("GiftForYou- Wedding");
+    }, []);
   
   return (
     <>

@@ -5,9 +5,15 @@ import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import  cakeProducts  from "../configs/cakedata";
 import Heading from "../components/Heading.jsx";
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+
 
 
 const Cake = () => {
+   useEffect(() => {
+    setPageTitle("GiftForYou- Cake");
+  }, []);
 
   const products = cakeProducts;
  

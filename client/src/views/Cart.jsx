@@ -3,8 +3,14 @@ import Navbar from "../components/Navbar.jsx";
 import CartItem from "../components/CartItem.jsx";
 import Btn from "../components/Button.jsx";
 import Heading from "../components/Heading.jsx";
+import { setPageTitle } from "../utils.jsx";
+
 
 function Cart() {
+   useEffect(() => {
+    setPageTitle("GiftForYou- Cart");
+  }, []);
+
   const [cartItems, setCartItems] = useState([]);
 
   const loadCart = () => {
@@ -35,7 +41,11 @@ function Cart() {
         ) : (
           <div className="flex flex-col gap-4 mx-auto w-full max-w-4xl">
             {cartItems.map((item) => (
-              <CartItem key={item.id + item.description} {...item} />
+          <CartItem 
+            key={item.id + item.description} 
+            {...item} 
+          />
+
             ))}
 
             <h2 className="text-xl font-bold text-right mt-4">

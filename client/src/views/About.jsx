@@ -10,13 +10,11 @@ import Heading from '../components/Heading.jsx'
 import TeamSection from '../components/TeamSection.jsx'
 import PopularGifting from "../components/PopularGifting.jsx"
 
-
-
 function About() {
-
        useEffect(() => {
     setPageTitle("About-GiftForYou")
   }, [])
+  
   const [review, setReview] = useState("");
   const [editIndex, setEditIndex] = useState(null);
 

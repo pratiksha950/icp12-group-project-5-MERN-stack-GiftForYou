@@ -8,6 +8,8 @@ import axios from "axios";
 import ProfileImg from "../assets/profile-update.png"
 import { Link } from "react-router";
 import Heading from "../components/Heading";
+import { setPageTitle } from "../utils.jsx";
+
 
 function Profile() {
   const [userData, setUserData] = useState({
@@ -20,6 +22,11 @@ function Profile() {
     pincode: "",
     country: ""
   });
+
+   useEffect(() => {
+      setPageTitle("GiftForYou- Profile");
+    }, []);
+  
 
   useEffect(() => {
     const data = getUserData();

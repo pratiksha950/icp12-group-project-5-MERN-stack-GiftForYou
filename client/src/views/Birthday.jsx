@@ -5,9 +5,15 @@ import { Toaster } from "react-hot-toast";
 import { addToCart } from "../utils";
 import birthdaycarddata from "../configs/birthdaycarddata"
 import Heading from "../components/Heading.jsx";
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+
 
 const Birthday = () => {
-  
+   useEffect(() => {
+    setPageTitle("GiftForYou- Birthday");
+  }, []);
+
 const products = birthdaycarddata;
   return (
     <>
