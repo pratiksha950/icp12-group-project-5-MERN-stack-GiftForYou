@@ -31,10 +31,10 @@ const userSchema=new Schema({
         type:String,
         required:true,
     },
-    profilePic:{
-    type:String,
-},
-
+    photos: {
+        type: [String],
+        default: [],
+    },
 
 },{timestamps:true})
 

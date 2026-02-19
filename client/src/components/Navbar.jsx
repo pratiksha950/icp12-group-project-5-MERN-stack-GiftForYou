@@ -8,7 +8,9 @@ import toast, { Toaster } from "react-hot-toast";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState({
+    
+  });
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userData"));
@@ -59,24 +61,19 @@ function Navbar() {
 
          
           <div>
-            {userData ? (
-              <div className="flex items-center gap-3">
-                
-                <Link to="/profile" className="flex items-center gap-2">
-                  
-                  {userData.profilePic ? (
-                    <img
-                      src={userData.profilePic}
-                      alt="profile"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-pink-500 md:flex hidden"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-full bg-pink-400 flex items-center justify-center text-white font-bold">
-                      {userData.username?.charAt(0).toUpperCase() || userData.name?.charAt(0).toUpperCase()}
-                    </div>
-                  )}
-
-                  <span className="font-medium hidden md:inline">Hello, {userData.username || userData.name}</span>
+            {userData?.name ? (
+              <div className="flex items-center gap-2">
+                <Link to="/profile" className="flex items-center gap-1">
+                  {userData?.photos?.length > 0 ? (
+  <img
+    src={userData.photos[0]}
+    alt="Profile"
+    className="w-8 h-8 rounded-full object-cover"
+  />
+) : (
+  <Avatar name={userData.name} />
+)}
+                  <span>Hello, {userData.name}</span>
                 </Link>
 
                 <Button
