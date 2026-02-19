@@ -10,7 +10,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
 
-        {/* Logo + About */}
+      
         <div>
           <h2 className="text-3xl font-extrabold text-pink-600 tracking-wide">
             GiftForYou
@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
 
-        {/* Quick Links */}
+       
         <div>
           <h3 className="font-semibold text-lg mb-5 text-gray-800 border-b pb-2">
             Quick Links
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
 
-        {/* Categories */}
+        
         <div>
           <h3 className="font-semibold text-lg mb-5 text-gray-800 border-b pb-2">
             Categories
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
 
-        {/* Newsletter */}
+     
         <div>
           <h3 className="font-semibold text-lg mb-5 text-gray-800 border-b pb-2">
             Subscribe
@@ -77,7 +77,7 @@ export default function Footer() {
               size="md"
               variant="primary" />
           </div>
-          {/* Social Icons */}
+        
           <div className="flex gap-4 mt-7 text-lg">
 
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
@@ -110,7 +110,7 @@ export default function Footer() {
       </div>
 
 
-      {/* Bottom Bar */}
+    
       <div className="border-t text-center py-5 text-sm bg-gradient-to-r from-pink-100 to-pink-200 text-gray-700 font-medium">
         © {new Date().getFullYear()} GiftForYou. All rights reserved.
       </div>
