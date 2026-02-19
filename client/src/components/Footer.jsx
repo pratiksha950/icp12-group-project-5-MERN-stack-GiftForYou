@@ -77,10 +77,35 @@ export default function Footer() {
         size="md"
         variant="primary"/>
       </div>
+       {/* Social Icons */}
+      <div className="flex gap-4 mt-7 text-lg">
 
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+           className="bg-white shadow-md p-2 rounded-full hover:scale-110 hover:text-blue-600 transition">
+          <Facebook />
+        </a>
 
-     
-        
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+           className="bg-white shadow-md p-2 rounded-full hover:scale-110 hover:text-pink-500 transition">
+          <Instagram />
+        </a>
+
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+           className="bg-white shadow-md p-2 rounded-full hover:scale-110 hover:text-sky-500 transition">
+          <Twitter />
+        </a>
+
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+           className="bg-white shadow-md p-2 rounded-full hover:scale-110 hover:text-black transition">
+          <Github />
+        </a>
+
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+           className="bg-white shadow-md p-2 rounded-full hover:scale-110 hover:text-red-500 transition">
+          <Youtube />
+        </a>
+
+      </div>   
     </div>
   </div>
 
