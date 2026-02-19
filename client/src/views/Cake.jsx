@@ -7,7 +7,7 @@ import  cakeProducts  from "../configs/cakedata";
 import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
-
+import Footer from "../components/Footer.jsx";
 
 
 const Cake = () => {
@@ -33,6 +33,8 @@ const Cake = () => {
           </div>
         </div>
       </div>
+        <Footer />
+      
     </>
   );
 };

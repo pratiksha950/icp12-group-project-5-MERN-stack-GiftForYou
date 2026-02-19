@@ -7,6 +7,7 @@ import birthdaycarddata from "../configs/birthdaycarddata"
 import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
+import Footer from "../components/Footer.jsx";
 
 
 const Birthday = () => {
@@ -32,6 +33,8 @@ const products = birthdaycarddata;
           </div>
         </div>
       </div>
+        <Footer />
+      
     </>
   );
 };

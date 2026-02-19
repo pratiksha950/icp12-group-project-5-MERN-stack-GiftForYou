@@ -9,7 +9,7 @@ import ProfileImg from "../assets/profile-update.png"
 import { Link } from "react-router";
 import Heading from "../components/Heading";
 import { setPageTitle } from "../utils.jsx";
-
+import Footer from "../components/Footer.jsx";
 
 function Profile() {
   const [userData, setUserData] = useState({
@@ -138,6 +138,7 @@ function Profile() {
           </div>
         </div>
       </div>
+        <Footer />
     </div>
   );
 }

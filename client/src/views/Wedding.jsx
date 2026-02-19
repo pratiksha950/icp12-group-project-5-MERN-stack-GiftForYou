@@ -7,7 +7,7 @@ import weddingcarddata from "../configs/weddingcarddata";
 import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
-
+import Footer from "../components/Footer.jsx";
 
 const Wedding = () => {
   const products = weddingcarddata;
@@ -31,6 +31,7 @@ const Wedding = () => {
           </div>
         </div>
       </div>
+        <Footer />
     </>
   );
 };

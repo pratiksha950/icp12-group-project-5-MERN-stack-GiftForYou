@@ -4,7 +4,7 @@ import CartItem from "../components/CartItem.jsx";
 import Btn from "../components/Button.jsx";
 import Heading from "../components/Heading.jsx";
 import { setPageTitle } from "../utils.jsx";
-
+import Footer from "../components/Footer.jsx";
 
 function Cart() {
    useEffect(() => {
@@ -63,6 +63,8 @@ function Cart() {
           </div>
         )}
       </div>
+        <Footer />
+      
     </>
   );
 }

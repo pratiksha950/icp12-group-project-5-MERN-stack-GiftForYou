@@ -7,7 +7,7 @@ import fashiondatacard from "../configs/fashiondatacard";
 import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
-
+import Footer from "../components/Footer.jsx";
 
 const Fashion = () => {
   const products = fashiondatacard;
@@ -32,6 +32,8 @@ const Fashion = () => {
           </div>
         </div>
       </div>
+        <Footer />
+      
     </>
   );
 };

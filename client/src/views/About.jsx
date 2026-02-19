@@ -9,6 +9,7 @@ import Navbar from '../components/Navbar.jsx'
 import Heading from '../components/Heading.jsx'
 import TeamSection from '../components/TeamSection.jsx'
 import PopularGifting from "../components/PopularGifting.jsx"
+import Footer from '../components/Footer.jsx'
 
 function About() {
        useEffect(() => {
@@ -147,7 +148,7 @@ function About() {
         </div>
 
 
-        <div className="mt-6 flex gap-3">
+        <div className="mt-6 flex gap-3 ">
           <input
             type="text"
             placeholder="Write review..."
@@ -167,6 +168,8 @@ function About() {
 
     </div>
   </div>
+    <Footer />
+
   </>
   
 );

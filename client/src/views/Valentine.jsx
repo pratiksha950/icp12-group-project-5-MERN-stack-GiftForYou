@@ -7,6 +7,7 @@ import valentinecarddata from "../configs/valentinecarddata";
 import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
+import Footer from "../components/Footer.jsx";
 
 const Valentine = () => {
   const products = valentinecarddata;
@@ -30,6 +31,7 @@ const Valentine = () => {
           </div>
         </div>
       </div>
+        <Footer />
     </>
   );
 };

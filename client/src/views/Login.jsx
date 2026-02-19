@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast"
 import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar'
 import loginImg from "../assets/homeimg/login.png"
+import Footer from "../components/Footer.jsx"
 
 function Login() {
   useEffect(() => {
@@ -115,6 +116,8 @@ function Login() {
           </div>
         </div>
       </div>
+       <Footer />
+      
     </>
   )
 }

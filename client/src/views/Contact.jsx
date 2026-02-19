@@ -9,7 +9,7 @@ import { MapPinCheck, PhoneCall, MailCheck} from "lucide-react";
 import { Link } from 'react-router';
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
-
+import Footer from '../components/Footer.jsx';
 
 function Contact() {
    useEffect(() => {
@@ -83,7 +83,6 @@ const [form, setForm] = useState({
         </Link>
         </div>
 
-        {/* Google Map */}
         <SubHeading text="location"/>
 
         <div className="mt-4 rounded-xl overflow-hidden shadow md:mx-10">
@@ -98,9 +97,6 @@ const [form, setForm] = useState({
         <p className="text-gray-600 text-center">
           We are located in the heart of the city. Visit our store anytime!
         </p>
-
-        {/* Form */}
-        
 
         <form
           onSubmit={handleSubmit}
@@ -146,16 +142,15 @@ const [form, setForm] = useState({
 <Button 
   title="Send Message" 
   varient="pink" 
-  size="lg" 
+  size="md" 
 />
           </div>
           </div>
 
         </form>
-
       </div>
+        <Footer />
     </div>
-  
     
   )
 }
