@@ -7,6 +7,7 @@ import Video from '../components/VideoSection.jsx'
 import OccasionSection from '../components/OccasionSection.jsx'
 import  PopularGifting from '../components/PopularGifting.jsx'
 import Personalise from '../components/Personalise.jsx'
+import Footer from '../components/Footer.jsx'
 
 function Home() {
      useEffect(() => {
@@ -21,6 +22,7 @@ function Home() {
       <OccasionSection />
       <PopularGifting />
       <Personalise />
+      <Footer />
     </div>
     </>
 

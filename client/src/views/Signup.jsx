@@ -72,13 +72,13 @@ function SignUp() {
     <>
       <Navbar />
 
-<div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center px-4">
+<div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center px-4 py-8">
 
   <div className="w-full md:w-1/2 flex items-center justify-center">
   <img
     src={signupImg}
     alt="signup"
-    className="h-64 md:h-[511px] w-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+    className="h-64 md:h-[621px] w-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
   />
 </div>
 
@@ -143,8 +143,8 @@ function SignUp() {
         />
       </div>
 
-      <div className="border px-3 py-2 rounded w-full">
-        <label className="block text-sm font-medium text-gray-700 mb-2">Profile Picture (Optional)</label>
+      <div className="border px-3 rounded w-full">
+        <label className="block text-sm font-medium text-gray-700 mb-2 ">Profile Picture (Optional)</label>
         <input
           type="file"
           accept="image/*"
