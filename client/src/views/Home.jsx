@@ -5,12 +5,13 @@ import Navbar from '../components/Navbar.jsx'
 import Category from '../components/CategorySection.jsx'
 import Video from '../components/VideoSection.jsx'
 import OccasionSection from '../components/OccasionSection.jsx'
-import TeamSection from '../components/TeamSection.jsx'
-
+import  PopularGifting from '../components/PopularGifting.jsx'
+import Personalise from '../components/Personalise.jsx'
+import Footer from '../components/Footer.jsx'
 
 function Home() {
      useEffect(() => {
-    setPageTitle("Home-GiftForYou")
+    setPageTitle("GiftForYou-Home")
   }, [])
   return (
     <>
@@ -19,7 +20,9 @@ function Home() {
       <Video />
       <Category />
       <OccasionSection />
-      <TeamSection />
+      <PopularGifting />
+      <Personalise />
+      <Footer />
     </div>
     </>
 

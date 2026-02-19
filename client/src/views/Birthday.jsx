@@ -1,83 +1,42 @@
-import Card from '../components/Card';
-import BirthdayCardData from '../configs/birthdaycarddata';
-import toast, { Toaster } from 'react-hot-toast';
-import Navbar from '../components/Navbar';
-import { useState } from 'react';
-import Input from '../components/Input';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Card from "../components/Card";
+import { Toaster } from "react-hot-toast";
+import { addToCart } from "../utils";
+import birthdaycarddata from "../configs/birthdaycarddata"
+import Heading from "../components/Heading.jsx";
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+import Footer from "../components/Footer.jsx";
 
-function StationaryStore() {
-  const [refreshCart, setRefreshCart] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(''); 
 
-  function addToCart(items) {
-    const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const itemIndex = existingCart.findIndex((item) => item.id === items.id);
+const Birthday = () => {
+   useEffect(() => {
+    setPageTitle("GiftForYou- Birthday");
+  }, []);
 
-  
-
-    if (itemIndex !== -1) {
-      existingCart[itemIndex] = items;
-    } else {
-      existingCart.push(items);
-    }
-
-    localStorage.setItem("cartItems", JSON.stringify(existingCart));
-
-    setTimeout(() => {
-      setRefreshCart(!refreshCart);
-      toast.success("Item added to cart successfully!");
-    }, 1000);
-  }
-
-  
-  const filteredItems = BirthdayCardData.filter(item =>
-    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
+const products = birthdaycarddata;
   return (
     <>
-    <div>
-      <Navbar refreshCart={refreshCart}/>
+      <Navbar />
+      <div className="p-6 bg-gradient-to-b from-pink-50 to-white min-h-screen">
+        <Toaster />
+        <div className="max-w-7xl mx-auto">
+          <Heading text="Birthday Gifts" />
+          <h1 className="text-4xl font-bold mb-2 text-pink-600 text-center"></h1>
+          <p className="text-gray-600 mb-8 text-center">Celebrate with personalized birthday gifts</p>
 
-      <Toaster />
-
-     
-      <div className="flex justify-center p-4 bg-[#F8FAFF] font-sans w-[100]">
-        <Input
-          type="text"
-          placeholder="Search items..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-0">
+            {products.map((product) => (
+              <Card key={product.id} {...product} addToCart={addToCart} />
+            ))}
+          </div>
+        </div>
       </div>
-
+        <Footer />
       
-      <div className="flex flex-wrap gap-6 justify-center p-6 bg-[#F8FAFF] font-sans min-h-screen">
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item) => {
-            const { id, image, name, description, price,originalPrice, discount } = item;
-            return (
-              <Card
-                key={id}
-                image={image}
-                name={name}
-                description={description}
-                price={price}
-                originalPrice={originalPrice}
-                discount={discount}
-                addToCart={addToCart}
-                id={id}
-              />
-            );
-          })
-        ) : (
-          <p className="text-gray-500 text-lg">No items found.</p>
-        )}
-      </div>
-    </div>
-     </>
+    </>
   );
-}
+};
 
-export default StationaryStore;
+export default Birthday;

@@ -5,52 +5,47 @@ import { getUserData, logoutUser } from "../utils";
 import Button from "./Button";
 import toast, { Toaster } from "react-hot-toast";
 
-function Navbar({ refreshCart }) {
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [userData, setUserData] = useState({
     
   });
 
-  // Get user data from localStorage
-  const fetchUserData = () => {
-    const data = getUserData();
-    console.log("NAVBAR USER DATA:", data);
-    setUserData(data || {});
-  };
-
-  // Load user data on page load
   useEffect(() => {
-    fetchUserData();
+    const user = JSON.parse(localStorage.getItem("userData"));
+    setUserData(user);
 
-    // Auto update when localStorage changes
+   
     const handleStorageChange = () => {
-      fetchUserData();
+      const updatedUser = JSON.parse(localStorage.getItem("userData"));
+      setUserData(updatedUser);
     };
 
     window.addEventListener("storage", handleStorageChange);
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  // Cart count update
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartCount(cart.length);
-  }, [refreshCart]);
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      setCartCount(cart.length);
+    };
+
+    updateCartCount();
+
+    window.addEventListener("storage", updateCartCount);
+    return () => window.removeEventListener("storage", updateCartCount);
+  }, []);
 
   return (
     <nav className="w-full bg-rose-100 shadow-md philosopher-regular">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
-        {/* LOGO */}
         <h1 className="text-2xl font-bold text-pink-600 italic cursor-pointer">
-          <Link to="/" className="hover:text-pink-500">GiftForYou</Link>
+          <Link to="/" className="hover:text-pink-500 lobster-two-bold md:text-3xl text-xl">GiftForYou</Link>
         </h1>
 
-        {/* MENU LINKS */}
         <ul className="hidden lg:flex items-center gap-6 text-gray-700 font-medium">
           <Link to="/wedding" className="hover:text-pink-500">Wedding</Link>
           <Link to="/birthday" className="hover:text-pink-500">Birthday</Link>
@@ -59,13 +54,12 @@ function Navbar({ refreshCart }) {
           <Link to="/cake" className="hover:text-pink-500">Cakes</Link>
         </ul>
 
-        {/* RIGHT SIDE */}
         <div className="flex items-center gap-4 text-gray-700">
 
           <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
           <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
 
-          {/* USER SECTION */}
+         
           <div>
             {userData?.name ? (
               <div className="flex items-center gap-2">
@@ -85,7 +79,7 @@ function Navbar({ refreshCart }) {
                 <Button
                   title="Logout"
                   varient="primary"
-                  className="ml-2"
+                  
                   onClick={logoutUser}
                 />
               </div>
@@ -99,22 +93,20 @@ function Navbar({ refreshCart }) {
             )}
           </div>
 
-          {/* CART ICON */}
-          <div className="relative cursor-pointer">
-            <Link to="/cart" className="text-lg">🛒</Link>
+          <div className="relative cursor-pointer text-lg">
+            <Link to="/cart">🛒</Link>
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 rounded-full">
               {cartCount}
             </span>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
           <button className="lg:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
             ☰
           </button>
+
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       {menuOpen && (
         <div className="lg:hidden bg-white shadow-md px-6 py-4 space-y-3 text-gray-700 font-medium">
           <Link to="/wedding" className="block">Wedding</Link>
@@ -124,7 +116,37 @@ function Navbar({ refreshCart }) {
           <Link to="/cake" className="block">Cakes</Link>
           <Link to="/about" className="block">About</Link>
           <Link to="/contact" className="block">Contact</Link>
-          <Link to="/login" className="block text-pink-500">Login</Link>
+          
+          
+          {userData ? (
+            <div className="border-t pt-3">
+              <Link to="/profile" className="flex items-center gap-2 py-2">
+                {userData.profilePic ? (
+                  <img
+                    src={userData.profilePic}
+                    alt="profile"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-pink-500"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-pink-400 flex items-center justify-center text-white font-bold text-sm">
+                    {userData.username?.charAt(0).toUpperCase() || userData.name?.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <span>Hello, {userData.username || userData.name}</span>
+              </Link>
+              <button
+                onClick={() => {
+                  logoutUser();
+                  setMenuOpen(false);
+                }}
+                className="block w-full text-left bg-pink-500 text-white px-3 py-2 rounded hover:bg-pink-600 text-sm mt-2 md:flex hidden"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="block text-pink-500">Login</Link>
+          )}
         </div>
       )}
 

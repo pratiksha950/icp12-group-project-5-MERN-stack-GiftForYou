@@ -8,6 +8,7 @@ import {getHome,getHealth} from "./controllers/health.js";
 import { updateUser } from "./controllers/auth.js";
 import ImageKit from "@imagekit/nodejs";
 
+dotenv.config();
 
 const app=express();
 app.use(express.json());

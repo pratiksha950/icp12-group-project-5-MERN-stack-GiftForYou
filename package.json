@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@imagekit/react": "^5.0.2",
+    "cors": "^2.8.6"
+  }
+}

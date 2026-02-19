@@ -4,40 +4,37 @@ import Input from "../components/Input.jsx";
 import Button from "../components/Button.jsx";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import signupImg from "../assets/signup.png"; 
+import Footer from "../components/Footer.jsx";
+import Heading from "../components/Heading.jsx";
 
 function SignUp() {
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
     mobile: "",
     city: "",
     country: "",
-    password: ""
+    password: "",
   });
 
   useEffect(() => {
-    setPageTitle("SignUp-TinyTour");
+    setPageTitle("GiftForYou-SignUp");
   }, []);
 
   const createUser = async (e) => {
     e.preventDefault();
-
-    if (!newUser.name || !newUser.email || !newUser.password) {
-      toast.error("Please fill all required fields");
-      return;
-    }
 
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/signUp`,
         newUser
       );
-
-      console.log(response.data);
 
       if (response.data.success) {
         toast.success(response.data.message, { id: "signupSuccess" });
@@ -48,20 +45,17 @@ function SignUp() {
           mobile: "",
           city: "",
           country: "",
-          password: ""
+          password: "",
         });
 
         setTimeout(() => {
-          navigate("/login");
+          navigate("/login"); 
         }, 1500);
-
       } else {
-        toast.error(response.data.message, { id: "signupError" });
+        toast.error(response.data.message, { id: "signuperror" });
       }
-
     } catch (error) {
-      console.error(error);
-      toast.error("Server error! Try again later");
+      toast.error("Server not responding: " + error.message);
     }
   };
 
@@ -69,96 +63,93 @@ function SignUp() {
     <>
       <Navbar />
 
-<div className="min-h-screen bg-gray-100 flex justify-center pt-6 md:pt-0 md:items-center px-4">
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
+        <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
-  <div className="bg-white shadow-lg rounded-lg w-full max-w-lg p-6 sm:p-8">
+          <div className="w-full md:w-1/2 flex items-center justify-center bg-red-100">
+            <img
+              src={signupImg}
+              alt="signup"
+              className="h-64 md:h-[560px] w-full object-cover"
+            />
+          </div>
 
-    <h2 className="text-xl sm:text-2xl font-bold text-center mb-1">
-      Create Account
-    </h2>
-    <p className="text-sm text-center text-gray-500 mb-5">
-      Join GiftForYou today 
-    </p>
+          <div className="w-full md:w-1/2 p-6 sm:p-8">
+            <Heading text="Create Account"/>
 
-    <form
-      onSubmit={createUser}
-      className="flex flex-col gap-3"
-    >
+            <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
+              Join GiftForYou and start shopping 
+            </p>
 
-      <Input
-        type="text"
-        placeholder="Full Name"
-        value={newUser.name}
-        autoComplete="off"
-        onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-        className="border px-3 py-2 rounded w-full"
-      />
+            <form onSubmit={createUser} className="flex flex-col gap-3 sm:gap-4">
 
-      <Input
-        type="email"
-        placeholder="Email Address"
-        value={newUser.email}
-        autoComplete="off"
-        onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-        className="border px-3 py-2 rounded w-full"
-      />
+              <Input
+                type="text"
+                placeholder="Full Name"
+                value={newUser.name}
+                onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+                className="border px-3 py-2 rounded w-full"
+              />
 
-      <Input
-        type="text"
-        placeholder="Mobile Number"
-        value={newUser.mobile}
-        onChange={(e) => setNewUser({ ...newUser, mobile: e.target.value })}
-        className="border px-3 py-2 rounded w-full"
-      />
+              <Input
+                type="email"
+                placeholder="Email"
+                value={newUser.email}
+                onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+                className="border px-3 py-2 rounded w-full"
+              />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <Input
-          type="text"
-          placeholder="City"
-          value={newUser.city}
-          onChange={(e) => setNewUser({ ...newUser, city: e.target.value })}
-          className="border px-3 py-2 rounded w-full"
-        />
+              <Input
+                type="text"
+                placeholder="Mobile"
+                value={newUser.mobile}
+                onChange={(e) => setNewUser({ ...newUser, mobile: e.target.value })}
+                className="border px-3 py-2 rounded w-full"
+              />
 
-        <Input
-          type="text"
-          placeholder="Country"
-          value={newUser.country}
-          onChange={(e) => setNewUser({ ...newUser, country: e.target.value })}
-          className="border px-3 py-2 rounded w-full"
-        />
+              <Input
+                type="text"
+                placeholder="City"
+                value={newUser.city}
+                onChange={(e) => setNewUser({ ...newUser, city: e.target.value })}
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <Input
+                type="text"
+                placeholder="Country"
+                value={newUser.country}
+                onChange={(e) => setNewUser({ ...newUser, country: e.target.value })}
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <Input
+                type="password"
+                placeholder="Password"
+                autoComplete="new-password"
+                value={newUser.password}
+                onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <div className="flex justify-center">
+                <Button title="Sign Up" type="submit" varient="primary" />
+              </div>
+
+              <p className="text-center text-xs sm:text-sm">
+                Already have an account?
+                <Link to="/login" className="text-purple-600 ml-1 font-semibold">
+                  Login
+                </Link>
+              </p>
+
+              <Toaster />
+            </form>
+          </div>
+        </div>
       </div>
 
-      <Input
-        type="password"
-        placeholder="Password"
-        autoComplete="new-password"
-        value={newUser.password}
-        onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
-        className="border px-3 py-2 rounded w-full"
-      />
-
-      <div className="flex justify-center mt-2">
-        <Button
-          title="Sign Up"
-          type="submit"
-          varient="primary"
-        />
-      </div>
-
-      <p className="text-center text-sm mt-2">
-        Already have an account?
-        <Link to="/login" className="text-purple-600 ml-1 font-semibold">
-          Login
-        </Link>
-      </p>
-
-    </form>
-  </div>
-
-</div>
-        <Toaster />
-     
+      <Footer />
     </>
   );
 }

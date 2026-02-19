@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import flower1 from "../assets/homeimg/flower1.jpg";
 import birthday1 from "../assets/homeimg/birthday1.jpg";
 import cake1 from "../assets/homeimg/cake1.jpg";

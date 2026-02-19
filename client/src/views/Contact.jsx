@@ -1,8 +1,21 @@
 import React from 'react'
 import Navbar from "../components/Navbar"
 import { useState } from "react";
+import SubHeading from '../components/SubHeading';
+import Heading from '../components/Heading';
+import Button from '../components/Button';
+import SuggestionImg from "../assets/contactImg/sendsuggestion.png";
+import { MapPinCheck, PhoneCall, MailCheck} from "lucide-react";
+import { Link } from 'react-router';
+import { useEffect } from "react";
+import { setPageTitle } from "../utils.jsx";
+import Footer from '../components/Footer.jsx';
 
 function Contact() {
+   useEffect(() => {
+    setPageTitle("GiftForYou- Contact");
+  }, []);
+
 
 const [form, setForm] = useState({
     name: "",
@@ -35,59 +48,70 @@ const [form, setForm] = useState({
   };
 
   return (
-      <>
+      <div>
     <Navbar/>
-    <div className="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+    
+      <div className=" mx-auto px-6 py-10">
 
-      <div className="max-w-2xl w-full bg-white rounded-3xl p-8 text-center shadow-lg">
+       <Heading text="Contact Us"/>
 
-        <h1 className="text-3xl font-bold text-blue-600 mb-4">
-          Contact Us
-        </h1>
+       <div  className='md:flex gap-10 md:mx-30'>
 
-        <h2 className="text-xl font-semibold text-blue-800">
-          Gift For You
-        </h2>
+        <Link to="https://www.google.com/maps?q=Pune,India&output=embed" 
+        className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+          <div className='flex flex-col items-center gap-2 mb-2'>
+          <MapPinCheck className='text-pink-500'/><span className="font-semibold">Address</span>
+          </div>
+          <p className='text-center'>123 Gift Street, Pune, India</p>
+           
+        </Link>
 
-        <p className="mt-4">
-          <strong>Address:</strong> 123 Gift Street, Pune, India
-        </p>
+        <Link to="tel:+919860737643" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+          <div className='flex flex-col items-center gap-2 mb-2'>
+          <PhoneCall className='text-pink-500'/><span className="font-semibold">Mobile No.</span>
+          </div>
+          <p className='text-center'>+91 9860737643</p>
+           
+        </Link>
 
-        <p>
-          <strong>Phone:</strong> +91 9860737643
-        </p>
+        <Link to="mailto:giftforyou@gmail.org" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+          <div className='flex flex-col items-center gap-2 mb-2'>
+          <MailCheck className='text-pink-500'/><span className="font-semibold">Email Id</span>
+          </div>
+          <p className='text-center'>giftforyou@gmail.org</p>
+           
+        </Link>
+        </div>
 
-        <p>
-          <strong>Email:</strong>nikitachormale4242@gmail.com
-        </p>
+        <SubHeading text="location"/>
 
-        {/* Google Map */}
-        <h2 className="mt-8 text-xl font-semibold text-blue-800">
-          Location
-        </h2>
-
-        <div className="mt-4 rounded-xl overflow-hidden shadow">
+        <div className="mt-4 rounded-xl overflow-hidden shadow md:mx-10">
           <iframe
             title="map"
             src="https://www.google.com/maps?q=Pune,India&output=embed"
-            className="w-full h-64 border-0"
+            className="w-full h-100 border-0"
             loading="lazy"
           />
         </div>
 
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-center">
           We are located in the heart of the city. Visit our store anytime!
         </p>
 
-        {/* Form */}
-        <h2 className="mt-8 text-xl font-semibold text-blue-800">
-          Send Suggestion
-        </h2>
-
         <form
           onSubmit={handleSubmit}
-          className="mt-4 flex flex-col gap-3"
+          className="mt-4 flex flex-col gap-3 max-w-200 bg-white p-6 rounded-lg shadow m-auto"
         >
+
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+
+          <div className='flex'>
+            <img src={SuggestionImg} alt="Send Suggestion" className="w-full h-60 md:h-80 object-cover rounded-lg" />
+          </div>
+          <div className='w-full md:w-1/2 flex flex-col gap-3'>
+          <h2 className="mt-2 text-2xl font-semibold text-black-800 text-center ">
+          Send Suggestion
+        </h2>
 
           <input
             type="text"
@@ -115,19 +139,19 @@ const [form, setForm] = useState({
             className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-800 transition"
-          >
-            Send Message
-          </button>
+<Button 
+  title="Send Message" 
+  varient="pink" 
+  size="md" 
+/>
+          </div>
+          </div>
 
         </form>
-
       </div>
+        <Footer />
     </div>
-  
-    </>
+    
   )
 }
 

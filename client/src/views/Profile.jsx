@@ -105,6 +105,11 @@ function Profile() {
     }
   };
 
+   useEffect(() => {
+      setPageTitle("GiftForYou- Profile");
+    }, []);
+  
+
   useEffect(() => {
     const data = getUserData();
     console.log("USER DATA:", data);
@@ -241,6 +246,7 @@ function Profile() {
           </div>
         </div>
       </div>
+        <Footer />
     </div>
   );
 }

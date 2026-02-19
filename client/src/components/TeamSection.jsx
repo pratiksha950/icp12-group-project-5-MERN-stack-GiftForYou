@@ -1,16 +1,16 @@
 import React from "react";
-import team1 from "../assets/homeimg/team2.jpg";
+import team1 from "../assets/homeimg/team1.jpg";
 import team2 from "../assets/homeimg/team2.jpg";
 import team3 from "../assets/homeimg/team3.jpg";
 import team4 from "../assets/homeimg/team4.jpg";
-import Heading from "./Heading";
+import SubHeading from "./SubHeading";
 
 function TeamSection() {
   const teamMembers = [
     {
       id: 1,
       name: "Rahul Naktode",
-      role: "Backend Developer",
+      role: "Founder",
       image: team1,
     },
     {
@@ -22,13 +22,13 @@ function TeamSection() {
     {
       id: 3,
       name: "Pratiksha Salunke",
-      role: "Founder & Developer",
+      role: "Co-Founder",
       image: team3,
     },
     {
       id: 4,
       name: "Nikita",
-      role: "Marketing & Content Manager",
+      role: "Marketing Manager",
       image: team4,
     },
   ];
@@ -37,7 +37,7 @@ function TeamSection() {
     <section className="py-2">
       <div className="max-w-7xl mx-auto px-4 text-center">
 
-        <Heading text="Our Team" />
+        <SubHeading text="Our Team" />
         <p className="text-center text-gray-900 mt-2 mb-4 font-medium">
           Meet the team behind GiftForYou 
         </p>

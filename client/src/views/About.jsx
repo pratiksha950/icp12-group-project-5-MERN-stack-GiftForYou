@@ -4,15 +4,18 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { setPageTitle } from "../utils.jsx"
 import Button from '../components/Button.jsx'
-import Category from '../components/CategorySection.jsx'
+import SubHeading from '../components/SubHeading.jsx'
 import Navbar from '../components/Navbar.jsx'
-
+import Heading from '../components/Heading.jsx'
+import TeamSection from '../components/TeamSection.jsx'
+import PopularGifting from "../components/PopularGifting.jsx"
+import Footer from '../components/Footer.jsx'
 
 function About() {
-
        useEffect(() => {
     setPageTitle("About-GiftForYou")
   }, [])
+  
   const [review, setReview] = useState("");
   const [editIndex, setEditIndex] = useState(null);
 
@@ -28,7 +31,6 @@ function About() {
     localStorage.setItem("reviews", JSON.stringify(reviews));
   }, [reviews]);
 
-  //scroll bar
   const reviewContainerRef = useRef(null);
 
   useEffect(() => {
@@ -40,7 +42,6 @@ function About() {
   }
 }, [reviews]);
 
-  // Add or Update Review
   const handleAddReview = () => {
     if (review.trim() === "") return;
 
@@ -56,13 +57,11 @@ function About() {
     setReview("");
   };
 
-  // Delete Review
   const handleDelete = (index) => {
     const filtered = reviews.filter((_, i) => i !== index);
     setReviews(filtered);
   };
 
-  // Edit Review
   const handleEdit = (index) => {
     setReview(reviews[index]);
     setEditIndex(index);
@@ -70,61 +69,58 @@ function About() {
 
   return (
     <>
-    <Navbar/>
+    <Navbar />
 
-
-  <div className="min-h-screen w-full bg-slate-100 py-12 px-4">
+  <div className="min-h-screen w-full py-12 px-4 bg-[#f5f3ff]">
     
-    <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl p-10">
+    <div className="">
 
-      {/* Welcome Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-pink-500 mb-4">
-          Welcome to Our Store
-        </h2>
+       
+        <Heading text="Welcome to Our Store"/>
 
-        <p className="text-gray-600 mb-3">
+        <p className="text-gray-600 mb-3 md:text-xl">
           Gift For You helps you find the perfect gift for every occasion.
         </p>
 
-        <p className="text-gray-600 leading-relaxed mb-3">
+        <PopularGifting />
+
+        <p className="text-gray-600 leading-relaxed mb-3 md:text-xl">
           Gift For You is a unique online gift shop designed to help you find the perfect
           present for your loved ones. We provide a wide variety of gifts suitable for
           different occasions and special moments.
         </p>
 
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-600 leading-relaxed md:text-xl">
           Our mission is to make gifting easy, joyful, and memorable.
           Whether you are celebrating love, friendship, or milestones,
           we have something special for everyone.
         </p>
       </div>
 
-      {/* Vision & Mission */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-blue-800 mb-4">
-          Vision & Mission
-        </h2>
+    <h2 className="text-4xl font-bold philosopher-regular mb-6 text-pink-600">
+      Vision & Mission
+    </h2>
 
-        <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
-          Our vision is to become the most trusted gift store online.
-          Our mission is to deliver happiness through thoughtful and creative gift collections.
-        </p>
+    <p className="text-gray-600 leading-relaxed mb-3 md:text-xl">
+      <span className="font-semibold">Vision:</span>  
+      Our vision is to become the most trusted and loved online gift store, connecting people through meaningful and memorable gifts. We aim to create a platform where every gift tells a story, expresses emotions, and strengthens relationships.
+
+      <br /><br />
+
+      <span className="font-semibold">Mission:</span>  
+      Our mission is to deliver happiness through thoughtful, creative, and personalized gift collections. We strive to provide high-quality products, unique designs, and excellent customer service to make every celebration special. We are committed to spreading joy, love, and smiles through every gift we deliver.
+    </p>
+        <TeamSection />
       </div>
 
-      {/* Category Section */}
-      <div className="mb-12">
-        <Category />
-      </div>
 
-      {/* Reviews Section */}
       <div>
-        <h2 className="text-3xl font-bold text-blue-800 text-center mb-6">
-          Customer Reviews
-        </h2>
+        <SubHeading text="Customer Reviews"/>
         <div
   ref={reviewContainerRef}
-  className={`bg-slate-100 rounded-xl p-6 space-y-4 transition-all
+  className={`rounded-xl p-6 space-y-4 transition-all
   ${reviews.length > 3 ? "max-h-72 overflow-y-auto pr-2" : ""}`}>
           {reviews.map((r, i) => (
             <div
@@ -152,8 +148,7 @@ function About() {
         </div>
 
 
-        {/* Add Review Input */}
-        <div className="mt-6 flex gap-3">
+        <div className="mt-6 flex gap-3 ">
           <input
             type="text"
             placeholder="Write review..."
@@ -164,7 +159,7 @@ function About() {
 
           <button
             onClick={handleAddReview}
-            className="bg-blue-600 text-white px-6 rounded-lg hover:bg-blue-800 transition"
+            className="bg-pink-600 text-white px-6 rounded-lg hover:bg-blue-800 transition"
           >
             {editIndex !== null ? "Update" : "Add"}
           </button>
@@ -173,6 +168,8 @@ function About() {
 
     </div>
   </div>
+    <Footer />
+
   </>
   
 );

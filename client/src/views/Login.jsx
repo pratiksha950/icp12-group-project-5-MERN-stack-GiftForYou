@@ -7,12 +7,12 @@ import toast, { Toaster } from "react-hot-toast"
 import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar'
 import loginImg from "../assets/homeimg/login.png"
-
-
+import Footer from "../components/Footer.jsx"
+import Heading from "../components/Heading.jsx";
 
 function Login() {
   useEffect(() => {
-    setPageTitle("Login-TinyTour")
+    setPageTitle("GiftForYou-Login");
   }, [])
 
   const [loginUser, setLoginUser] = useState({
@@ -52,71 +52,68 @@ function Login() {
   }
 
   return (
-    <> <Navbar />
-    <div className="min-h-screen bg-gray-100 flex justify-center pt-2 sm:pt-4 md:pt-0 md:items-center px-2 overflow-x-hidden">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
+     <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
-  <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden">
 
-    <div className="hidden md:block md:w-1/2">
-      <img
-        src={loginImg}
-        alt="login"
-        className="h-full w-full object-cover"
-      />
-    </div>
-
-    <div className="w-full md:w-1/2 p-4 sm:p-6">
-
-      <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
-        Welcome Back
-      </h2>
-
-      <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
-        Login to continue to GiftForYou
-      </p>
-
-      <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
-
-        <Input
-          type="email"
-          placeholder="Email"
-          autoComplete="off"
-          value={loginUser.email}
-          onChange={(e) =>
-            setLoginUser({ ...loginUser, email: e.target.value })
-          }
-          className="border px-3 py-2 rounded w-full"
-        />
-
-        <Input
-          type="password"
-          placeholder="Password"
-          autoComplete="new-password"
-          value={loginUser.password}
-          onChange={(e) =>
-            setLoginUser({ ...loginUser, password: e.target.value })
-          }
-          className="border px-3 py-2 rounded w-full"
-        />
-
-        <div className="flex justify-center">
-          <Button title="Login" type="submit" varient="primary" />
-        </div>
-
-        <p className="text-center text-xs sm:text-sm">
-          Don't have an account?
-          <Link to="/signUp" className="text-purple-600 ml-1 font-semibold">
-            Sign Up
-          </Link>
-        </p>
-
-        <Toaster />
-      </form>
-
-    </div>
-  </div>
+ <div className="w-full md:w-1/2 flex items-center justify-center">
+  <img
+    src={loginImg}
+    alt="login"
+    className="h-64 md:h-[511px] w-full object-cover"
+  />
 </div>
 
+          <div className="w-full md:w-1/2 p-6 sm:p-8">
+            <Heading text="Welcome Back"/>
+
+            <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
+              Login to continue to GiftForYou
+            </p>
+
+            <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
+
+              <Input
+                type="email"
+                placeholder="Email"
+                autoComplete="off"
+                value={loginUser.email}
+                onChange={(e) =>
+                  setLoginUser({ ...loginUser, email: e.target.value })
+                }
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <Input
+                type="password"
+                placeholder="Password"
+                autoComplete="new-password"
+                value={loginUser.password}
+                onChange={(e) =>
+                  setLoginUser({ ...loginUser, password: e.target.value })
+                }
+                className="border px-3 py-2 rounded w-full"
+              />
+
+              <div className="flex justify-center">
+                <Button title="Login" type="submit" varient="primary" />
+              </div>
+
+              <p className="text-center text-xs sm:text-sm">
+                Don't have an account?
+                <Link to="/signUp" className="text-purple-600 ml-1 font-semibold">
+                  Sign Up
+                </Link>
+              </p>
+              <Toaster />
+            </form>
+          </div>
+        </div>
+      </div>
+       <Footer />
+      
     </>
   )
 }
