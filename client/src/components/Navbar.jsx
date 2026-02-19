@@ -82,7 +82,7 @@ function Navbar() {
                 <Button
                   title="Logout"
                   varient="primary"
-                  className="hidden md:block"
+                  className=" mb:flex hidden md:block"
                   onClick={logoutUser}
                 />
               </div>
@@ -142,7 +142,7 @@ function Navbar() {
                   logoutUser();
                   setMenuOpen(false);
                 }}
-                className="block w-full text-left bg-pink-500 text-white px-3 py-2 rounded hover:bg-pink-600 text-sm mt-2"
+                className=" mb:flex hidden block w-full text-left bg-pink-500 text-white px-3 py-2 rounded hover:bg-pink-600 text-sm mt-2"
               >
                 Logout
               </button>
