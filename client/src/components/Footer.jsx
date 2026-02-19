@@ -55,7 +55,7 @@ export default function Footer() {
           </h3>
 
           <p className="text-sm mb-4 text-gray-600">
-            Get updates about new gifts & offers.
+            Get Updates About New Gifts & Offers.
           </p>
 
           <div className="flex shadow-md rounded-lg overflow-hidden">
