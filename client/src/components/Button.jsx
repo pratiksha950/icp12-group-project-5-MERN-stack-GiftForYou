@@ -4,7 +4,8 @@ function Button({title,size="sm",varient="primary",onClick}) {
  const size_classes = {
     sm: "px-3 py-1 text-sm",
     md: "px-6 py-2 text-base",
-    lg: "px-8 py-3 text-lg"
+    lg: "px-8 py-3 text-lg",
+    xsm: "px-0 py-0.5 text-xs "
   };
 
    const variant_classes = {

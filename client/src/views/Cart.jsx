@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar.jsx";
 import CartItem from "../components/CartItem.jsx";
 import Btn from "../components/Button.jsx";
+import Heading from "../components/Heading.jsx";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -13,7 +14,6 @@ function Cart() {
 
   useEffect(() => {
     loadCart();
-    // Listen for storage changes from other pages
     const handleStorageChange = () => loadCart();
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
@@ -28,7 +28,7 @@ function Cart() {
     <>
       <Navbar />
       <div className="min-h-screen bg-[#F8FAFF] p-4">
-        <h1 className="text-center text-2xl font-bold mb-4">Your Cart</h1>
+        <Heading text="Your Cart" />
 
         {cartItems.length === 0 ? (
           <p className="text-center text-gray-600">Your cart is empty.</p>
@@ -46,7 +46,7 @@ function Cart() {
               <Btn
                 title="Proceed to Pay"
                 variant="primary"
-                size="large"
+                size="md"
                 onClick={() => (window.location.href = "https://www.phonepe.com/")}
               />
             </div>

@@ -76,14 +76,16 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
                                 return;
                             }
                             addToCart({
-                                id,
-                                name,
-                                price,
-                                quantity,
-                                description: customText || description,
-                                imageUrl: customImage || image,
-                                totalAmount: price * quantity
+                              id,
+                              name,
+                              price,
+                              quantity,
+                              description: customText || description,
+                              productImage: image,       
+                              customImage: customImage,                   
+                              totalAmount: price * quantity
                             });
+
                             setQuantity(1);
                             setCustomImage(null);
                             setCustomText("");
