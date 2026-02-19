@@ -8,7 +8,9 @@ import toast, { Toaster } from "react-hot-toast";
 function Navbar({ refreshCart }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({
+    
+  });
 
   // Get user data from localStorage
   const fetchUserData = () => {
@@ -68,7 +70,15 @@ function Navbar({ refreshCart }) {
             {userData?.name ? (
               <div className="flex items-center gap-2">
                 <Link to="/profile" className="flex items-center gap-1">
-                  <Avatar name={userData.name} />
+                  {userData?.photos?.length > 0 ? (
+  <img
+    src={userData.photos[0]}
+    alt="Profile"
+    className="w-8 h-8 rounded-full object-cover"
+  />
+) : (
+  <Avatar name={userData.name} />
+)}
                   <span>Hello, {userData.name}</span>
                 </Link>
 

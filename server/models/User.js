@@ -31,6 +31,10 @@ const userSchema=new Schema({
         type:String,
         required:true,
     },
+    photos: {
+        type: [String],
+        default: [],
+    },
 
 },{timestamps:true})
 
