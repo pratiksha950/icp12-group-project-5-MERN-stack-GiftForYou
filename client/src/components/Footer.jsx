@@ -6,7 +6,7 @@ import Button from "./Button";
 export default function Footer() {
   return (
 
-    <footer className="bg-gradient-to-br from-pink-50 via-white to-pink-100 text-gray-700 mt-20 border-t shadow-inner">
+    <footer className="bg-gradient-to-br from-pink-50 to-pink-100 text-gray-700 mt-20 border-t shadow-inner">
 
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
 
@@ -16,7 +16,7 @@ export default function Footer() {
           </h2>
 
           <p className="mt-4 text-sm leading-relaxed text-gray-600">
-            Personalized gifts for every occasion. We deliver happiness through
+            Personalized Gifts For Every Occasion. We deliver happiness through
             thoughtful and creative gift collections.
           </p>
 
