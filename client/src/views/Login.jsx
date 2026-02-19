@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 import Navbar from '../components/Navbar'
 import loginImg from "../assets/homeimg/login.png"
 import Footer from "../components/Footer.jsx"
+import Heading from "../components/Heading.jsx";
 
 function Login() {
   useEffect(() => {
@@ -68,9 +69,7 @@ function Login() {
 
 
           <div className="w-full md:w-1/2 p-6 sm:p-8">
-            <h2 className="text-lg sm:text-2xl font-bold text-center mb-2">
-              Welcome Back
-            </h2>
+            <Heading text="Welcome Back"/>
 
             <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
               Login to continue to GiftForYou
