@@ -103,7 +103,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t text-center py-5 text-sm bg-gradient-to-r from-pink-100 to-pink-200 text-gray-700 font-medium">
-        © {new Date().getFullYear()} GiftForYou. All rights reserved.
+        © {new Date().getFullYear()} GiftForYou. All Rights Reserved.
       </div>
     </footer>
   );
