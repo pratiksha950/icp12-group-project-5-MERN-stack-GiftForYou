@@ -7,6 +7,10 @@ import axios from "axios";
 import ProfileImg from "../assets/profile-update.png"
 import { Link } from "react-router";
 import Heading from "../components/Heading";
+import Footer from "../components/Footer"
+import { setPageTitle } from "../utils.jsx"
+
+
 import {
   ImageKitAbortError,
   ImageKitInvalidRequestError,
