@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import occasion from "../assets/homeimg/occasion1.png";
 import anniversary from "../assets/homeimg/image.png";
 import trending from "../assets/homeimg/occasion3.jpg";
@@ -32,7 +31,7 @@ function OccasionSection() {
             <Link 
               to={item.path}
               key={index}
-              className="group flex flex-col items-center"
+              className="flex flex-col items-center"
             >
               <div className="w-60 h-80 bg-white rounded-t-full rounded-b-5xl overflow-hidden shadow-lg flex items-end">
                 <img

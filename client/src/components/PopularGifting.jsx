@@ -29,16 +29,16 @@ function PopularGifting() {
     <div className="py-10 px-6">
 
       <div className="flex gap-6 overflow-x-auto flex-wrap justify-center items-center">
-        {gifts.map((gift, index) => (
+        {gifts.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <div className="bg-white rounded-2xl shadow-lg hover:scale-105 transition">
               <img
-                src={gift.img}
-                alt={gift.title}
+                src={item.img}
+                alt={item.title}
                 className="w-44 h-44 object-cover rounded-xl"
               />
             </div>
-            <p className="mt-3 font-medium text-lg">{gift.title}</p>
+            <p className="mt-3 font-medium text-lg">{item.title}</p>
           </div>
         ))}
       </div>

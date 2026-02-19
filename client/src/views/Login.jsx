@@ -62,11 +62,9 @@ function Login() {
   <img
     src={loginImg}
     alt="login"
-    className="h-64 md:h-[511px] w-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+    className="h-64 md:h-[511px] w-full object-cover"
   />
 </div>
-
-
 
           <div className="w-full md:w-1/2 p-6 sm:p-8">
             <Heading text="Welcome Back"/>
@@ -109,7 +107,6 @@ function Login() {
                   Sign Up
                 </Link>
               </p>
-
               <Toaster />
             </form>
           </div>
