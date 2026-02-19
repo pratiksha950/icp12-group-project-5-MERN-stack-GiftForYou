@@ -66,7 +66,7 @@ export default function Footer() {
             />
 
             <Button
-              title='join'
+              title='Join'
               size="md"
               variant="primary" />
           </div>
