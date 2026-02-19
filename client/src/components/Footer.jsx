@@ -10,7 +10,6 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
 
-      
         <div>
           <h2 className="text-3xl font-extrabold text-pink-600 tracking-wide">
             GiftForYou
@@ -24,8 +23,6 @@ export default function Footer() {
           <div className="w-14 h-1 bg-pink-500 rounded mt-4"></div>
         </div>
 
-
-       
         <div>
           <h3 className="font-semibold text-lg mb-5 text-gray-800 border-b pb-2">
             Quick Links
@@ -37,8 +34,6 @@ export default function Footer() {
             <li><Link to="/contact" className="hover:text-pink-500 transition">Contact</Link></li>
           </ul>
         </div>
-
-
         
         <div>
           <h3 className="font-semibold text-lg mb-5 text-gray-800 border-b pb-2">
@@ -54,8 +49,6 @@ export default function Footer() {
           </ul>
         </div>
 
-
-     
         <div>
           <h3 className="font-semibold text-lg mb-5 text-gray-800 border-b pb-2">
             Subscribe
@@ -108,9 +101,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-
-    
+      
       <div className="border-t text-center py-5 text-sm bg-gradient-to-r from-pink-100 to-pink-200 text-gray-700 font-medium">
         © {new Date().getFullYear()} GiftForYou. All rights reserved.
       </div>
