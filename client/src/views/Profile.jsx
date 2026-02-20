@@ -88,7 +88,6 @@ function Profile() {
         };
 
         localStorage.setItem("userData", JSON.stringify(updatedData));
-        window.dispatchEvent(new Event("storage"));
 
         return updatedData;
       });
