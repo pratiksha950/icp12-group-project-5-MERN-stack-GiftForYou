@@ -7,6 +7,7 @@ import { postSignUp,postLogin } from "./controllers/auth.js";
 import {getHome,getHealth} from "./controllers/health.js";
 import { updateUser } from "./controllers/auth.js";
 import ImageKit from "@imagekit/nodejs";
+import { addReview, deleteReview, getReview, updateReview } from "./controllers/review.js";
 
 dotenv.config();
 
@@ -33,6 +34,11 @@ app.post("/Signup",postSignUp)
 app.post("/login",postLogin)
 
 app.put("/profile", checkJWT, updateUser);
+
+app.post("/reviews", addReview);
+app.put("/reviews/:id", updateReview)
+app.delete("/reviews/:id", deleteReview)
+app.get("/reviews", getReview);
 
 
 app.listen(PORT,()=>{

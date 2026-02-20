@@ -10,6 +10,7 @@ import Heading from '../components/Heading.jsx'
 import TeamSection from '../components/TeamSection.jsx'
 import PopularGifting from "../components/PopularGifting.jsx"
 import Footer from '../components/Footer.jsx'
+import axios from 'axios'
 
 function About() {
        useEffect(() => {
@@ -19,17 +20,12 @@ function About() {
   const [review, setReview] = useState("");
   const [editIndex, setEditIndex] = useState(null);
 
-  const [reviews, setReviews] = useState(() => {
-    const saved = localStorage.getItem("reviews");
-    return saved ? JSON.parse(saved) : [
-      "Amazing gifts and fast delivery!",
-      "Beautiful packaging and quality products!"
-    ];
-  });
+  const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    localStorage.setItem("reviews", JSON.stringify(reviews));
-  }, [reviews]);
+useEffect(() => {
+  axios.get(`${import.meta.env.VITE_API_BASE_URL}/reviews`)
+    .then(res => setReviews(res.data.data))
+}, []);
 
   const reviewContainerRef = useRef(null);
 
@@ -42,28 +38,38 @@ function About() {
   }
 }, [reviews]);
 
-  const handleAddReview = () => {
-    if (review.trim() === "") return;
+  const handleAddReview = async () => {
+  if (!review.trim()) return;
 
-    if (editIndex !== null) {
-      const updated = [...reviews];
-      updated[editIndex] = review;
-      setReviews(updated);
-      setEditIndex(null);
-    } else {
-      setReviews([...reviews, review]);
-    }
+  if (editIndex !== null) {
+    const id = reviews[editIndex]._id;
 
-    setReview("");
-  };
+    await axios.put(
+      `${import.meta.env.VITE_API_BASE_URL}/reviews/${id}`,
+      { message: review }
+    );
 
-  const handleDelete = (index) => {
-    const filtered = reviews.filter((_, i) => i !== index);
-    setReviews(filtered);
-  };
+  } else {
+    await axios.post(
+      `${import.meta.env.VITE_API_BASE_URL}/reviews`,
+      { message: review }
+    );
+  }
+
+  const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/reviews`);
+  setReviews(response.data.data);
+
+  setReview("");
+  setEditIndex(null);
+};
+
+  const handleDelete = async (id) => {
+  await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/reviews/${id}`);
+  setReviews(reviews.filter(r => r._id !== id));
+};
 
   const handleEdit = (index) => {
-    setReview(reviews[index]);
+    setReview(reviews[index].message);
     setEditIndex(index);
   };
 
@@ -122,12 +128,12 @@ function About() {
   ref={reviewContainerRef}
   className={`rounded-xl p-6 space-y-4 transition-all
   ${reviews.length > 3 ? "max-h-72 overflow-y-auto pr-2" : ""}`}>
-          {reviews.map((r, i) => (
+          {reviews?.map((r, i) => (
             <div
-              key={i}
+              key={r._id}
               className="flex justify-between items-center bg-white p-4 rounded-xl shadow "
             >
-              <span>⭐ {r}</span>
+              <span>⭐ {r.message}</span>
 
               <div className="flex space-x-2">
                 <Button
@@ -140,7 +146,7 @@ function About() {
                   title="Delete"
                   size="sm"
                   variant="danger"
-                  onClick={() => handleDelete(i)}
+                  onClick={() => handleDelete(r._id)}
                 />
               </div>
             </div>
