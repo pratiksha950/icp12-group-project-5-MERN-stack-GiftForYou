@@ -9,6 +9,7 @@ import { updateUser } from "./controllers/auth.js";
 import ImageKit from "@imagekit/nodejs";
 import {addReview,updateReview,deleteReview,getReview} from "./controllers/review.js"
 import { addToCartController, getCartController } from "./controllers/cart.js";
+import {createSuggestion} from "./controllers/suggestion.js"
 
 dotenv.config();
 
@@ -46,6 +47,8 @@ app.get("/reviews", getReview);
 
 app.post("/cart", addToCartController);
 app.get("/cart", getCartController);
+
+app.post("/suggestion", createSuggestion);
 
 
   app.listen(PORT, () => {
