@@ -7,6 +7,8 @@ import { postSignUp,postLogin } from "./controllers/auth.js";
 import {getHome,getHealth} from "./controllers/health.js";
 import { updateUser } from "./controllers/auth.js";
 import ImageKit from "@imagekit/nodejs";
+import {addReview,updateReview,deleteReview,getReview} from "./controllers/review.js"
+import { addToCartController, getCartController } from "./controllers/cart.js";
 
 dotenv.config();
 
@@ -35,7 +37,19 @@ app.post("/login",postLogin)
 app.put("/profile", checkJWT, updateUser);
 
 
-app.listen(PORT,()=>{
-    console.log(`server is running on port ${PORT}`);
-    connectDB();
-})
+app.post("/reviews", addReview);
+app.put("/reviews/:id", updateReview)
+app.delete("/reviews/:id", deleteReview)
+app.get("/reviews", getReview);
+
+// Add to cart
+app.post("/cart", addToCartController);
+
+// Get cart for a user
+app.get("/cart", getCartController);
+
+
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    connectDB()
+  });

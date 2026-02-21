@@ -4,6 +4,7 @@ import { Plus, Minus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
 
+
 const imageKitEndpoint = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT;
 const imageKitPublicKey = import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY;
 
@@ -72,7 +73,7 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
 
                 <div className="mt-4 justify-center flex">
 
-                    <Button
+<Button
   title="Add To Cart"
   onClick={() => {
     const product = {
@@ -86,14 +87,14 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
       totalAmount: price * quantity
     };
 
-    addToCart(product);
+    addToCart(product); 
 
     setQuantity(1);
     setCustomImage(null);
     setCustomText("");
   }}
-/>
-                </div>
+/>                
+</div>
             </div>
         </div>
     );

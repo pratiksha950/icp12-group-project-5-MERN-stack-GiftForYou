@@ -22,7 +22,7 @@ function CartItem({ id, name, description, price, quantity,  productImage, custo
           onClick={() => removeFromCart(id, description)}
         />
       </div>
-
+    
 
 <div className="flex gap-4">
   <img
