@@ -3,6 +3,7 @@ import Button from "./Button.jsx";
 import { Plus, Minus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios";
+import { addToCart } from "../utils.jsx";
 
 
 const imageKitEndpoint = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT;
@@ -72,7 +73,28 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
                 </p>
 
                 <div className="mt-4 justify-center flex">
-<Button variant="primary" size="medium" title={"Add To Cart"} onClick={() => { if (customText.trim() === "" && customImage) { toast.error("Please add a short description for customization!"); return; } addToCart({ id, name, price, quantity, description: customText || description, productImage: image, customImage: customImage, totalAmount: price * quantity }); setQuantity(1); setCustomImage(null); setCustomText(""); }} />
+
+                    <Button
+  title="Add To Cart"
+  onClick={() => {
+    const product = {
+      id,
+      name,
+      price,
+      quantity,
+      description: customText || description,
+      productImage: image,
+      customImage,
+      totalAmount: price * quantity
+    };
+
+    addToCart(product);
+
+    setQuantity(1);
+    setCustomImage(null);
+    setCustomText("");
+  }}
+/>
                 </div>
             </div>
         </div>
