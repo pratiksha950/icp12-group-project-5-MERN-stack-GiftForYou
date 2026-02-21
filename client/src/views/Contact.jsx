@@ -34,29 +34,41 @@ const [form, setForm] = useState({
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!form.name || !form.email || !form.message) {
-      alert("Please fill all fields");
-      return;
-    }
+  if (!form.name || !form.email || !form.message) {
+    alert("Please fill all fields");
+    return;
+  }
 
-    alert("Message sent successfully!");
-
-    setForm({
-      name: "",
-      email: "",
-      message: ""
+  try {
+    const res = await fetch("http://localhost:8080/suggestion", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
     });
-  };
 
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong");
+  }
+};
   return (
       <div>
     <Navbar/>
     
       <div className=" mx-auto px-6 py-10">
-
        <Heading text="Contact Us"/>
 
        <div  className='md:gap-10 md:mx-30 flex flex-col md:flex-row mt-3 mb-10'>

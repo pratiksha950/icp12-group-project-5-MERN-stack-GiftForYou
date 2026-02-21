@@ -10,7 +10,7 @@ const userSchema=new Schema({
         unique:true
     },
     mobile:{
-        type:String,
+        type:Number,
     },
     city:{
         type:String,
@@ -19,10 +19,10 @@ const userSchema=new Schema({
         type:String,
     },
     pincode:{
-        type:String,
+        type:Number,
     },
     whatsappNumber:{
-        type:String,
+        type:Number,
     },
     address:{
         type:String,

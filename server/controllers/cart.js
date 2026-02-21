@@ -1,22 +1,35 @@
-import Cart from "../models/Cart";
+import Cart from "../models/Cart.js";
 
-export const addToCartDB = async (req, res) => {
-  try {
-    const { userId, product } = req.body;
+// Add product to cart
+export const addToCartController = async (req, res) => {
+    try {
+        const { userId, productId, name, description, productImage, customImage, price, quantity } = req.body;
+        const totalAmount = price * quantity;
 
-    let cart = await Cart.findOne({ userId });
+        // Check if the same product with the same customization already exists for the user
+        let cartItem = await Cart.findOne({ userId, productId, description });
+        if (cartItem) {
+            cartItem.quantity += quantity;
+            cartItem.totalAmount = cartItem.price * cartItem.quantity;
+        } else {
+            cartItem = new Cart({ userId, productId, name, description, productImage, customImage, price, quantity, totalAmount });
+        }
 
-    if (!cart) {
-      cart = new Cart({ userId, items: [product] });
-    } else {
-      cart.items.push(product);
+        await cartItem.save();
+        res.status(200).json({ success: true, message: "Added to cart", cartItem });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Something went wrong" });
     }
+};
 
-    await cart.save();
-    res.json({ msg: "Added to cart", cart });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: err.message });
-  }
+// Get all cart items for a user
+export const getCartController = async (req, res) => {
+    try {
+        const { userId } = req.query;
+        const cartItems = await Cart.find({ userId });
+        res.status(200).json(cartItems);
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Failed to fetch cart" });
+    }
 };

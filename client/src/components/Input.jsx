@@ -1,6 +1,14 @@
-import React from "react"
+import React from "react";
 
-function Input({ type, placeholder, value, name, onChange, autoComplete,onKeyDown,ref }) {
+function Input({
+  type,
+  placeholder,
+  value,
+  name,
+  onChange,
+  autoComplete,
+  onKeyDown
+}) {
   return (
     <input
       type={type}
@@ -10,10 +18,10 @@ function Input({ type, placeholder, value, name, onChange, autoComplete,onKeyDow
       onChange={onChange}
       autoComplete={autoComplete}
       onKeyDown={onKeyDown}
-      ref={ref}
-      className="border rounded h-8 block w-full text-sm text-center"
+      className="border rounded-xl h-8 block w-full text-sm text-center  focus:outline-none
+  focus:border-pink-700 "
     />
-  )
+  );
 }
 
-export default Input
+export default Input;
