@@ -5,10 +5,13 @@ const setPageTitle = (title) => {
 };
 
 const getUserData = () => {
-    const userData = localStorage.getItem("userData") || "{}";
-    return JSON.parse(userData);
+  try {
+    const userData = localStorage.getItem("userData");
+    return userData ? JSON.parse(userData) : null;
+  } catch {
+    return null;
+  }
 };
-
 const logoutUser = () => {
     localStorage.clear();
     toast.success("Logged Out Successfully")
@@ -17,20 +20,30 @@ const logoutUser = () => {
     }, 1500)
 };
 
-// Shared cart management utility
 const addToCart = (item) => {
-    const saved = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const idx = saved.findIndex(i => i.id === item.id && i.description === item.description);
+  const user = getUserData();
+  if (!user || !user.token) {
+    toast.error("Please login to add items to cart!");
+    setTimeout(() => {
+      window.location.href = "/login";
+    }, 1000);
+    return;
+  }
 
-    if (idx !== -1) {
-        saved[idx].quantity += item.quantity;
-    } else {
-        saved.push(item);
-    }
+  const saved = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const idx = saved.findIndex(
+    i => i.id === item.id && i.description === item.description
+  );
 
-    localStorage.setItem("cartItems", JSON.stringify(saved));
-    window.dispatchEvent(new Event("storage"));
-    toast.success("Added to cart!");
+  if (idx !== -1) {
+    saved[idx].quantity += item.quantity;
+  } else {
+    saved.push(item);
+  }
+
+  localStorage.setItem("cartItems", JSON.stringify(saved));
+  window.dispatchEvent(new Event("storage"));
+  toast.success("Added to cart!");
 };
 
 export { setPageTitle, getUserData, logoutUser, addToCart }

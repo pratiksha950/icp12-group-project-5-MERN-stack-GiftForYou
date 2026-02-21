@@ -35,10 +35,9 @@ function Login() {
         setLoginUser({ email: "", password: "" })
 
 
-        const {token,data}=response.data;
-        localStorage.setItem("userJwtToken",token);
-        localStorage.setItem("userData",JSON.stringify(data));
-
+       const { token, data } = response.data;
+      localStorage.setItem("userData", JSON.stringify({ ...data, token }));
+      localStorage.setItem("userJwtToken", token);
         setTimeout(()=>{
           window.location.href="/";
         },1500)

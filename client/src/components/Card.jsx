@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Button from "./Button.jsx";
 import { Plus, Minus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
-import axios from "axios";
-import { addToCart } from "../utils.jsx";
 
 
 const imageKitEndpoint = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT;
