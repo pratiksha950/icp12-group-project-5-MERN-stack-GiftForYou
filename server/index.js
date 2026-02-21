@@ -13,15 +13,17 @@ import { addToCartController, getCartController } from "./controllers/cart.js";
 dotenv.config();
 
 const app=express();
-app.use(express.json());
-app.use(cors());
 
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
+
+
+app.use(cors());
 const client = new ImageKit({
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY
 });
 
-const PORT=8080;
-
+const PORT=process.env.PORT || 8080;
 
 app.get("/health",getHealth) 
 app.get("/",getHome) 
@@ -42,10 +44,7 @@ app.put("/reviews/:id", updateReview)
 app.delete("/reviews/:id", deleteReview)
 app.get("/reviews", getReview);
 
-// Add to cart
 app.post("/cart", addToCartController);
-
-// Get cart for a user
 app.get("/cart", getCartController);
 
 

@@ -52,13 +52,12 @@ const [form, setForm] = useState({
     <Navbar/>
     
       <div className=" mx-auto px-6 py-10">
-
        <Heading text="Contact Us"/>
 
-       <div  className='md:flex gap-10 md:mx-30'>
+       <div  className='md:flex gap-10 md:mx-30 '>
 
         <Link to="https://www.google.com/maps?q=Pune,India&output=embed" 
-        className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+        className="mt-4  bg-white p-4  shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
           <MapPinCheck className='text-pink-500'/><span className="font-semibold">Address</span>
           </div>
@@ -66,15 +65,14 @@ const [form, setForm] = useState({
            
         </Link>
 
-        <Link to="tel:+919860737643" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+        <Link to="tel:+919860737643" className="mt-4  bg-white p-4  shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
           <PhoneCall className='text-pink-500'/><span className="font-semibold">Mobile No.</span>
           </div>
           <p className='text-center'>+91 9860737643</p>
-           
         </Link>
 
-        <Link to="mailto:giftforyou@gmail.org" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+        <Link to="mailto:giftforyou@gmail.org" className="mt-4 border border-transparent bg-white p-4  shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
           <MailCheck className='text-pink-500'/><span className="font-semibold">Email Id</span>
           </div>

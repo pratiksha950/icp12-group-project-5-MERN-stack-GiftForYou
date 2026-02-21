@@ -3,8 +3,6 @@ import Button from "./Button.jsx";
 import { Plus, Minus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
-
-
 const imageKitEndpoint = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT;
 const imageKitPublicKey = import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY;
 

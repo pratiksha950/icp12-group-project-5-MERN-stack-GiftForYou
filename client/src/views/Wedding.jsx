@@ -18,7 +18,7 @@ const Wedding = () => {
   return (
     <>
       <Navbar />
-      <div className="p-6 bg-gradient-to-b from-yellow-50 to-white min-h-screen">
+      <div className="p-6 bg-[#f5f3ff] min-h-screen">
         <Toaster />
         <div className="max-w-7xl mx-auto">
           <Heading text="Wedding Gifts" />
