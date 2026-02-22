@@ -9,6 +9,7 @@ import { Link } from "react-router";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer"
 import { setPageTitle } from "../utils.jsx"
+import SubHeading from "../components/SubHeading.jsx"
 
 
 import {
@@ -169,10 +170,7 @@ function Profile() {
 
 
         <div className="w-full md:w-1/2 p-4 sm:p-6 my-2">
-
-          <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">
-            Welcome Back
-          </h2>
+        <SubHeading text="Welcome Back"/>
 
           <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
             Update your profile information
