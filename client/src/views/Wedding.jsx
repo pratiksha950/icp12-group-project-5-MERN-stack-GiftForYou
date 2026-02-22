@@ -8,24 +8,24 @@ import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
 import Footer from "../components/Footer.jsx";
-import {useState} from "react"
+import { useState } from "react"
 import Input from "../components/Input.jsx";
 
 const Wedding = () => {
-    const [search, setSearch] = useState("");
-  
+  const [search, setSearch] = useState("");
+
   const products = weddingcarddata;
 
-    const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase()) ||
     product.description.toLowerCase().includes(search.toLowerCase())
   );
 
-  
-   useEffect(() => {
-      setPageTitle("GiftForYou- Wedding");
-    }, []);
-  
+
+  useEffect(() => {
+    setPageTitle("GiftForYou- Wedding");
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -52,7 +52,7 @@ const Wedding = () => {
           </div>
         </div>
       </div>
-        <Footer />
+      <Footer />
     </>
   );
 };

@@ -109,10 +109,10 @@ function Profile() {
     }
   };
 
-   useEffect(() => {
-      setPageTitle("GiftForYou- Profile");
-    }, []);
-  
+  useEffect(() => {
+    setPageTitle("GiftForYou- Profile");
+  }, []);
+
 
   useEffect(() => {
     const data = getUserData();
@@ -170,7 +170,7 @@ function Profile() {
 
 
         <div className="w-full md:w-1/2 p-4 sm:p-6 my-2">
-        <SubHeading text="Welcome Back"/>
+          <SubHeading text="Welcome Back" />
 
           <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
             Update your profile information
@@ -247,7 +247,7 @@ function Profile() {
           </div>
         </div>
       </div>
-        <Footer />
+      <Footer />
     </div>
   );
 }
