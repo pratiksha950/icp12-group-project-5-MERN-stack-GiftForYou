@@ -37,7 +37,7 @@ function Profile() {
 
   const authenticator = async () => {
     try {
-      const response = await fetch("http://localhost:8080/auth");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth`);
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`Request failed with status ${response.status}: ${errorText}`);
