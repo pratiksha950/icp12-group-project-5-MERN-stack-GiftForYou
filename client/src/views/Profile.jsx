@@ -131,7 +131,7 @@ function Profile() {
       const token = localStorage.getItem("userJwtToken");
 
       const response = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL}/profile`,
+        `${import.meta.env.VITE_API_URL}/profile`,
         userData,
         {
           headers: {

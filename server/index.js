@@ -29,7 +29,7 @@ app.get("/", getHome);
 
 app.get("/auth", (req, res) => {
   const authParams = imagekit.getAuthenticationParameters();
-  res.json(authParams); // ✅ MUST JSON
+  res.json(authParams);
 });
 
 app.post("/Signup", postSignUp);
