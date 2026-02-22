@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Avatar from "./Avatar";
 import { getUserData, logoutUser } from "../utils";
 import Button from "./Button";
+import toast, { Toaster } from "react-hot-toast";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
