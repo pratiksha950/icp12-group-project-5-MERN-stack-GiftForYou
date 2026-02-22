@@ -30,7 +30,7 @@ const addToCart = async (item) => {
 
     try {
         const response = await axios.post(
-            `${import.meta.env.VITE_API_URL}/cart`,
+            `http://localhost:8080/cart`,
             item,
             {
                 headers: {
