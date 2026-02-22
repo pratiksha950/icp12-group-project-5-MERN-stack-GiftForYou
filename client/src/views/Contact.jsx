@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from "../components/Navbar"
 import { useState } from "react";
 import SubHeading from '../components/SubHeading';
@@ -10,6 +9,11 @@ import { Link } from 'react-router';
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
 import Footer from '../components/Footer.jsx';
+import Facebook from '../assets/contactImg/facebook.png'
+import Instagram from '../assets/contactImg/insta.png'
+import Linkedin from '../assets/contactImg/linkedin.png'
+import Twitter from '../assets/contactImg/twitters.png'
+import Youtube from '../assets/contactImg/youtube.png'
 
 function Contact() {
    useEffect(() => {
@@ -67,32 +71,40 @@ const handleSubmit = async (e) => {
       <div className=" mx-auto px-6 py-10">
        <Heading text="Contact Us"/>
 
-       <div  className='md:flex gap-10 md:mx-30 '>
+       <div  className='md:gap-10 md:mx-30 flex flex-col md:flex-row mt-3 mb-10'>
 
         <Link to="https://www.google.com/maps?q=Pune,India&output=embed" 
-        className="mt-4  bg-white p-4  shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+        className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
           <MapPinCheck className='text-pink-500'/><span className="font-semibold">Address</span>
           </div>
-          <p className='text-center'>123 Gift Street, Pune, India</p>
-           
+          <p className='text-center'>123 Gift Street, Pune, India</p>  
         </Link>
 
-        <Link to="tel:+919860737643" className="mt-4  bg-white p-4  shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+        <Link to="tel:+919860737643" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
           <PhoneCall className='text-pink-500'/><span className="font-semibold">Mobile No.</span>
           </div>
-          <p className='text-center'>+91 9860737643</p>
+          <p className='text-center'>+91 9860737643</p>  
         </Link>
 
-        <Link to="mailto:giftforyou@gmail.org" className="mt-4 border border-transparent bg-white p-4  shadow md:w-100 w-full hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
+        <Link to="mailto:giftforyou@gmail.org" className="mt-4 border bg-white p-4 rounded-lg shadow md:w-100 hover:transition hover:shadow-lg hover:scale-105 cursor-pointer">
           <div className='flex flex-col items-center gap-2 mb-2'>
           <MailCheck className='text-pink-500'/><span className="font-semibold">Email Id</span>
           </div>
-          <p className='text-center'>giftforyou@gmail.org</p>
-           
+          <p className='text-center'>giftforyou@gmail.org</p> 
         </Link>
         </div>
+
+        <SubHeading text="Follow us" className="mt-10"/>
+
+        <div className="flex gap-4 justify-center mt-3 mb-10">
+            <Link to="https://www.facebook.com/"><img src={Facebook} alt='facebook' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://www.instagram.com/"><img src={Instagram} alt='Instagram' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://in.linkedin.com/"><img src={Linkedin} alt='Linkedin' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://x.com/"><img src={Twitter} alt='Twitter' className='w-10 hover:scale-110 transition' /></Link>
+            <Link to="https://www.youtube.com/"><img src={Youtube} alt='Youtube' className='w-10 hover:scale-110 transition' /></Link>
+          </div>
 
         <SubHeading text="location"/>
 
