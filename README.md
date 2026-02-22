@@ -50,7 +50,7 @@ This is a MERN Stack based gift shopping website where users can explore and buy
 
 ---
 
-## Tools & Tools & Technologies Used
+## Tools & Technologies Used
 
 - React.js  
 - Node.js  
