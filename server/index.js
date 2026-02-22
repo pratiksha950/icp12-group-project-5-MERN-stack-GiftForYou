@@ -16,10 +16,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const imagekit = new ImageKit({
-  publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
-  privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
-  urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT,
+const client = new ImageKit({
+  privateKey: process.env.IMAGEKIT_PRIVATE_KEY
 });
 
 const PORT = process.env.PORT || 8080;
@@ -27,9 +25,9 @@ const PORT = process.env.PORT || 8080;
 app.get("/health", getHealth);
 app.get("/", getHome);
 
-app.get("/auth", (req, res) => {
-  const authParams = imagekit.getAuthenticationParameters();
-  res.json(authParams);
+app.get('/auth', function (req, res) {
+  const { token, expire, signature } = client.helper.getAuthenticationParameters();
+  res.send({ token, expire, signature, publicKey: process.env.IMAGEKIT_PUBLIC_KEY });
 });
 
 app.post("/Signup", postSignUp);
