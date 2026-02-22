@@ -59,13 +59,13 @@ function Navbar() {
 
           <div>
             {userData?.name ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 hidden md:flex">
                 <Link to="/profile" className="flex items-center gap-1">
                   {userData?.photos?.length > 0 ? (
                     <img
                       src={userData.photos[0]}
                       alt="Profile"
-                      className="w-8 h-8 rounded-full object-cover"
+                      className="w-8 h-8 rounded-full object-cover hidden md:flex "
                     />
                   ) : (
                     <Avatar name={userData.name} />
