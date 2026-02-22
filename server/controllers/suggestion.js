@@ -5,7 +5,7 @@ export const createSuggestion = async (req, res) => {
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
-      return res.status(400).json({
+      return res.json({
         success: false,
         message: "All fields are required",
       });
@@ -17,14 +17,14 @@ export const createSuggestion = async (req, res) => {
       message,
     });
 
-    res.status(201).json({
+    res.json({
       success: true,
       message: "Suggestion sent successfully",
       data: suggestion,
     });
   } catch (error) {
     console.error("Create Suggestion Error:", error);
-    res.status(500).json({
+    res.json({
       success: false,
       message: "Server error",
     });

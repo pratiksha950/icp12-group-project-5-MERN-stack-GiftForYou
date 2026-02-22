@@ -11,6 +11,7 @@ import TeamSection from '../components/TeamSection.jsx'
 import PopularGifting from "../components/PopularGifting.jsx"
 import Footer from '../components/Footer.jsx'
 import axios from 'axios'
+import Input2 from '../components/Input2.jsx'
 
 function About() {
   useEffect(() => {
@@ -150,17 +151,16 @@ function About() {
             </div>
 
             <div className="mt-6 flex gap-3 ">
-              <input
+              <Input2
                 type="text"
                 placeholder="Write review..."
                 value={review}
                 onChange={(e) => setReview(e.target.value)}
-                className="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
 
               <button
                 onClick={handleAddReview}
-                className="bg-pink-600 text-white px-6 rounded-lg hover:bg-blue-800 transition"
+                className="bg-pink-500 text-white px-6 rounded-lg hover:bg-pink-600 transition"
               >
                 {editIndex !== null ? "Update" : "Add"}
               </button>
