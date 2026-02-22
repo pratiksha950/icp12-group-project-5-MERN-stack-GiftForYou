@@ -37,7 +37,7 @@ function Profile() {
 
   const authenticator = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth`);
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`Request failed with status ${response.status}: ${errorText}`);
@@ -131,7 +131,7 @@ function Profile() {
       const token = localStorage.getItem("userJwtToken");
 
       const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/profile`,
+        `${import.meta.env.VITE_API_BASE_URL}/profile`,
         userData,
         {
           headers: {
