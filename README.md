@@ -3,9 +3,10 @@
 Welcome to **Gift For You**!  
 This is a MERN Stack based gift shopping website where users can explore and buy gifts for different occasions like Valentine, Birthday, Wedding, Cake, and Fashion.
 
-Click Here to visit our website ()
-
 ---
+
+## Live Website  
+
 
 ## Pages
 
@@ -35,9 +36,6 @@ Click Here to visit our website ()
 - Toast Notifications
 
 ---
-  
-## ScreenShot
-
 ### Home Page
 ![Home Page](./client/src/assets/homepage.png)
 
