@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <nav className="w-full bg-rose-100 shadow-md philosopher-regular sticky top-0 z-50 shadow">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between md:px-6 px-2 py-5">
 
         <h1 className="text-2xl font-bold text-pink-600 italic cursor-pointer">
           <Link to="/" className="hover:text-pink-500 lobster-two-bold md:text-3xl text-xl">GiftForYou</Link>
@@ -70,20 +70,19 @@ function Navbar() {
                   ) : (
                     <Avatar name={userData.name} />
                   )}
-                  <span>Hello, {userData.name}</span>
+                  <span className="text-sm md:text-lg hover:text-pink-500">Hello, {userData.name}</span>
                 </Link>
 
                 <Button
                   title="Logout"
                   varient="primary"
-
                   onClick={logoutUser}
                 />
               </div>
             ) : (
               <Link
                 to="/login"
-                className="hidden md:block bg-pink-500 text-white px-3 py-1 text-sm rounded hover:bg-pink-600"
+                className="hidden md:block bg-pink-500 text-white md:px-3 px-1 md:py-1 py-0.5 text-sm rounded hover:bg-pink-600"
               >
                 Login
               </Link>
