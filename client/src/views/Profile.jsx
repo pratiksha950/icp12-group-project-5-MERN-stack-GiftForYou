@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { getUserData } from "../utils";
 import Navbar from "../components/Navbar"
-import Input from "../components/Input";
+import Input2 from "../components/Input2";
 import Button from "../components/Button";
 import axios from "axios";
 import ProfileImg from "../assets/profile-update.png"
@@ -196,45 +196,45 @@ function Profile() {
               className="border rounded h-8 block w-full text-sm text-center px-13 md:px-25 cursor-pointer"
             />
 
-            <Input name="name"
+            <Input2 name="name"
               value={userData.name}
               onChange={handleChange}
               placeholder="Name"
             />
 
-            <Input name="email"
+            <Input2 name="email"
               value={userData.email}
               onChange={handleChange}
               placeholder="Email"
               className="mt-10"
             />
 
-            <Input name="mobile"
+            <Input2 name="mobile"
               value={userData.mobile}
               onChange={handleChange}
               placeholder="Mobile" />
 
-            <Input name="whatsapp"
+            <Input2 name="whatsapp"
               value={userData.whatsapp}
               onChange={handleChange}
               placeholder="Whatsapp" />
 
-            <Input name="address"
+            <Input2 name="address"
               value={userData.address}
               onChange={handleChange}
               placeholder="Address" />
 
-            <Input name="city"
+            <Input2 name="city"
               value={userData.city}
               onChange={handleChange}
               placeholder="City" />
 
-            <Input name="pincode"
+            <Input2 name="pincode"
               value={userData.pincode}
               onChange={handleChange}
               placeholder="Pincode" />
 
-            <Input name="country"
+            <Input2 name="country"
               value={userData.country}
               onChange={handleChange}
               placeholder="Country" />
