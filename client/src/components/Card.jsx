@@ -20,7 +20,7 @@ function Card({ image, name, description, price, originalPrice, discount, addToC
     const fileInputRef = useRef(null);
 
   const authenticator = async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth`); // backend auth route
+    const response = await fetch(`http://localhost:8080/auth`); // backend auth route
     if (!response.ok) throw new Error("ImageKit auth failed");
     return response.json(); // { signature, expire, token, publicKey }
   };
