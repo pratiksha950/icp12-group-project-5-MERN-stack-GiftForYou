@@ -9,14 +9,14 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [userData, setUserData] = useState({
-    
+
   });
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userData"));
     setUserData(user);
 
-   
+
     const handleStorageChange = () => {
       const updatedUser = JSON.parse(localStorage.getItem("userData"));
       setUserData(updatedUser);
@@ -59,27 +59,27 @@ function Navbar() {
           <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
           <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
 
-         
+
           <div>
             {userData?.name ? (
               <div className="flex items-center gap-2">
                 <Link to="/profile" className="flex items-center gap-1">
                   {userData?.photos?.length > 0 ? (
-  <img
-    src={userData.photos[0]}
-    alt="Profile"
-    className="w-8 h-8 rounded-full object-cover"
-  />
-) : (
-  <Avatar name={userData.name} />
-)}
+                    <img
+                      src={userData.photos[0]}
+                      alt="Profile"
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                  ) : (
+                    <Avatar name={userData.name} />
+                  )}
                   <span>Hello, {userData.name}</span>
                 </Link>
 
                 <Button
                   title="Logout"
                   varient="primary"
-                  
+
                   onClick={logoutUser}
                 />
               </div>
@@ -116,8 +116,8 @@ function Navbar() {
           <Link to="/cake" className="block">Cakes</Link>
           <Link to="/about" className="block">About</Link>
           <Link to="/contact" className="block">Contact</Link>
-          
-          
+
+
           {userData ? (
             <div className="border-t pt-3">
               <Link to="/profile" className="flex items-center gap-2 py-2">

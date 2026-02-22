@@ -9,9 +9,9 @@ import Heading from "./Heading";
 function OccasionSection() {
 
   const categories = [
-    { name: "Anniversary", img: occasion , path: "/wedding" },
+    { name: "Anniversary", img: occasion, path: "/wedding" },
     { name: "Friends", img: anniversary, path: "/valentine" },
-    { name: "Family", img:trending, path: "/cake" },
+    { name: "Family", img: trending, path: "/cake" },
     { name: "Birthday", img: Birthday, path: "/birthday" },
   ];
 
@@ -28,7 +28,7 @@ function OccasionSection() {
         <div className="flex justify-center gap-8 mt-10 flex-wrap">
 
           {categories.map((item, index) => (
-            <Link 
+            <Link
               to={item.path}
               key={index}
               className="flex flex-col items-center"

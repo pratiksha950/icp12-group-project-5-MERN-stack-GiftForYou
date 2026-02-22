@@ -22,15 +22,15 @@ function CategorySection() {
       <div className="max-w-7xl mx-auto px-4">
 
         <Heading text="Explore Our Categories" />
-                <p className="text-center text-gray-900 mt-2 mb-4 font-medium">
-         Make Every Moment Special
+        <p className="text-center text-gray-900 mt-2 mb-4 font-medium">
+          Make Every Moment Special
         </p>
 
 
         <div className="flex flex-wrap justify-center gap-6">
 
           {categories.map((item, index) => (
-            <Link 
+            <Link
               key={index}
               to={item.path}
               className="flex flex-col items-center cursor-pointer group"

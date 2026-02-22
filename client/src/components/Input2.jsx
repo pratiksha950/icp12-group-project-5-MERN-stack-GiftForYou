@@ -10,17 +10,17 @@ function Input2({
   onKeyDown
 }) {
   return (
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        name={name}
-        onChange={onChange}
-        autoComplete={autoComplete}
-        onKeyDown={onKeyDown}
-        className="border rounded-xl h-8 w-full text-sm text-center
+    <input
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      name={name}
+      onChange={onChange}
+      autoComplete={autoComplete}
+      onKeyDown={onKeyDown}
+      className="border rounded-xl h-8 w-full text-sm text-center
         focus:outline-none focus:border-pink-700"
-      />
+    />
   );
 }
 
