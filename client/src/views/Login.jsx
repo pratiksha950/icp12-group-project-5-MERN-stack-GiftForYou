@@ -35,18 +35,18 @@ function Login() {
         setLoginUser({ email: "", password: "" })
 
 
-       const { token, data } = response.data;
-      localStorage.setItem("userData", JSON.stringify({ ...data, token }));
-      localStorage.setItem("userJwtToken", token);
-        setTimeout(()=>{
-          window.location.href="/";
-        },1500)
+        const { token, data } = response.data;
+        localStorage.setItem("userData", JSON.stringify({ ...data, token }));
+        localStorage.setItem("userJwtToken", token);
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1500)
 
       } else {
         toast.error(response.data.message, { id: "loginFail" })
       }
     } catch (error) {
-      toast.error("Server not responding"+ error.message)
+      toast.error("Server not responding" + error.message)
     }
   }
 
@@ -54,19 +54,18 @@ function Login() {
     <>
       <Navbar />
       <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
-     <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
+        <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
-
- <div className="w-full md:w-1/2 flex items-center justify-center">
-  <img
-    src={loginImg}
-    alt="login"
-    className="h-64 md:h-[511px] w-full object-cover"
-  />
-</div>
+          <div className="w-full md:w-1/2 flex items-center justify-center">
+            <img
+              src={loginImg}
+              alt="login"
+              className="h-64 md:h-[511px] w-full object-cover"
+            />
+          </div>
 
           <div className="w-full md:w-1/2 p-6 sm:p-8">
-            <Heading text="Welcome Back"/>
+            <Heading text="Welcome Back" />
 
             <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
               Login to continue to GiftForYou
@@ -111,8 +110,7 @@ function Login() {
           </div>
         </div>
       </div>
-       <Footer />
-      
+      <Footer />
     </>
   )
 }

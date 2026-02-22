@@ -8,14 +8,13 @@ import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
 import Footer from "../components/Footer.jsx";
-import {useState} from "react"
+import { useState } from "react"
 import Input from "../components/Input.jsx";
-
 
 const Birthday = () => {
   const [search, setSearch] = useState("");
 
-   useEffect(() => {
+  useEffect(() => {
     setPageTitle("GiftForYou- Birthday");
   }, []);
 
@@ -47,13 +46,12 @@ const Birthday = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-0">
             {filteredProducts.map((product) => (
-        <Card key={product.id} {...product} addToCart={addToCart} />
-      ))}
-                </div>
+              <Card key={product.id} {...product} addToCart={addToCart} />
+            ))}
+          </div>
         </div>
       </div>
-        <Footer />
-      
+      <Footer />
     </>
   );
 };

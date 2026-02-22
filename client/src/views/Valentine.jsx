@@ -8,20 +8,20 @@ import Heading from "../components/Heading.jsx";
 import { useEffect } from "react";
 import { setPageTitle } from "../utils.jsx";
 import Footer from "../components/Footer.jsx";
-import {useState} from "react"
+import { useState } from "react"
 import Input from "../components/Input.jsx";
 
 const Valentine = () => {
-      const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
 
   const products = valentinecarddata;
 
-    const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase()) ||
     product.description.toLowerCase().includes(search.toLowerCase())
   );
 
- useEffect(() => {
+  useEffect(() => {
     setPageTitle("GiftForYou- Valentine");
   }, []);
 
@@ -32,7 +32,7 @@ const Valentine = () => {
         <Toaster />
         <div className="max-w-7xl mx-auto">
           <Heading text="Valentine's Gifts" />
-                 <div className="max-w-md mx-auto mb-8">
+          <div className="max-w-md mx-auto mb-8">
             <Input
               type="text"
               placeholder="Search Valentine's Gifts..."
@@ -42,8 +42,6 @@ const Valentine = () => {
             />
           </div>
 
-
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-0">
             {filteredProducts.map((product) => (
               <Card key={product.id} {...product} addToCart={addToCart} />
@@ -51,7 +49,7 @@ const Valentine = () => {
           </div>
         </div>
       </div>
-        <Footer />
+      <Footer />
     </>
   );
 };

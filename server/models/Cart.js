@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const cartSchema = new mongoose.Schema({
   productId: String,
-  userId: String, // store which user added it
+  userId: String,
   name: String,
   price: Number,
   quantity: Number,

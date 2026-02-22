@@ -6,7 +6,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import signupImg from "../assets/signup.png"; 
+import signupImg from "../assets/signup.png";
 import Footer from "../components/Footer.jsx";
 import Heading from "../components/Heading.jsx";
 
@@ -49,7 +49,7 @@ function SignUp() {
         });
 
         setTimeout(() => {
-          navigate("/login"); 
+          navigate("/login");
         }, 1500);
       } else {
         toast.error(response.data.message, { id: "signuperror" });
@@ -75,10 +75,10 @@ function SignUp() {
           </div>
 
           <div className="w-full md:w-1/2 p-6 sm:p-8">
-            <Heading text="Create Account"/>
+            <Heading text="Create Account" />
 
             <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
-              Join GiftForYou and start shopping 
+              Join GiftForYou and start shopping
             </p>
 
             <form onSubmit={createUser} className="flex flex-col gap-3 sm:gap-4">
@@ -148,7 +148,6 @@ function SignUp() {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

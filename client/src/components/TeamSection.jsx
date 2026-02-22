@@ -39,7 +39,7 @@ function TeamSection() {
 
         <SubHeading text="Our Team" />
         <p className="text-center text-gray-900 mt-2 mb-4 font-medium">
-          Meet the team behind GiftForYou 
+          Meet the team behind GiftForYou
         </p>
 
         <div className="flex flex-wrap justify-center gap-8 ">
@@ -58,7 +58,6 @@ function TeamSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
