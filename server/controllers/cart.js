@@ -14,10 +14,10 @@ export const addToCartController = async (req, res) => {
         }
 
         await cartItem.save();
-        res.status(200).json({ success: true, message: "Added to cart", cartItem });
+        res.json({ success: true, message: "Added to cart", cartItem });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Something went wrong" });
+        res.json({ success: false, message: "Something went wrong" });
     }
 };
 
@@ -25,8 +25,8 @@ export const getCartController = async (req, res) => {
     try {
         const { userId } = req.query;
         const cartItems = await Cart.find({ userId });
-        res.status(200).json(cartItems);
+        res.json(cartItems);
     } catch (error) {
-        res.status(500).json({ success: false, message: "Failed to fetch cart" });
+        res.json({ success: false, message: "Failed to fetch cart" });
     }
 };
