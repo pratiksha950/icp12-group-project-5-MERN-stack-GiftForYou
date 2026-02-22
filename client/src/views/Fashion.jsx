@@ -11,7 +11,6 @@ import Footer from "../components/Footer.jsx";
 import { useState } from "react"
 import Input from "../components/Input.jsx";
 
-
 const Fashion = () => {
   const [search, setSearch] = useState("");
   const products = fashiondatacard;
@@ -20,7 +19,6 @@ const Fashion = () => {
     product.name.toLowerCase().includes(search.toLowerCase()) ||
     product.description.toLowerCase().includes(search.toLowerCase())
   );
-
 
   useEffect(() => {
     setPageTitle("GiftForYou-Fashion");
@@ -44,7 +42,6 @@ const Fashion = () => {
             />
           </div>
 
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-0">
             {filteredProducts.map((product) => (
               <Card key={product.id} {...product} addToCart={addToCart} />
@@ -53,7 +50,6 @@ const Fashion = () => {
         </div>
       </div>
       <Footer />
-
     </>
   );
 };

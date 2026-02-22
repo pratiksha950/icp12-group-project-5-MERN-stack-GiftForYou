@@ -10,9 +10,9 @@ const addReview = async (req, res) => {
             data: review
         });
     } catch (err) {
-  console.log(err); // this shows the real error
-  res.json({ success: false, error: "Failed to save review" });
-}
+        console.log(err);
+        res.json({ success: false, error: "Failed to save review" });
+    }
 }
 
 const updateReview = async (req, res) => {

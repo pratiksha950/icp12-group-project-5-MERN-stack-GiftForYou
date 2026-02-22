@@ -58,7 +58,6 @@ function TeamSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -113,7 +113,6 @@ function Profile() {
     setPageTitle("GiftForYou- Profile");
   }, []);
 
-
   useEffect(() => {
     const data = getUserData();
     console.log("USER DATA:", data);
@@ -167,7 +166,6 @@ function Profile() {
         <div className="flex flex-col items-center">
           <img src={ProfileImg} alt="Profile" className="h-full w-full object-cover" />
         </div>
-
 
         <div className="w-full md:w-1/2 p-4 sm:p-6 my-2">
           <SubHeading text="Welcome Back" />

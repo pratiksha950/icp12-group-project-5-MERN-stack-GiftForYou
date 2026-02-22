@@ -1,12 +1,10 @@
 import Cart from "../models/Cart.js";
 
-// Add product to cart
 export const addToCartController = async (req, res) => {
     try {
         const { userId, productId, name, description, productImage, customImage, price, quantity } = req.body;
         const totalAmount = price * quantity;
 
-        // Check if the same product with the same customization already exists for the user
         let cartItem = await Cart.findOne({ userId, productId, description });
         if (cartItem) {
             cartItem.quantity += quantity;
@@ -23,7 +21,6 @@ export const addToCartController = async (req, res) => {
     }
 };
 
-// Get all cart items for a user
 export const getCartController = async (req, res) => {
     try {
         const { userId } = req.query;

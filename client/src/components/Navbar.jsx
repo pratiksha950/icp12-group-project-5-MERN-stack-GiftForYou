@@ -9,13 +9,11 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [userData, setUserData] = useState({
-
   });
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userData"));
     setUserData(user);
-
 
     const handleStorageChange = () => {
       const updatedUser = JSON.parse(localStorage.getItem("userData"));
@@ -58,7 +56,6 @@ function Navbar() {
 
           <Link to="/about" className="hidden md:block hover:text-pink-500 text-sm">About</Link>
           <Link to="/contact" className="hidden md:block hover:text-pink-500 text-sm">Contact</Link>
-
 
           <div>
             {userData?.name ? (
@@ -117,7 +114,6 @@ function Navbar() {
           <Link to="/about" className="block">About</Link>
           <Link to="/contact" className="block">Contact</Link>
 
-
           {userData ? (
             <div className="border-t pt-3">
               <Link to="/profile" className="flex items-center gap-2 py-2">
@@ -149,7 +145,6 @@ function Navbar() {
           )}
         </div>
       )}
-
       <Toaster />
     </nav>
   );

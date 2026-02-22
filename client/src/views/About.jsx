@@ -76,11 +76,8 @@ function About() {
   return (
     <>
       <Navbar />
-
       <div className="min-h-screen w-full py-12 px-4 bg-[#f5f3ff]">
-
-        <div className="">
-
+        <div>
           <div className="text-center mb-12">
 
             <Heading text="Welcome to Our Store" />
@@ -121,7 +118,6 @@ function About() {
             <TeamSection />
           </div>
 
-
           <div>
             <SubHeading text="Customer Reviews" />
             <div
@@ -153,7 +149,6 @@ function About() {
               ))}
             </div>
 
-
             <div className="mt-6 flex gap-3 ">
               <input
                 type="text"
@@ -171,15 +166,11 @@ function About() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
       <Footer />
-
     </>
-
   );
-
 }
 
 export default About

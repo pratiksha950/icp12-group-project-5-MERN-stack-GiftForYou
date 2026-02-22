@@ -29,10 +29,7 @@ createRoot(document.getElementById("root")).render(
       <Route path="/fashion" element={<Fashion />} />
       <Route path="/cake" element={<Cake />} />
       <Route path="/valentine" element={<Valentine />} />
-     <Route path="/cart" element={<Cart />} />
-     
-
-      
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   </BrowserRouter>
 );

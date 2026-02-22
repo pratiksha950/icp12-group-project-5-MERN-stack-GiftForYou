@@ -21,7 +21,6 @@ const Wedding = () => {
     product.description.toLowerCase().includes(search.toLowerCase())
   );
 
-
   useEffect(() => {
     setPageTitle("GiftForYou- Wedding");
   }, []);
@@ -43,7 +42,6 @@ const Wedding = () => {
               autoComplete="off"
             />
           </div>
-
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-0">
             {filteredProducts.map((product) => (

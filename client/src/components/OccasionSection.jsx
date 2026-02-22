@@ -44,10 +44,8 @@ function OccasionSection() {
               <div className="bg-gray-300 w-60 py-3 text-center rounded-b-xl font-semibold text-gray-700">
                 {item.name}
               </div>
-
             </Link>
           ))}
-
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 const checkJWT = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
-  console.log("AUTH HEADER:", authHeader); 
+  console.log("AUTH HEADER:", authHeader);
 
   if (!authHeader) {
     return res.status(401).json({
@@ -16,7 +16,7 @@ const checkJWT = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; 
+    req.user = decoded;
     console.log("DECODED USER:", decoded);
     next();
   } catch (err) {

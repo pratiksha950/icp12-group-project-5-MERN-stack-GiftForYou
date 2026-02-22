@@ -1,43 +1,43 @@
-import {Schema,model} from "mongoose";
+import { Schema, model } from "mongoose";
 
-const userSchema=new Schema({
-    name:{
-        type:String,
+const userSchema = new Schema({
+    name: {
+        type: String,
     },
-    email:{
-        type:String,
-        required:true,
-        unique:true
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
-    mobile:{
-        type:Number,
+    mobile: {
+        type: Number,
     },
-    city:{
-        type:String,
+    city: {
+        type: String,
     },
-    country:{
-        type:String,
+    country: {
+        type: String,
     },
-    pincode:{
-        type:Number,
+    pincode: {
+        type: Number,
     },
-    whatsappNumber:{
-        type:Number,
+    whatsappNumber: {
+        type: Number,
     },
-    address:{
-        type:String,
+    address: {
+        type: String,
     },
-    password:{
-        type:String,
-        required:true,
+    password: {
+        type: String,
+        required: true,
     },
     photos: {
         type: [String],
         default: [],
     },
 
-},{timestamps:true})
+}, { timestamps: true })
 
-const User=model("User",userSchema);
+const User = model("User", userSchema);
 
 export default User

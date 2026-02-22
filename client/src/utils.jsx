@@ -18,7 +18,6 @@ const logoutUser = () => {
     }, 1500)
 };
 
-// Shared cart management utility
 const addToCart = async (item) => {
     const user = getUserData();
     if (!user || !user.token) {
@@ -30,13 +29,12 @@ const addToCart = async (item) => {
     }
 
     try {
-        // POST request to backend
         const response = await axios.post(
             "http://localhost:8080/cart",
             item,
             {
                 headers: {
-                    Authorization: `Bearer ${user.token}`, // if your backend needs JWT
+                    Authorization: `Bearer ${user.token}`,
                     "Content-Type": "application/json",
                 }
             }
@@ -45,7 +43,6 @@ const addToCart = async (item) => {
         if (response.data.success) {
             toast.success("Added to cart!");
 
-            // Optional: update localStorage for frontend state
             const saved = JSON.parse(localStorage.getItem("cartItems")) || [];
             const idx = saved.findIndex(i => i.id === item.id && i.description === item.description);
 

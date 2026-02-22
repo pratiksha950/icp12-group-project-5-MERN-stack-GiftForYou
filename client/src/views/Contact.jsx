@@ -20,7 +20,6 @@ function Contact() {
     setPageTitle("GiftForYou- Contact");
   }, []);
 
-
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -169,12 +168,10 @@ function Contact() {
               />
             </div>
           </div>
-
         </form>
       </div>
       <Footer />
     </div>
-
   )
 }
 

@@ -45,7 +45,6 @@ function Cart() {
             key={item.id + item.description} 
             {...item} 
           />
-
             ))}
 
             <h2 className="text-xl font-bold text-right mt-4">
@@ -63,8 +62,7 @@ function Cart() {
           </div>
         )}
       </div>
-        <Footer />
-      
+        <Footer />  
     </>
   );
 }
