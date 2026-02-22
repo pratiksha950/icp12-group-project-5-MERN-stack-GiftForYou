@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { setPageTitle } from "../utils.jsx"
-import Input from "../components/Input.jsx"
+import Input2 from "../components/Input2.jsx"
 import Button from "../components/Button.jsx"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
@@ -74,7 +74,7 @@ function Login() {
 
             <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
 
-              <Input
+              <Input2
                 type="email"
                 placeholder="Email"
                 autoComplete="off"
@@ -85,7 +85,7 @@ function Login() {
                 className="border px-3 py-2 rounded w-full"
               />
 
-              <Input
+              <Input2
                 type="password"
                 placeholder="Password"
                 autoComplete="new-password"

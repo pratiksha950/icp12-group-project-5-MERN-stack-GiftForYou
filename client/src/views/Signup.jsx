@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { setPageTitle } from "../utils.jsx";
-import Input from "../components/Input.jsx";
+import Input2 from "../components/Input2.jsx";
 import Button from "../components/Button.jsx";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -83,7 +83,7 @@ function SignUp() {
 
             <form onSubmit={createUser} className="flex flex-col gap-3 sm:gap-4">
 
-              <Input
+              <Input2
                 type="text"
                 placeholder="Full Name"
                 value={newUser.name}
@@ -91,7 +91,7 @@ function SignUp() {
                 className="border px-3 py-2 rounded w-full"
               />
 
-              <Input
+              <Input2
                 type="email"
                 placeholder="Email"
                 value={newUser.email}
@@ -99,7 +99,7 @@ function SignUp() {
                 className="border px-3 py-2 rounded w-full"
               />
 
-              <Input
+              <Input2
                 type="text"
                 placeholder="Mobile"
                 value={newUser.mobile}
@@ -107,7 +107,7 @@ function SignUp() {
                 className="border px-3 py-2 rounded w-full"
               />
 
-              <Input
+              <Input2
                 type="text"
                 placeholder="City"
                 value={newUser.city}
@@ -115,7 +115,7 @@ function SignUp() {
                 className="border px-3 py-2 rounded w-full"
               />
 
-              <Input
+              <Input2
                 type="text"
                 placeholder="Country"
                 value={newUser.country}
@@ -123,7 +123,7 @@ function SignUp() {
                 className="border px-3 py-2 rounded w-full"
               />
 
-              <Input
+              <Input2
                 type="password"
                 placeholder="Password"
                 autoComplete="new-password"

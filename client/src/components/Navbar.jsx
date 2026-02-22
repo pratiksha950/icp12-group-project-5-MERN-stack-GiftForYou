@@ -39,7 +39,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full bg-rose-100 shadow-md philosopher-regular">
+    <nav className="w-full bg-rose-100 shadow-md philosopher-regular sticky top-0 z-50 shadow">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
         <h1 className="text-2xl font-bold text-pink-600 italic cursor-pointer">
