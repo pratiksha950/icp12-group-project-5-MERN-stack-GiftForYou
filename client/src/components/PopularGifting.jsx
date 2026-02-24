@@ -1,8 +1,8 @@
 import React from "react";
-import gift1 from "../assets/homeimg/gift1.png";
-import gift2 from "../assets/homeimg/gift2.png";
-import gift3 from "../assets/homeimg/gift3.png";
-import gift4 from "../assets/homeimg/gift4.png";
+import gift1 from "../assets/homeimg/gift.png";
+import gift2 from "../assets/homeimg/cutegift.png";
+import gift3 from "../assets/homeimg/giftbox.png";
+import gift4 from "../assets/homeimg/minigift.png";
 
 
 const gifts = [

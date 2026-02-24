@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar"
 import Input2 from "../components/Input2";
 import Button from "../components/Button";
 import axios from "axios";
-import ProfileImg from "../assets/profile-update.png"
+import ProfileImg from "../assets/profileUpdate.png"
 import { Link } from "react-router";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer"

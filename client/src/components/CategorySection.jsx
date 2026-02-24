@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import flower1 from "../assets/homeimg/flower1.jpg";
-import birthday1 from "../assets/homeimg/birthday1.jpg";
-import cake1 from "../assets/homeimg/cake1.jpg";
+import flower1 from "../assets/homeimg/flower.jpg";
+import birthday1 from "../assets/homeimg/birthday.jpg";
+import cake1 from "../assets/homeimg/cake.jpg";
 import wedding1 from "../assets/homeimg/wedding1.jpg";
 import fasion from "../assets/homeimg/fasion.png";
 import Heading from "./Heading";

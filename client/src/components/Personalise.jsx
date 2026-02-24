@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Personalise1 from "../assets/homeimg/Personalise1.png";
-import Personalise2 from "../assets/homeimg/Personalise2.png";
-import Personalise3 from "../assets/homeimg/Personalise3.png";
-import Personalise4 from "../assets/homeimg/Personalise4.png";
+import Personalise1 from "../assets/homeimg/personalise.png";
+import Personalise2 from "../assets/homeimg/hamper.png";
+import Personalise3 from "../assets/homeimg/sipper.png";
+import Personalise4 from "../assets/homeimg/cusions.png";
 import Heading from "./Heading";
 
 const gifts = [

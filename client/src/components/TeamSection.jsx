@@ -1,8 +1,8 @@
 import React from "react";
-import team1 from "../assets/homeimg/team1.jpg";
-import team2 from "../assets/homeimg/team2.jpg";
-import team3 from "../assets/homeimg/team3.jpg";
-import team4 from "../assets/homeimg/team4.jpg";
+import team1 from "../assets/homeimg/founder.jpg";
+import team2 from "../assets/homeimg/designer.jpg";
+import team3 from "../assets/homeimg/cofounder.jpg";
+import team4 from "../assets/homeimg/manager.jpg";
 import SubHeading from "./SubHeading";
 
 function TeamSection() {

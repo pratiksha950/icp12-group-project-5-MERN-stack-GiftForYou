@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import occasion from "../assets/homeimg/occasion1.png";
-import anniversary from "../assets/homeimg/image.png";
-import trending from "../assets/homeimg/occasion3.jpg";
-import Birthday from "../assets/homeimg/occasion2.png";
+import occasion from "../assets/homeimg/occasion.png";
+import anniversary from "../assets/homeimg/brother.png";
+import trending from "../assets/homeimg/family.jpg";
+import Birthday from "../assets/homeimg/girl.png";
 import Heading from "./Heading";
 
 function OccasionSection() {
