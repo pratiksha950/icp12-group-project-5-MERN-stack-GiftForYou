@@ -6,7 +6,7 @@ This is a MERN Stack based gift shopping website where users can explore and buy
 ---
 
 ## Live Website  
-
+https://icp12-group-project-5-mern-stack.onrender.com
 
 ## Pages
 
