@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Personalise1 from "../assets/homeimg/personalise.png";
+import Personalise1 from "../assets/homeimg/bouque.png";
 import Personalise2 from "../assets/homeimg/hamper.png";
 import Personalise3 from "../assets/homeimg/sipper.png";
 import Personalise4 from "../assets/homeimg/cusions.png";
