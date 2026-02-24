@@ -7,7 +7,6 @@ import Birthday from "../assets/homeimg/occasion2.png";
 import Heading from "./Heading";
 
 function OccasionSection() {
-
   const categories = [
     { name: "Anniversary", img: occasion, path: "/wedding" },
     { name: "Friends", img: anniversary, path: "/valentine" },
@@ -33,17 +32,21 @@ function OccasionSection() {
               key={index}
               className="flex flex-col items-center"
             >
-              <div className="w-60 h-80 bg-white rounded-t-full rounded-b-5xl overflow-hidden shadow-lg flex items-end">
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
+             <div className="flex flex-col items-center">
+  
+          <div className="w-60 h-80 bg-white rounded-t-full rounded-b-5xl overflow-hidden shadow-lg">
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+            />
+          </div>
 
-              <div className="bg-gray-300 w-60 py-3 text-center rounded-b-xl font-semibold text-gray-700">
-                {item.name}
-              </div>
+          <div className="bg-gray-300 w-60 py-3 text-center rounded-b-xl font-semibold text-gray-700">
+            {item.name}
+          </div>
+
+      </div>
             </Link>
           ))}
         </div>

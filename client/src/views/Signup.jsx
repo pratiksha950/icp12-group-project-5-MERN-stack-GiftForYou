@@ -66,7 +66,7 @@ function SignUp() {
       <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
         <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
-          <div className="w-full md:w-1/2 flex items-center justify-center bg-red-100">
+          <div className="w-full md:w-1/2 flex items-center justify-center">
             <img
               src={signupImg}
               alt="signup"

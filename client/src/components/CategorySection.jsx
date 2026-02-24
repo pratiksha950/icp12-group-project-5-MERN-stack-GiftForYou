@@ -33,7 +33,7 @@ function CategorySection() {
             <Link
               key={index}
               to={item.path}
-              className="flex flex-col items-center cursor-pointer group"
+              className="flex flex-col items-center cursor-pointer"
             >
               <div className="w-50 h-40 rounded-2xl overflow-hidden shadow-lg bg-white flex justify-center items-center">
                 <img

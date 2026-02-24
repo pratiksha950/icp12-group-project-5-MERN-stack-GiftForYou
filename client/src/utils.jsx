@@ -41,7 +41,7 @@ const addToCart = async (item) => {
         );
 
         if (response.data.success) {
-            toast.success("Added to cart!");
+            toast.success("Added to cart", { id: "cart-success" });
 
             const saved = JSON.parse(localStorage.getItem("cartItems")) || [];
             const idx = saved.findIndex(i => i.id === item.id && i.description === item.description);

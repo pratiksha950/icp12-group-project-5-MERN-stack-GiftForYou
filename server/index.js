@@ -18,6 +18,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
+
 const client = new ImageKit({
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY
 });

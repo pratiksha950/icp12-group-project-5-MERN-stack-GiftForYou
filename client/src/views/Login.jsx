@@ -34,7 +34,6 @@ function Login() {
         toast.success(response.data.message, { id: "loginSuccess" })
         setLoginUser({ email: "", password: "" })
 
-
         const { token, data } = response.data;
         localStorage.setItem("userData", JSON.stringify({ ...data, token }));
         localStorage.setItem("userJwtToken", token);

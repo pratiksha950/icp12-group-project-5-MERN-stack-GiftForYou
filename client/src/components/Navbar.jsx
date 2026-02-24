@@ -140,7 +140,7 @@ function Navbar() {
               </button>
             </div>
           ) : (
-            <Link to="/login" className="block text-pink-500">Login</Link>
+            <Link to="/login" target="_blank" className="block text-pink-500">Login</Link>
           )}
         </div>
       )}

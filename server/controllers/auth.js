@@ -8,7 +8,7 @@ dotenv.config();
 
 //signUp
 const postSignUp = async (req, res) => {
-  const { name, email, mobile, city, country, password, profilePic } = req.body;
+  const { name, email, mobile, city, country, password} = req.body;
 
   if (!name) {
     return res.json({
@@ -51,7 +51,6 @@ const postSignUp = async (req, res) => {
     mobile,
     city,
     country,
-    profilePic,
     password: encryptedPassword
   })
   try {

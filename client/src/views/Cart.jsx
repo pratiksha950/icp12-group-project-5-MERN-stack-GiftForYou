@@ -52,13 +52,14 @@ function Cart() {
             </h2>
 
             <div className="flex justify-center">
-              <Btn
-                title="Proceed to Pay"
-                variant="primary"
-                size="md"
-                onClick={() => (window.location.href = "https://www.phonepe.com/")}
-              />
-            </div>
+            <Btn
+              title="Proceed to Pay"
+              variant="primary"
+              size="md"
+              onClick={() => window.open("https://www.phonepe.com/", "_blank")}
+            />
+</div>
+
           </div>
         )}
       </div>
